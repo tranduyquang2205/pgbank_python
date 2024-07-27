@@ -41,7 +41,6 @@ class PGBank:
     "getCaptcha": "https://biz.pgbank.com.vn/servlet/ImageServlet",
     "login": "https://home.pgbank.com.vn/V2018/login.aspx",
     "getHistories": "https://home.pgbank.com.vn/V2018/pages/transelect.aspx",
-    "getlistAccount": "https://efast.vietinbank.vn/api/v1/account/getUserInfo",
 }
         self.lang =  "vi"
         self.request_id = None
