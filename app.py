@@ -33,7 +33,7 @@ def login_api(input: LoginDetails):
 def confirm_api(input: LoginDetails):
     try:
         pgbank = PGBank(input.username, input.password, input.account_number)
-        response = pgbank.get_balance()
+        response = pgbank.get_balance(input.account_number)
         return APIResponse.json_format(response)
     except Exception as e:
         response = str(e)
