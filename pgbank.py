@@ -560,8 +560,8 @@ class PGBank:
         url = "https://home.pgbank.com.vn/V2018/Pages/TranSelect.aspx"
         
         response = self.curlGet(url)
-        with open("111.html", "w", encoding="utf-8") as file:
-            file.write(response)
+        # with open("111.html", "w", encoding="utf-8") as file:
+        #     file.write(response)
         __EVENTVALIDATION = self.extract___EVENTVALIDATION(response)
         __VIEWSTATE = self.extract___VIEWSTATE(response)
         __VIEWSTATEGENERATOR = self.extract___VIEWSTATEGENERATOR(response)
