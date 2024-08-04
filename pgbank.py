@@ -226,7 +226,7 @@ class PGBank:
         match = re.search(pattern, html_content)
         return match.group(1) if match else None
     def extract_balance(self,html_content):
-        pattern = r'<span class="lblLabel" style="color:Black;">Số dư khả dụng</span>: <span style="color: black"><strong>               (.*) VND</strong></span><br />'
+        pattern = r'<span class="lblLabel" style="color:Black;">Số dư khả dụng</span>: <span style="color: black"><strong>\s+(.*) VND</strong></span><br />'
         match = re.search(pattern, html_content)
         return int(match.group(1).replace(',','').strip()) if match else None
     def get_total_transaction(self,html_content):
@@ -376,8 +376,8 @@ class PGBank:
         
         response = self.curlPost(self.url['login'],payload_converted,headers)
         #print(time.time()-st)
-        # with open('payload2.html', 'w', encoding='utf-8') as file:
-        #     file.write(response)
+        with open('payload2.html', 'w', encoding='utf-8') as file:
+            file.write(response)
         if 'Số dư khả dụng' in response:
             self.is_login = True
             self.balance = self.extract_balance(response)
