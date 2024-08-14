@@ -441,7 +441,7 @@ class PGBank:
                     'message': "Unknown Error!"
             }
     def get_balance(self,account_number):
-        if not self.is_login or time.time() - self.time_login > 1800:
+        if not self.is_login or time.time() - self.time_login > 1790:
             login = self.doLogin()
             if 'success' not in login or not login['success']:
                 return login
@@ -547,7 +547,7 @@ class PGBank:
 
     def getHistories(self, fromDate="16/06/2023", toDate="16/06/2023", account_number=''):
         self.transactions = []
-        if not self.is_login or time.time() - self.time_login > 1800:
+        if not self.is_login or time.time() - self.time_login > 1790:
             login = self.doLogin()
             if 'success' not in login or not login['success']:
                 return login
