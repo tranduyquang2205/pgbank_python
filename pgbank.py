@@ -445,6 +445,17 @@ class PGBank:
             login = self.doLogin()
             if 'success' not in login or not login['success']:
                 return login
+            
+        url = "https://home.pgbank.com.vn/V2018/Pages/acbalance.aspx"
+        
+        response = self.curlGet(url)
+        self.balance = self.extract_balance(response)
+        account_number = self.extract_account_number(response)
+        accounts = {
+            "account_number": account_number,
+            "balance": self.balance
+        }
+        self.accounts_list = accounts
         account = self.accounts_list
         if account.get('account_number'):
             if account.get('account_number') == account_number:
