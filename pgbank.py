@@ -459,42 +459,6 @@ class PGBank:
             self.is_login = False
             self.save_data()
             return {'code':520 ,'success': False, 'message': 'Unknown Error!'} 
-    def saveData(self):
-        data = {
-            'username': self.username,
-            'password': self.password,
-            'account_number': self.account_number,
-            'sessionId': self.sessionId,
-            'mobileId': self.mobileId,
-            'clientId': self.clientId,
-            'cif': self.cif,
-            'E': self.E,
-            'res': self.res,
-            'tranId': self.tranId,
-            'browserToken': self.browserToken,
-            'browserId': self.browserId,
-        }
-        with open(f"data/{self.username}.txt", "w") as file:
-            json.dump(data, file)
-
-    def parseData(self):
-        with open(f"data/{self.username}.txt", "r") as file:
-            data = json.load(file)
-            self.username = data["username"]
-            self.password = data["password"]
-            self.account_number = data.get("account_number", "")
-            self.sessionId = data.get("sessionId", "")
-            self.mobileId = data.get("mobileId", "")
-            self.clientId = data.get("clientId", "")
-            self.token = data.get("token", "")
-            self.accessToken = data.get("accessToken", "")
-            self.authToken = data.get("authToken", "")
-            self.cif = data.get("cif", "")
-            self.res = data.get("res", "")
-            self.tranId = data.get("tranId", "")
-            self.browserToken = data.get("browserToken", "")
-            self.browserId = data.get("browserId", "")
-            self.E = data.get("E", "")
 
     def getE(self):
         ahash = hashlib.md5(self.username.encode()).hexdigest()
