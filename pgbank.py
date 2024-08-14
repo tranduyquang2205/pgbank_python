@@ -587,8 +587,8 @@ class PGBank:
         url = "https://home.pgbank.com.vn/V2018/Pages/TranSelect.aspx"
         
         response = self.curlGet(url)
-        with open("111.html", "w", encoding="utf-8") as file:
-            file.write(response)
+        # with open("111.html", "w", encoding="utf-8") as file:
+        #     file.write(response)
         __EVENTVALIDATION = self.extract___EVENTVALIDATION(response)
         __VIEWSTATE = self.extract___VIEWSTATE(response)
         __VIEWSTATEGENERATOR = self.extract___VIEWSTATEGENERATOR(response)
@@ -644,8 +644,8 @@ class PGBank:
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0'
         }
         response = self.curlPost(self.url['getHistories'],payload_converted,headers)
-        with open("222.html", "w", encoding="utf-8") as file:
-            file.write(response)
+        # with open("222.html", "w", encoding="utf-8") as file:
+        #     file.write(response)
         # return 1
         transactions =  self.extract_transaction_history(response)
         if transactions == 'error':
