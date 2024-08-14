@@ -84,17 +84,33 @@ class PGBank:
         self.sessionId = data.get('sessionId', '')
         self.time_login = data.get("time_login", "")
         self.is_login = data.get("is_login", "")
-    def save_cookies(self,cookie_jar):
-        with open(self.cookies_file, 'w') as f:
-            json.dump(cookie_jar.get_dict(), f)
     def load_cookies(self):
         try:
             with open(self.cookies_file, 'r') as f:
                 cookies = json.load(f)
-                self.cookies = cookies
-                return
+                jar = requests.cookies.RequestsCookieJar()
+                for cookie in cookies:
+                    jar.set(cookie['name'], cookie['value'], domain=cookie.get('domain'), path=cookie.get('path'))
+                self.session.cookies.update(jar)
         except (FileNotFoundError, json.decoder.JSONDecodeError):
-            return requests.cookies.RequestsCookieJar()
+            self.session.cookies = requests.cookies.RequestsCookieJar()
+
+    def save_cookies(self):
+        cookies_list = []
+        for cookie in self.session.cookies:
+            cookie_dict = {
+                'name': cookie.name,
+                'value': cookie.value,
+                'domain': cookie.domain,
+                'path': cookie.path,
+                'expires': cookie.expires,
+                'secure': cookie.secure,
+                'httpOnly': cookie.has_nonstandard_attr('HttpOnly')
+            }
+            cookies_list.append(cookie_dict)
+        
+        with open(self.cookies_file, 'w') as f:
+            json.dump(cookies_list, f, indent=4)
     def init_guid(self):
         self._IBDeviceId = self.generate_device_id()
         
@@ -136,7 +152,7 @@ class PGBank:
         }
         self.load_cookies()
         response = self.session.get(url, headers=headers,allow_redirects=True)
-        self.save_cookies(self.session.cookies)
+        self.save_cookies()
         self.referer_url = url
         try:
             return response.json()
@@ -173,7 +189,7 @@ class PGBank:
             }
         self.load_cookies()
         response = self.session.post(url, headers=headers, data=data)
-        self.save_cookies(self.session.cookies)
+        self.save_cookies()
         self.referer_url = url
         try:
             return response.json()
@@ -355,7 +371,7 @@ class PGBank:
     def doLogin(self):
         print('login')
         st = time.time()
-        self.session = requests.Session()
+        # self.session = requests.Session()
         response = self.curlGet(self.url['login'])
         #print(time.time()-st)
         __EVENTVALIDATION = self.extract___EVENTVALIDATION(response)
@@ -562,11 +578,11 @@ class PGBank:
 
     def getHistories(self, fromDate="16/06/2023", toDate="16/06/2023", account_number=''):
         self.transactions = []
-        # if not self.is_login or time.time() - self.time_login > 1790:
-        #     login = self.doLogin()
-        #     if 'success' not in login or not login['success']:
-        #         return login
-        self.get_balance(account_number)
+        if not self.is_login or time.time() - self.time_login > 1790:
+            login = self.doLogin()
+            if 'success' not in login or not login['success']:
+                return login
+        # self.get_balance(account_number)
         param = {}
         url = "https://home.pgbank.com.vn/V2018/Pages/TranSelect.aspx"
         

@@ -1,261 +1,110 @@
 
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head><meta content="text/html;charset=UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /><meta http-equiv="Cache-Control" content="no-cache, no-store, max-age=0, must-revalidate" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="0" /><meta http-equiv="refresh" content="600" /><title>
+<html>
+<head><link rel="stylesheet" type="text/css" href="/V2018/DXR.axd?r=1_24-XZeUe" /><link rel="stylesheet" type="text/css" href="/V2018/DXR.axd?r=1_26-XZeUe" /><link rel="stylesheet" type="text/css" href="/V2018/DXR.axd?r=1_9-XZeUe" /><link rel="stylesheet" type="text/css" href="/V2018/DXR.axd?r=1_7-XZeUe" /><link rel="stylesheet" type="text/css" href="../App_Themes/Aqua1/GridView/sprite.css" /><link rel="stylesheet" type="text/css" href="../App_Themes/Aqua1/Web/sprite.css" /><link rel="stylesheet" type="text/css" href="../App_Themes/Aqua1/GridView/styles.css" /><link rel="stylesheet" type="text/css" href="../App_Themes/Aqua1/Web/styles.css" /><link rel="stylesheet" type="text/css" href="../App_Themes/Aqua1/Editors/sprite.css" /><link rel="stylesheet" type="text/css" href="../App_Themes/Aqua1/Editors/styles.css" /><link rel="stylesheet" type="text/css" href="../App_Themes/Aqua1/Web/styles.css?v=20231228" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /><meta name="description" /><meta name="author" /><link rel="icon" href="../Resources/Pgb_theme/images/pg/favicon_logo.png?v=4543" /><title>
 	PGBank dịch vụ Ngân hàng điện tử
-</title><link rel="shortcut icon" href="Resources/Images/PGBANK.ICO?v=3453" type="image/x-icon" /><link rel="icon" href="Resources/Pgb_theme/images/pg/favicon.png?v=45435" type="image/ico" />
-
-    <!-- Vender -->
-    <link href="Resources/StyleSheet/font-awesome.min.css?v=20231228" rel="stylesheet" />
-    
-
-    <!--create for new css pgb-->
-    <link rel="stylesheet" href="Resources/Pgb_theme/assets/components/bootstrap/dist/css/bootstrapX.css?v=20231228" />
+</title>
 
 
+    <!-- Bootstrap v4.0.0-beta -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css?v=20231228" /><link rel="stylesheet" href="../Resources/Pgb_theme/assets/components/bootstrap/dist/css/bootstrapX.css?v=20231228" /><link rel="stylesheet" href="../Resources/Pgb_theme/css/newStyle.css?v=20231228" /><link href="../Resources/StyleSheet/font-awesome.min.css?v=20231228" rel="stylesheet" />
     <!-- font awesome -->
-    <link rel="stylesheet" href="Resources/Pgb_theme/assets/components/font-awesome/css/font-awesome.css?v=20231228" />
+    <link rel="stylesheet" href="../Resources/Pgb_theme/assets/components/font-awesome/css/font-awesome.css?v=20231228" />
 
     <!-- ionicons -->
-    <link rel="stylesheet" href="Resources/Pgb_theme/assets/components/Ionicons/css/ionicons.css?v=20231228" />
+    <link rel="stylesheet" href="../Resources/Pgb_theme/assets/components/Ionicons/css/ionicons.css?v=20231228" />
+    <script src="../Resources/Pgb_theme/assets/components/jquery/dist/jquery.js?v=20231228"></script>
+    <link rel="stylesheet" href="../Resources/JavaScript/ebScript.js?v=20231228" />
 
     <!-- theme style -->
-    <link rel="stylesheet" href="Resources/Pgb_theme/css/master_style.css?v=20231228" /><link rel="stylesheet" href="Resources/Pgb_theme/css/skins/_all-skins.css?v=20231228" /><link rel="stylesheet" href="Resources/Pgb_theme/css/pg.css?v=20231228" />
+    <link rel="stylesheet" href="../Resources/Pgb_theme/css/master_style.css?v=20231228" /><link rel="stylesheet" href="../Resources/Pgb_theme/css/skins/_all-skins.css?v=20231228" />
+
     <!-- morris chart -->
-    <link rel="stylesheet" href="Resources/Pgb_theme/assets/components/morris.js/morris.css?v=20231228" />
+    <link rel="stylesheet" href="../Resources/Pgb_theme/assets/components/morris.js/morris.css?v=20231228" />
 
     <!-- jvectormap -->
-    <link rel="stylesheet" href="Resources/Pgb_theme/assets/components/jvectormap/jquery-jvectormap.css?v=20231228" />
+    <link rel="stylesheet" href="../Resources/Pgb_theme/assets/components/jvectormap/jquery-jvectormap.css?v=20231228" />
 
     <!-- date picker -->
-    <link rel="stylesheet" href="Resources/Pgb_theme/assets/components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css?v=20231228" />
+    <link rel="stylesheet" href="../Resources/Pgb_theme/assets/components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css?v=20231228" />
 
     <!-- daterange picker -->
-    <link rel="stylesheet" href="Resources/Pgb_theme/assets/components/bootstrap-daterangepicker/daterangepicker.css?v=20231228" />
+    <link rel="stylesheet" href="../Resources/Pgb_theme/assets/components/bootstrap-daterangepicker/daterangepicker.css?v=20231228" />
 
     <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="Resources/Pgb_theme/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css?v=20231228" />
+    <link rel="stylesheet" href="../Resources/Pgb_theme/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css?v=20231228" />
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-	<script src="assets/js/fix/html5shiv.min.js" ></script>
-	<script src="assets/js/fix/respond.min.js"></script>
+	<script src="assets/js/fix/html5shiv.min.js?v=20231228" ></script>
+	<script src="assets/js/fix/respond.min.js?v=20231228"></script>
 	<![endif]-->
 
     <!-- google font -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;subset=vietnamese" rel="stylesheet" /><link href="Resources/Pgb_theme/css/animate.min.css?v=20231228" rel="stylesheet" />
-
-    
-    <script type="text/javascript" src="../Resources/javascript/RemoveVNAccent.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" /><link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;subset=vietnamese" rel="stylesheet" /><link href="../Resources/Pgb_theme/css/animate.min.css?v=20231228" rel="stylesheet" /><link rel="stylesheet" href="../Resources/Pgb_theme/css/pg.css?v=20231228" />
+    <script src="../Resources/JavaScript/swfobject.js?v=20231228" type="text/javascript"></script>
 
     <style type="text/css">
-        .lnkInline:hover {
-            color: white;
+        .box-body .col-md-4 label, .box-body .col-md-4, .box-body .col-md-8 span, .box-body .col-md-2 span, .box-body .col-md-4 span, .box-body .col-md-6 span, .box-body .col-md-10 span, .box-body .col-md-10 form-control span {
+            line-height: 28px;
         }
 
-        .lnkInline {
-            color: white;
+        .box-body .heading span {
+            font-weight: 500;
+            font-size: 15px;
         }
 
-        .modal-custom-feild {
-            margin-bottom: 2px !important;
+        .box-body .radio-button, .box-body .form_content {
+            margin-left: 6%;
+            margin-top: 20px;
+            margin-bottom: 60px;
         }
 
-        .lbModal {
-            font-weight: bold !important;
-        }
-
-        .custom_btsendOTP {
-            color: #17a2b8;
-        }
-
-            .custom_btsendOTP:hover {
-                color: paleturquoise;
+            .box-body .form_content .form-group span {
+                font-size: 11px;
+                font-weight: 400;
+                color: #7d7d7d;
+                margin-left: 4%;
             }
 
-        .loading {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 999992;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(192, 192, 192, 0.5);
-            background-repeat: no-repeat;
-            background-position: center;
+        .form_content .form-control {
+            width: 50%;
         }
 
-
-        .centerx {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-top: -50px;
-            margin-left: -50px;
-            border: 10px solid #f3f3f3;
-            border-radius: 50%;
-            border-top: 10px solid #3498db;
-            width: 80px;
-            height: 80px;
-            -webkit-animation: spin 2s linear infinite; /* Safari */
-            animation: spin 2s linear infinite;
+        .box-body .radio-button label {
+            display: block;
         }
-
-        /* Safari */
-        @-webkit-keyframes spin {
-            0% {
-                -webkit-transform: rotate(0deg);
-            }
-
-            100% {
-                -webkit-transform: rotate(360deg);
-            }
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .cs_custom_button {
-            border: none;
-            background-color: #1e88e5;
-            color: white;
-            height: 40px;
-            width: 130px;
-        }
-
-        .cs_custom_button2 {
-            border: none;
-            background-color: #1e88e5;
-            color: white;
-            height: 40px;
-        }
-
-        .msgCustomBlank {
-            display: none;
-            font-size: 13px;
-            color: red;
+        /*dongph*/
+        .menuChilActive {
+            color: #33bbed !important; 
         }
     </style>
+    <script>
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            console.log(event.target)
+            if (event.target == document.getElementById("myModal")) {
+                document.getElementById("myModal").style.display = "none";
+            }
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        function closeOnClick() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+    </script>
+
 </head>
 
-
-<body class="hold-transition skin-blue layout-boxed sidebar-mini">
-    <div id="loading" class="loading">
-        <div class="centerx" style="z-index: 9999922"></div>
-    </div>
-    <div class="wrapper">
-        <form onsubmit="return false">
-            <div class="modal fade" id="myModal" role="dialog" style="z-index: 999991">
-
-                <div class="modal-dialog modal-lg">
-                    <div id="modalContent" class="modal-content">
-                        <div class="modal-header" style="height: 50px; margin-top: 5px; display: flex; align-items: center; justify-content: center">
-                            <h4 style="text-align: center">Quên mật khẩu</h4>
-                            
-                        </div>
-                        <div class="modal-body">
-                            <div id="divCode" style="display: none;">
-                                
-                                <div id="contentCode" style="margin-top: 5px; margin-left: 10px; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
-                                    <b id="codeNum" style="font-size: 17px; font-weight: normal"></b>
-                                </div>
-                                <div style="height: 36px; margin-top: 15px; margin-left: 10px; margin-right: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px">
-                                    <input id="btnClose" type="button" class="cs_custom_button" data-dismiss="modal" value="Đóng" />
-                                </div>
-
-                            </div>
-                            <div id="divContent" class="form-element" style="margin-left: 40px; margin-right: 40px; display: block">
-                                
-                                <div class="form-group has-feedback modal-custom-feild">
-                                    <label class="adLabelFooter" id="Label9">Họ và tên</label>
-                                    <input type="text" id="tbFullName" placeholder="Họ và tên" name="account" class="form-control " onkeyup="fnRemoveEmpty(this)" />
-                                    <label class="msgCustomBlank" id="tbFullNameMsg" />
-                                </div>
-                                
-                                <div class="form-group has-feedback modal-custom-feild">
-                                    <label class="adLabelFooter" id="Label5">Số CMND/CCCD/Hộ chiếu</label>
-                                    <input type="text" id="tbIdentify" placeholder="Số CMND/CCCD/HC đăng ký tại PG Bank" name="account" class="form-control " onkeyup="fnRemoveEmpty(this)" />
-                                    <label class="msgCustomBlank" id="tbIdentifyMsg" />
-                                </div>
-                                
-                                <div class="form-group has-feedback modal-custom-feild">
-                                    <label class="adLabelFooter" id="Label1">Số thẻ</label>
-                                    <input type="number" id="tbCardNumber" placeholder="Số thẻ Ghi nợ nội địa/Trả trước Online" name="account" class="form-control " onkeyup="fnRemoveEmpty(this)" />
-                                    <label class="msgCustomBlank" id="tbCardNumberMsg" />
-                                </div>
-
-                                
-                                <div class="form-group has-feedback modal-custom-feild">
-                                    <label class="adLabelFooter" id="Label4">Mã PIN</label>
-                                    <input type="password" pattern="[0-9]*" inputmode="numeric" id="tbPin" placeholder="Mã PIN của thẻ" name="account" class="form-control " onkeyup="fnRemoveEmpty(this)" />
-                                    <label class="msgCustomBlank" id="tbPinMsg" />
-                                </div>
-
-                                
-                                <div class="form-group has-feedback modal-custom-feild">
-                                    <label class="adLabelFooter" id="Label6">Số điện thoại</label>
-                                    <input type="number" id="tbPhoneNumber" placeholder="Số ĐT đăng ký DV Ngân hàng điện tử" name="account" class="form-control " onkeyup="fnRemoveEmpty(this)" />
-                                    <label class="msgCustomBlank" id="tbPhoneNumberMsg" />
-                                </div>
-                                
-                                <div class="form-group has-feedback modal-custom-feild" style="margin-bottom: 10px !important">
-                                    <label class="adLabelFooter" id="Label99">Mã kiểm tra</label>
-
-                                    <div id="dvCapcha" style="display: flex">
-                                        <input type="text" id="tbCapcha" placeholder="Nhập mã kiểm tra" name="account" class="form-control col-sm-8" onkeyup="fnRemoveEmpty(this)" />
-
-                                        <div style="display: flex" class="col-sm-1">
-                                            <img id="imgCapcha" alt="capcha" style="border: 2px solid gray;">
-                                            <span class="ion ion-loop" style="color: blue; padding-left: 15px; font-size: 21px; padding-top: 6px" onclick="ReloadCapcha_Onclick()"></span>
-                                        </div>
-                                    </div>
-                                    <label class="msgCustomBlank" id="tbCapchaMsg" />
-                                </div>
-                                
-                                <div style="display: none" id="divAuthSms">
-
-                                    <div class="d-flex mb-3">
-                                        <label id="Label7" style="padding-top: 8px; width: 80px">Mã OTP</label>
-
-                                        <input type="text" id="tbSMS" placeholder="Nhập mã xác thực OTP được gửi đến số điện thoại của Quý khách" name="account" class="form-control " disabled />
-
-                                        <input id="cmdSMS" type="button" class="cs_custom_button" style="height: 33px" value="Gửi OTP" onclick="GetSMSForgotClick()" />
-                                    </div>
-
-                                </div>
-                                <div style="text-align: center">
-                                    <label class="adLabelFooter" id="lbCountTime" style="color: red; font-size: 13px; padding: 3px!important;"></label>
-                                    <label class="adLabelFooter" id="lbError" style="color: red; font-size: 13px; padding: 3px!important;"></label>
-                                </div>
-                                <div style="display: flex">
-                                    <div style="flex-grow: 1"></div>
-                                    <input id="btClose" type="button" style="width: 30%; flex-grow: 1" class="cs_custom_button2" data-dismiss="modal" value="Đóng" />
-                                    <div style="flex-grow: 1; width: 10%;"></div>
-                                    <input id="btSubmit" type="submit" style="width: 30%; flex-grow: 1" class="cs_custom_button2" value="Xác nhận" onclick="SubmitForgotPass()" />
-
-                                    <div style="flex-grow: 1"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <form name="aspnetForm" method="post" action="./Login.aspx" id="aspnetForm" autocomplete="off">
+<body>
+    <form name="aspnetForm" method="post" action="./TranDetail.aspx" id="aspnetForm">
 <div>
-<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="RRH95UJFZyOXaYZuarAD/rqtY0FaNyQiHHWUvraZw+onAJoALL+nVlReoOYcmZWYzpT4hVDuUaqcV8dG1WeZHOz/Ky7v3RvSCFuMSmPdTFkj54/KONJuZRxLG9XZ4xnpIw1Yoig79lTrcmuL7SND7C8h17kxj1STSMVSnfYCweT82TEgrImA8jLRTrLHdF95YwI5TzV+t5yTGNcH2ji1rUmzQAJ1UEUpl9U45qH0Z/RHjdA9vJYYx+dvHIiByd9fUxRYq2aqUCHtMP+9mRIW9k2GNNT9GQX0mi/8B+xTEXIG9FMW3sL2gxhfjUh1kt8DRkfnlA==" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
 </div>
 
 <script type="text/javascript">
@@ -275,307 +124,1115 @@ function __doPostBack(eventTarget, eventArgument) {
 </script>
 
 
-<script src="/V2018/WebResource.axd?d=KKTX3uB_RIPKrmm2o6vWjZpH_luEddPXDzwgnJyzMdb9Cd2uPhcWKPIr5ChRZGtuHK65J4Hrn4Pa0hh305Mt8Wgu7HM1&amp;t=638526636345524026" type="text/javascript"></script>
+<script src="/V2018/WebResource.axd?d=IXUo6jz1USKn9vzVbVbC6Pves05BAUa5uDgW73hOdZqrnQQCEJ2DAOKQR08yzrh49JAaETEp6qi_GcOccYENMbUvvxM1&amp;t=638526636345524026" type="text/javascript"></script>
 
-
-<script src="/V2018/WebResource.axd?d=hJAepYXykG1nO2VUPVR8NVm9rZab6xPo0JMoVtEY24LwujxJv5O6PYJ_p9zo4bAvSm9sr5G1a5WHlInVtBvujD8roek1&amp;t=638526636345524026" type="text/javascript"></script>
 <div>
 
-	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="6A5FEB30" />
-	<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
-	<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="0kyF+dzZTTRk0k70+o//X1AAT6jpadPoCsz62Xvs8Xk289P84tyCe60XqQfhSzOwKTWxzGs1MEVTeVA26/9Zp1j2f4pg2+sMdjlHtm+6kwJUh46E0XyNF2cKy44lVlw+0/PDGN9kc97x32bmp1r0B9nPFJhCxVXX6hc6rubYaL1rdFShfnvFXYYnaQem0ObUj1oxVg==" />
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="68FCB1AB" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="p8tTzlX5enXpj/XyQe0dK8ZyAKujcalS1+6m2pmjHdvn5ADrDxhIx2/JdpF1hOrBjIJ+s8U/YfdnL50VxSZ0A/pX3GJ1J5FoXunN8z1hP1+RHB6lHaLgxc8awP9V87Z/gb4gSjtFTzlt5gZ5m30jEUta65x+ScgIiqy+NIDfdrFSvLPBjq7s4yfNoth4M4fkXUDos1AbY/5NoRJVH6Zlb0MvTn/faGdlDcc23nUPg10ldoYH9MRyhsFJwhcj9GLOU6OH9pxj+sufgTNsRU5jBz8TdmvKtpi8dowvTBjlzosv0EtMko69ojFqxFIbgrj37lb6PkLxVlOcN5gl3+4A3dKnW8h24AG4FNgj/LfzUTxNumRWkPQsRaTuFrUba9qANt9xU5/DNXF9wgB68Z5I/W2rfetfp5ZUUoVWdAlBlpt89agvlfawWJUajnQ55Dfwun5WeslfHVFGrTDpGI9PVFtybbK9tYV1txlQB2rOTq8xgmYUYjrVgxPiZT+J3OMbTYtO1nX7Fvvxm4a7DAn13M2xn0+fintfKmThx2GuVuVaGqKGMn2zyZMcm9M0WRliiTdn4JnFEDulWuHGs5POpVlBeyGy1a6difLm9ZVOG0wj+c/PqFl/692Qiu80t6ryBJMWpgGIINrV6RusungyLt1/z+TeFiRUYgm2QGKAtZs+0mKmZbAAdZC+l9f3CescyGu01BF7Yp97jh0OO0Pxx7aA+GIilTL4AvFPNTusacimeF5qA5HXvWs4Lnw+lOLpMqQ/glTk1iQ2Xo+145rwJ9Fr5Qk1pGQoVvAN6Ij8LHqo2a2pe87VG4ceGkcEQmnthMQ9CtniiCluOCv36A6sHjfoUoU6Yoo9nbGRelgQO0lBK/4WSB7VzpnBxSNtDAb8jVt4EZX8zC8uVKdRtJoXw2TfmZIQE7J0iNuuHm/Lkb2OqnMx4+jQqATWafTxVyLtxGb1yp9VyR0b3ASpmuoe5BQicHN7CqzxX9drAkl3gjmtCJVJQShWB9Rv+zaFURZNSdmfgvw+eaX6hMbHiqcfyB48Axtf16OGjki7/NAjCuUgeyY5+CzQt2tW8Gl/7bzp/vy+hrOPiMrTG3PaKfQX+SHP+uFfaXiGGX7uZsDtpTaIwS3JwOKEhSHpFoVfsjuOq120dqgPlkuAjSXHV/8u2iiDJ4o=" />
 </div>
-            <!-- Modal -->
+        <div class="hold-transition skin-blue layout-boxed sidebar-mini">
+            <div class="wrapper">
 
-            <nav class="navbar navbar-default navbar-expand-lg navbar-light fixed-top">
-                <div class="container">
-                    <a class="navbar-brand  mr-auto" href="#">
-                        <img src="../Resources/Pgb_theme/images/logo.png" /></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                <header class="main-header">
 
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
-                        <ul class="navbar-nav mt-2 mt-lg-0">
-                            <li>
-                                <span id="ctl00_Label2" class="adLabelFooter">Điện thoại:</span>
-                                <a href="tel:1900555574">
-                                    <span id="ctl00_Telphone" class="adLabelFooter">1900555574</span>
+                    <!-- Logo -->
+                    <a href="../Pages/acbalance.aspx" class="logo">
+                        <!-- mini logo for sidebar mini 50x50 pixels -->
+                        <span class="logo-mini">
+                            <img src="../Resources/Pgb_theme/images/pg/top_left_min.png" /></span>
+                        <!-- logo for regular state and mobile devices -->
+                        <img src="../Resources/Pgb_theme/images/pg/top_left.png" />
+                        <!-- <span class="logo-lg">Hoang Nam</span> -->
+                    </a>
+
+
+
+                    <!-- Header Navbar: style can be found in header.less -->
+                    <nav class="navbar navbar-static-top">
+                        <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button" onclick="fixSidebar();">
+                            <span class="sr-only">Toggle navigation</span>
+                        </a>
+
+                        <div class="navbar-custom-menu">
+                            <ul class="nav navbar-nav">
+                                <!-- User Account: style can be found in dropdown.less -->
+
+                                <li class="dropdown user user-menu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <span class="lblLabel" style="color:white">Xin chào</span>
+                                        <span class="d-none d-sm-inline-block">
+                                            <span id="ctl00_lblUserName" class="adBoldLabelvn">TRAN DUY QUANG</span>
+                                        </span>
+                                        <img src="../Resources/Pgb_theme/images/user2-160x160.jpg" class="user-image rounded-circle" alt="User Image">
+                                    </a>
+                                    <ul class="dropdown-menu scale-up">
+                                        <!-- User image -->
+                                        <li class="user-header">
+                                            <br />
+                                            <br />
+                                            
+                                            <p>
+                                                <span id="ctl00_lblUserNamePopup" class="adBoldLabelvn">TRAN DUY QUANG</span>
+                                                <small>
+                                                    <span id="ctl00_lblOpenDate" class="adBoldLabelvn">16/07/2024 12:00:00 SA</span></small>
+                                            </p>
+                                        </li>
+                                        <!-- Menu Footer-->
+                                        <div class="user-footer">
+                                            <div class="pull-left">
+                                                <a href="../pages/umeditprofile.aspx" class="btn btn-default btn-flat">
+                                                    <span class="lblLabel">Hồ sơ</span>
+                                                </a>
+                                            </div>
+                                            <div class="pull-right">
+                                                <a href="../Pages/logout.aspx" class="btn btn-default btn-flat">
+                                                    <span class="lblLabel">Đăng xuất</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </li>
+
+
+
+
+
+                                
+                            </ul>
+                        </div>
+                    </nav>
+                </header>
+
+                <!-- Left side column. contains the logo and sidebar -->
+                <aside class="main-sidebar">
+                    <!-- sidebar: style can be found in sidebar.less -->
+                    <section class="sidebar">
+                        <!-- Sidebar user panel -->
+                        <!--
+      <div class="user-panel">
+        <div class="image">
+          <img src="images/user2-160x160.jpg" class="rounded-circle" alt="User Image">
+        </div>
+        <div class="info">
+          <p>Hoang Nam</p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+	  -->
+
+
+                        <!-- sidebar menu::  style can be found in sidebar.less -->
+                        <ul class="sidebar-menu" data-widget="tree" style="white-space: normal !important;">
+                            <li class="header">&nbsp</li>
+                            <li class="active ">
+                                <a href="../Pages/acbalance.aspx">
+                                    <i class="fa fa-dashboard"></i><span>
+                                        <span class="lblLabel" style="color: white !important;">Trang chủ</span></span>
                                 </a>
                             </li>
-
-                            <li>
-                                <a href="mailto:dvkh.pgbank@petrolimex.com.vn">
-                                    <span id="ctl00_Label3" class="adLabelFooter">Trợ giúp</span>
+                            
+                                    <li class='treeview'>
+                                        <a href="#">
+                                            <i class='fa fa-credit-card'></i>
+                                            <span>Thẻ</span>
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl00$ChildRepeater$ctl00$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Thông tin thẻ tín dụng</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl00$ChildRepeater$ctl01$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Sao kê thẻ tín dụng</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl00$ChildRepeater$ctl02$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Thanh toán thẻ tín dụng</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl00$ChildRepeater$ctl03$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Đóng/mở Thanh toán trực tuyến</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl00$ChildRepeater$ctl04$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Khóa/Mở khóa thẻ</a>
+                                                    </li>
+                                                
+                                        </ul>
+                                    </li>
+                                
+                                    <li class='treeview'>
+                                        <a href="#">
+                                            <i class='fa fa-user'></i>
+                                            <span>Tài khoản</span>
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl01$ChildRepeater$ctl00$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Thông tin tài khoản</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl01$ChildRepeater$ctl01$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Chi tiết giao dịch theo ngày</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl01$ChildRepeater$ctl02$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Sao kê tài khoản tháng</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl01$ChildRepeater$ctl03$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Thông tin khoản vay</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl01$ChildRepeater$ctl04$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Thay đổi gói tài khoản</a>
+                                                    </li>
+                                                
+                                        </ul>
+                                    </li>
+                                
+                                    <li class='treeview'>
+                                        <a href="#">
+                                            <i class='fa fa-bank'></i>
+                                            <span>Giao dịch</span>
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl02$ChildRepeater$ctl00$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Cài đặt người thụ hưởng</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl02$ChildRepeater$ctl01$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Tìm kiếm lệnh chuyển tiền</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl02$ChildRepeater$ctl02$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Chuyển tiền</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl02$ChildRepeater$ctl03$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Cài đặt hạn mức chuyển tiền</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl02$ChildRepeater$ctl04$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Chuyển tiền định kỳ</a>
+                                                    </li>
+                                                
+                                        </ul>
+                                    </li>
+                                
+                                    <li class='treeview'>
+                                        <a href="#">
+                                            <i class='fa fa-exchange'></i>
+                                            <span>Tra soát giao dịch</span>
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl03$ChildRepeater$ctl00$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Yêu cầu tra soát</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl03$ChildRepeater$ctl01$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Truy vấn tra soát</a>
+                                                    </li>
+                                                
+                                        </ul>
+                                    </li>
+                                
+                                    <li class='treeview'>
+                                        <a href="#">
+                                            <i class='fa fa-file-text-o'></i>
+                                            <span>Thanh toán hóa đơn</span>
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl04$ChildRepeater$ctl00$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Điện lực</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl04$ChildRepeater$ctl01$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Nước</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl04$ChildRepeater$ctl02$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Viễn thông</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl04$ChildRepeater$ctl03$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Internet</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl04$ChildRepeater$ctl04$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Truyền hình</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl04$ChildRepeater$ctl05$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Vé máy bay</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl04$ChildRepeater$ctl06$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Vé tàu</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl04$ChildRepeater$ctl07$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Dịch vụ Cảng</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl04$ChildRepeater$ctl08$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Phí chung cư</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl04$ChildRepeater$ctl09$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Giao thông</a>
+                                                    </li>
+                                                
+                                        </ul>
+                                    </li>
+                                
+                                    <li class='treeview'>
+                                        <a href="#">
+                                            <i class='fa fa-building-o'></i>
+                                            <span>Nạp tiền</span>
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl05$ChildRepeater$ctl00$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Nạp tiền điện thoại</a>
+                                                    </li>
+                                                
+                                        </ul>
+                                    </li>
+                                
+                                    <li class='treeview active'>
+                                        <a href="#">
+                                            <i class='fa fa-money'></i>
+                                            <span>Tiết kiệm Online</span>
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl06$ChildRepeater$ctl00$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Quy định tiết kiệm Online</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl06$ChildRepeater$ctl01$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Mở tiết kiệm Online</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl06$ChildRepeater$ctl02$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Rút tiết kiệm Online</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl06$ChildRepeater$ctl03$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>In kỳ lĩnh lãi</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl06$ChildRepeater$ctl04$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Hỗ trợ tính toán</a>
+                                                    </li>
+                                                
+                                        </ul>
+                                    </li>
+                                
+                                    <li class='treeview'>
+                                        <a href="#">
+                                            <i class='fa fa-plus-square'></i>
+                                            <span>Dịch vụ giá trị gia tăng</span>
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl07$ChildRepeater$ctl00$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Chia sẻ thông báo giao dịch</a>
+                                                    </li>
+                                                
+                                        </ul>
+                                    </li>
+                                
+                                    <li class='treeview'>
+                                        <a href="#">
+                                            <i class='fa fa-cogs'></i>
+                                            <span>Cài đặt</span>
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl08$ChildRepeater$ctl00$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Thanh toán hóa đơn tự động</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl08$ChildRepeater$ctl01$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Thay đổi trạng thái Smart OTP</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl08$ChildRepeater$ctl02$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Đặt lại mật khẩu Smart OTP</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl08$ChildRepeater$ctl03$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Đồng bộ Token</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl08$ChildRepeater$ctl04$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Sửa thông tin người dùng</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl08$ChildRepeater$ctl05$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Đổi mật khẩu</a>
+                                                    </li>
+                                                
+                                        </ul>
+                                    </li>
+                                
+                            <li class="active">
+                                <a href="../Pages/ebContact.aspx">
+                                    <i class="fa fa-phone-square"></i><span>
+                                        <span class="lblLabel" style="color: white !important;">Liên hệ</span>
+                                    </span>
                                 </a>
                             </li>
-
-
-                            <li class="lang">
-                                <a id="ctl00_hplVnLanguage" class="active" href="Login.aspx?lang=vi-VN">
-                                        <img src="../Resources/Pgb_theme/images/Flag_vn.jpg?v=20231228" />&nbsp;
-                                </a>
-                                <a id="ctl00_hplEnLanguage" href="Login.aspx?lang=en-US">
-                                        <img src="../Resources/Pgb_theme/images/Flag_EN.jpg?v=20231228" />&nbsp;
-                                </a>
-                                <div class="clearfix"></div>
-                            </li>
+                            
+                            <a id="ctl00_hplBanner" class="banner_ads_left" href="https://www.pgbank.com.vn/Desktop.aspx/Ca-nhan/Ca-nhan/">
+                                <img src="" />
+                            </a>
 
                         </ul>
 
-                    </div>
-                </div>
-            </nav>
-            <div class="container-fluid bs-reset content_login" style="overflow: hidden">
 
-                <div class="row bs-reset">
+                    </section>
 
 
-                    <!-- Slider PC -->
-                    <div id="slider_banner_pc" class="banner-top d-none d-lg-block bs-reset">
-                        <div class="main_slides_banner">
-                            <section class="slides">
-                                <article class="item-slides">
 
-                                    <div class="featured">
-                                        <img src="../Resources/Pgb_theme/images/login_banner.png" title="A field of dreams" /> 
-                                    </div>
 
-                                </article>
+                    <!-- /.sidebar -->
 
-                               
-                            </section>
-                        </div>
+                    <div class="sidebar-footer">
+                        
+                        <a href="../Pages/logout.aspx" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="fa fa-power-off"></i></a>
+                        
                     </div>
 
-                    <!-- /.Slider PC -->
 
-                    <div class="col-lg-7">
-                        <a id="link0" class="lnkClass" href="https://www.pgbank.com.vn/Desktop.aspx/Tin-tuc/Tin-noi-bat/PG_BANK_CHO_VAY_MUA_NHA_SIEU_TOC_CHI_TRONG_24H/">
-                            <div style="width: 100%; height: 100%">
-                            </div>
-                        </a>
-                        <a id="link1" class="lnkClass" href="http://www.pgbank.com.vn/Desktop.aspx/Tin-tuc/Tin-noi-bat/PG_Bank_trien_khai_chuong_trinh_Vay_de_dang_khong_mang_lai_suat/" style="display: none">
-                            <div style="width: 100%; height: 100%">
-                            </div>
-                        </a>
-                        <a id="link2" class="lnkClass" href="https://www.pgbank.com.vn/Desktop.aspx/Ca-nhan/Ca-nhan/" style="display: none">
-                            <div style="width: 100%; height: 100%">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-5 bs-reset login_right align-self-end float-lg-right">
-                        <div class="login-box-2 col-sm-8">
-                            <div class="login-logo">
-                            </div>
-                            <!-- /.login-logo -->
-                            <div class="login-box-body">
-
-                                <div class="form-element">
-                                    <div class="form-group has-feedback">
-                                        
-                                        <input name="ctl00$txtloginName" id="ctl00_txtloginName" type="text" name="account" class="form-control" required="true" placeholder="Tên truy cập" />
-                                        <span class="ion ion-android-contact form-control-feedback"></span>
-                                    </div>
-                                    <div class="form-group has-feedback">
-                                        <input name="ctl00$txtPassword" id="ctl00_txtPassword" class="form-control" name="password" type="password" value="" required="" data-validation-required-message="This field is 21312" placeholder="Mật khẩu" />
-                                        <span class="ion ion-locked form-control-feedback"></span>
-                                    </div>
-
-                                    <div class="form-group has-feedback capcha">
-                                        
-                                        
-                                    </div>
-
+                </aside>
+                <div class="content-wrapper">
+                    <section class="content-header">
+                        
+                        <span id="ctl00_lblPageTitle" class="lblLabel" style="font-size: 21px; margin: 0 0 0px; font-weight: lighter;"> </span>
+                        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                            <span style="color: red">
+                                <a id="ctl00_lblMsgChangePass" href="UMChangePass.aspx" href="javascript:__doPostBack(&#39;ctl00$lblMsgChangePass&#39;,&#39;&#39;)" style="color:Red;font-size:14px;font-style:italic;text-decoration:underline;"></a>
+                            </span>
+                        <ol class="breadcrumb" style="display: none">
+                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i>
+                                <span class="lblLabel">Trang chủ</span>
+                            </a></li>
+                            
+                                    <li class="breadcrumb-item">
+                                        <a href='#'>
+                                            <i class="fa"></i>Tiết kiệm Online
+                                        </a>
+                                    </li>
+                                
+                                    <li class="breadcrumb-item">
+                                        <a href='https://home.pgbank.com.vn/V2018/pages/trandetail.aspx'>
+                                            <i class="fa"></i>DUMMY MENU
+                                        </a>
+                                    </li>
+                                
+                            
+                        </ol>
+                    </section>
+                    <!-- Main content -->
+                    <section class="content">
+                        <div id="ctl00_divErrorMSG">
+                            <div id="myModal" style="z-index: 3000" class="modal">
+                                <div id="modalDialog" class="modal-dialog">
                                     
-
-                                    <div class="row">
-
-                                        <div class="col-12 text-center">
-                                            
-                                            <input type="submit" name="ctl00$btnLogin" value="Đăng nhập" id="ctl00_btnLogin" class="btn btn-info btn-block btn-flat margin-top-10" type="button" />
-                                        </div>
-                                        <div class="margin-top-10 text-left col-12">
-                                            <p>
-                                                <a onclick="openModal()" href="#" data-target="#myModal" data-toggle="modal" data-backdrop="static" data-keyboard="false" class="text-info m-l-5">
-                                                    <span class="ion ion-log-in"></span>
-                                                    Quên mật khẩu?
-                                                </a>
-                                            </p>
-                                            <p>
-                                                <a href="http://www.pgbank.com.vn/Desktop.aspx/Ngan-hang-truc-tuyen/Dich-vu-Internet-Banking/20111219-Dich_vu_Internet_Banking/" class="text-info m-l-5"><span class="ion ion-log-in"></span>
-                                                    Đăng ký Internet Banking</a>
-                                            </p>
-                                            
-                                        </div>
+                                    <div id="divActions">
+                                        <input type="button" class="close" id="btnCancel" onclick="closeOnClick()" value="Hủy" />
+                                        <input type="submit" name="ctl00$btnAccept" value="Đồng ý" id="btnAccept" class="btCommand" />
                                     </div>
                                 </div>
-
-
-
-
-
                             </div>
-                            <!-- /.login-box-body -->
                         </div>
-                        <!-- /.login-box -->
-
-                        <div id="utilities">
-                            <div class="list_icon">
-                                <div class="container">
-                                    <div class="row">
-
-                                        <div class="col-md-12">
-                                            <ul class="ds-btn">
-                                                <li>
-                                                    <a href="http://www.pgbank.com.vn/Desktop.aspx/Lich-tra-theo-du-no-ban-dau/Lich-tra-theo-du-no-ban-dau/">
-                                                        <span class="icon">
-                                                            <i class="icon_normal">
-                                                                <img src="../Resources/Pgb_theme/images/pg/ico_congcu.png" /></i>
-
-                                                        </span>
-                                                        <span>
-                                                            <span class="lblLabel">Hỗ trợ tính toán</span>
-                                                        </span>
-                                                    </a>
-
-                                                </li>
-                                                <li>
-                                                    <a href="http://www.pgbank.com.vn/Desktop.aspx/Lai-suat-huy-dong/Lai-suat-huydong/">
-                                                        <span class="icon">
-                                                            <i class="icon_normal">
-                                                                <img src="../Resources/Pgb_theme/images/pg/ico_laisuat.png" /></i>
-
-                                                        </span>
-                                                        <span>
-                                                            <span class="lblLabel">Lãi suất</span>
-                                                        </span>
-                                                    </a>
-
-                                                </li>
-                                                <li>
-                                                    <a href="ebManual.aspx">
-                                                        <span class="icon">
-                                                            <i class="icon_normal">
-                                                                <img src="../Resources/Pgb_theme/images/pg/ico_chinhanh.png" /></i>
-
-                                                        </span>
-                                                        <span>
-                                                            <span class="lblLabel">Hướng dẫn</span></span>
-                                                    </a>
-
-                                                </li>
-
-                                                <li>
-                                                    <a href="/Pages/ExchangeRate.aspx?id=1">
-
-                                                        <span class="icon">
-                                                            <i class="icon_normal">
-                                                                <img src="../Resources/Pgb_theme/images/pg/ico_tigia.png" /></i>
-
-                                                        </span>
-                                                        <span>
-                                                            <span class="lblLabel">Tỉ giá ngoại tệ</span>
-                                                        </span>
-                                                    </a>
-
-                                                </li>
-
-                                                <div class="clearfix"></div>
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <!--End list_icon-->
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-            <footer class="footer_login_page fixed-bottom">
-
-                <div class="container">
-                    <div class="pull-right d-none d-sm-inline-block">
-                        <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg4">
-                            Điều khoản sử dụng</a>  
-                    </div>
-                    Copyright &copy; 2017 PGBank
-
-                </div>
-
-            </footer>
-            <div>
-                
+                        <div style="overflow: hidden">
+                            
     
 
+<script type="text/javascript">
+    function print_text() {
+        window.open('MonthBalExport.aspx?report=statement');
+        window.open('MonthBalExport.aspx?report=lineitems');
+    }
+</script>
+<script type="text/javascript">
+    window.onresize = function (e) {
+        grdAccount.SetWidth($('#divrule').width() - 35);
+        grdAccount.AdjustControl();
+    }
+    window.onload = function (e) {
+        grdAccount.SetWidth($('#divrule').width() - 35);
+        grdAccount.AdjustControl();
+    }
+</script>
+<div id="divrule" style="width: 100%" />
+<input type="hidden" name="ctl00$HolderBody$ucTranDetail$hfacc_card" id="hfacc_card" value="4477040252893" />
+<div class="box box-default">
+    
+    <div class="box-header with-border" style="text-align: center">
+        <h3 class="box-title">
+            <span id="ctl00_HolderBody_ucTranDetail_lblTitle" class="adHeadertext">Sổ phụ tài khoản</span><br />
+            <br />
+            <span id="ctl00_HolderBody_ucTranDetail_lblDate" class="adLabelvn">Từ ngày 27/07/2024 đến ngày 29/07/2024</span>
+        </h3>
+    </div>
+    <br />
+    <div class="box-body">
+        <div class="row">
+            <div class="col-md-4 col-6">
+                <span id="ctl00_HolderBody_ucTranDetail_Label1" class="adLabelvn">Tên khách hàng</span>
+            </div>
+            <div class="col-md-8 col-6 m-text-right">
+                <div class="form-group">
+                    <span><strong>
+                        <span id="ctl00_HolderBody_ucTranDetail_lblCus_Name" class="adLabelvn">TRAN DUY QUANG</span>
+                    </strong></span>
+                </div>
+            </div>
+            <div class="col-md-4 col-6">
+                <span id="ctl00_HolderBody_ucTranDetail_Label2" class="adLabelvn">Số tài khoản/Số thẻ</span>
+            </div>
+            <div class="col-md-8 col-6 m-text-right">
+                <div class="form-group">
+                    <span><strong>
+                        <span id="ctl00_HolderBody_ucTranDetail_lblAcc_No" class="adLabelvn"></span>
+                    </strong></span>
+                </div>
+            </div>
+            <div class="col-md-4 col-6">
+                <span id="ctl00_HolderBody_ucTranDetail_Label3" class="adLabelvn">Loại tiền</span>
+            </div>
+            <div class="col-md-8 col-6 m-text-right">
+                <div class="form-group">
+                    <span><strong>
+                        <span id="ctl00_HolderBody_ucTranDetail_lblCurrencyCode" class="adLabelvn">VND</span>
+                    </strong></span>
+                </div>
+            </div>
+            <div class="col-md-4 col-6">
+                <span id="ctl00_HolderBody_ucTranDetail_Label5" class="adLabelvn">Dư đầu kỳ</span>
+            </div>
+            <div class="col-md-2 col-6 m-text-right">
+                <div class="form-group">
+                    <span><strong>
+                        <span id="ctl00_HolderBody_ucTranDetail_lblBalance_Begin" class="adLabelvn">0.00</span>
+                    </strong></span>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <span id="ctl00_HolderBody_ucTranDetail_Label7" class="adLabelvn">Dư cuối kỳ</span>
+            </div>
+            <div class="col-md-3 col-6 m-text-right">
+                <div class="form-group">
+                    <span><strong>
+                        <span id="ctl00_HolderBody_ucTranDetail_lblBalance_End" class="adLabelvn">1,112.00</span>
+                    </strong></span>
+                </div>
+            </div>
+            <div class="col-md-4 col-6">
+                <span id="ctl00_HolderBody_ucTranDetail_Label6" class="adLabelvn">Số lần báo có</span>
+            </div>
+            <div class="col-md-2 col-6 m-text-right">
+                <div class="form-group">
+                    <span><strong>
+                        <span id="ctl00_HolderBody_ucTranDetail_lblCredit_Num" class="adLabelvn">1</span>
+                    </strong></span>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <span id="ctl00_HolderBody_ucTranDetail_Label9" class="adLabelvn">Tổng phát sinh có</span>
+            </div>
+            <div class="col-md-3 col-6 m-text-right">
+                <div class="form-group">
+                    <span><strong>
+                        <span id="ctl00_HolderBody_ucTranDetail_lblCredit_Total" class="adLabelvn">11,111.00</span>
+                    </strong></span>
+                </div>
+            </div>
+            <div class="col-md-4 col-6">
+                <span id="ctl00_HolderBody_ucTranDetail_Label14" class="adLabelvn">Số lần báo nợ</span>
+            </div>
+            <div class="col-md-2 col-6 m-text-right">
+                <div class="form-group">
+                    <span><strong>
+                        <span id="ctl00_HolderBody_ucTranDetail_lblDebit_Num" class="adLabelvn">1</span>
+                    </strong></span>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <span id="ctl00_HolderBody_ucTranDetail_Label12" class="adLabelvn">Tổng phát sinh nợ</span>
+            </div>
+            <div class="col-md-3 col-6 m-text-right">
+                <div class="form-group">
+                    <span><strong>
+                        <span id="ctl00_HolderBody_ucTranDetail_lblDebit_Total" class="adLabelvn">9,999.00</span>
+                    </strong></span>
+                </div>
             </div>
 
+            <div class="col-md-12 col-12">
+                <div class="tableGridTKCal">
+                    <script id="dxis_491244073" src="/V2018/DXR.axd?r=1_230-XZeUe" type="text/javascript"></script><script id="dxis_507721208" src="/V2018/DXR.axd?r=1_128-XZeUe" type="text/javascript"></script><script id="dxis_500419080" src="/V2018/DXR.axd?r=1_224-XZeUe" type="text/javascript"></script><script id="dxis_481244441" src="/V2018/DXR.axd?r=1_154-XZeUe" type="text/javascript"></script><script id="dxis_491795927" src="/V2018/DXR.axd?r=1_131-XZeUe" type="text/javascript"></script><script id="dxis_509097431" src="/V2018/DXR.axd?r=1_139-XZeUe" type="text/javascript"></script><script id="dxis_469054803" src="/V2018/DXR.axd?r=1_176-XZeUe" type="text/javascript"></script><script id="dxis_507721043" src="/V2018/DXR.axd?r=1_178-XZeUe" type="text/javascript"></script><script id="dxis_477181798" src="/V2018/DXR.axd?r=1_182-XZeUe" type="text/javascript"></script><script id="dxis_483669496" src="/V2018/DXR.axd?r=1_125-XZeUe" type="text/javascript"></script><script id="dxis_477181209" src="/V2018/DXR.axd?r=1_152-XZeUe" type="text/javascript"></script><script id="dxis_490419572" src="/V2018/DXR.axd?r=1_160-XZeUe" type="text/javascript"></script><script id="dxis_479081943" src="/V2018/DXR.axd?r=1_133-XZeUe" type="text/javascript"></script><script id="dxis_483669364" src="/V2018/DXR.axd?r=1_165-XZeUe" type="text/javascript"></script><script id="dxis_491795737" src="/V2018/DXR.axd?r=1_151-XZeUe" type="text/javascript"></script><script id="dxis_490419481" src="/V2018/DXR.axd?r=1_150-XZeUe" type="text/javascript"></script><script id="dxis_512608883" src="/V2018/DXR.axd?r=1_216-XZeUe" type="text/javascript"></script><script id="dxis_500419187" src="/V2018/DXR.axd?r=1_214-XZeUe" type="text/javascript"></script><script id="dxis_477181242" src="/V2018/DXR.axd?r=1_142-XZeUe" type="text/javascript"></script><script id="dxis_491795770" src="/V2018/DXR.axd?r=1_141-XZeUe" type="text/javascript"></script><script id="dxis_502581842" src="/V2018/DXR.axd?r=1_203-XZeUe" type="text/javascript"></script><table class="dxgvControl_Aqua1" id="grdAccount" style="width:100%;border-collapse:separate;">
+	<tr>
+		<td><table id="grdAccount_DXMainTable" class="dxgvTable_Aqua1" onclick="ASPx.GTableClick(&#39;grdAccount&#39;, event);" style="width:100%;empty-cells:show;">
+			<tr id="grdAccount_DXHeadersRow0">
+				<td id="grdAccount_col0" class="dxgvHeader_Aqua1" onmousedown="ASPx.GHeaderMouseDown(&#39;grdAccount&#39;, this, event);" style="color:White;background-color:#EC8711;text-align:Center;border-top-width:0px;border-left-width:0px;"><table style="width:100%;">
+					<tr>
+						<td style="color:White;text-align:Center;">Ngày giao dịch</td><td style="width:1px;text-align:right;"><span class="dx-vam">&nbsp;</span></td>
+					</tr>
+				</table></td><td id="grdAccount_col2" class="dxgvHeader_Aqua1" onmousedown="ASPx.GHeaderMouseDown(&#39;grdAccount&#39;, this, event);" style="color:White;background-color:#EC8711;text-align:Center;border-top-width:0px;border-left-width:0px;"><table style="width:100%;">
+					<tr>
+						<td style="color:White;text-align:Center;">Nội dung</td><td style="width:1px;text-align:right;"><span class="dx-vam">&nbsp;</span></td>
+					</tr>
+				</table></td><td id="grdAccount_col3" class="dxgvHeader_Aqua1" onmousedown="ASPx.GHeaderMouseDown(&#39;grdAccount&#39;, this, event);" style="color:White;background-color:#EC8711;text-align:Center;border-top-width:0px;border-left-width:0px;"><table style="width:100%;">
+					<tr>
+						<td style="color:White;text-align:Center;">Nợ/Có</td><td style="width:1px;text-align:right;"><span class="dx-vam">&nbsp;</span></td>
+					</tr>
+				</table></td><td id="grdAccount_col4" class="dxgvHeader_Aqua1" onmousedown="ASPx.GHeaderMouseDown(&#39;grdAccount&#39;, this, event);" style="color:White;background-color:#EC8711;text-align:Center;border-top-width:0px;border-left-width:0px;"><table style="width:100%;">
+					<tr>
+						<td style="color:White;text-align:Center;">Thời gian GD</td><td style="width:1px;text-align:right;"><span class="dx-vam">&nbsp;</span></td>
+					</tr>
+				</table></td><td id="grdAccount_col5" class="dxgvHeader_Aqua1" onmousedown="ASPx.GHeaderMouseDown(&#39;grdAccount&#39;, this, event);" style="color:White;background-color:#EC8711;text-align:Center;border-top-width:0px;border-left-width:0px;border-right-width:0px;"><table style="width:100%;">
+					<tr>
+						<td style="color:White;text-align:Center;">&nbsp;</td><td style="width:1px;text-align:right;"><span class="dx-vam">&nbsp;</span></td>
+					</tr>
+				</table></td><td class="dxgvAIC dxgvHeader_Aqua1" style="color:White;background-color:#EC8711;width:0.1%;text-align:Center;border-top-width:0px;border-left-width:0px;cursor:default;"><img class="dxGridView_gvDetailExpandedButton_Aqua1" src="/V2018/DXR.axd?r=1_30-XZeUe" alt="" style="visibility:hidden;" /></td>
+			</tr><tr id="grdAccount_DXADRow" class="dxgvDetailRow_Aqua1 dxgvADR" style="display:none;">
+				<td class="dxgv dxgvDetailCell_Aqua1" colspan="5"></td><td class="dxgvAIC dxgv" style="border-left-width:0px;border-right-width:0px;">&nbsp;</td>
+			</tr><tr id="grdAccount_DXDataRow0" class="dxgvDataRow_Aqua1">
+				<td class="dxgv dx-ac" style="border-bottom-width:0px;">27/07/2024</td><td class="dxgv dx-al" style="border-bottom-width:0px;">abc123       </td><td id="grdAccount_tccell0_3" class="dxgv dx-ar" style="border-bottom-width:0px;">
+                                    <span class="dxeBase" id="grdAccount_cell0_3_lblAmount_0">11,111.00</span>
+                                </td><td class="dxgv dx-ar" style="border-bottom-width:0px;">27/07/2024 1:28:18 CH</td><td id="grdAccount_tccell0_5" class="dxgv dx-ac" style="vertical-align:Middle;border-right-width:0px;border-bottom-width:0px;">
+                                    <input type="image" name="ctl00$HolderBody$ucTranDetail$grdAccount$cell0_5$TC$cmdView" id="grdAccount_cell0_5_cmdView_0" src="../Resources/Images/Search.png" style="height:19px;width:18px;border-width:0px;" />
+                                </td><td class="dxgvAIC dxgv" style="width:0px;border-left-width:0px;border-bottom-width:0px;"><a class="dxbButton_Aqua1 dxgvADSB dxbButtonSys" data-args="[[&#39;ShowAdaptiveDetail&#39;,0],0]" id="grdAccount_DXCBtn0"><img title="..." class="dxGridView_gvShowAdaptiveDetailButton_Aqua1 dx-vam" src="/V2018/DXR.axd?r=1_30-XZeUe" alt="..." /></a><script id="dxss_1257594522" type="text/javascript">
+<!--
+ASPx.AddDisabledItems('grdAccount_DXCBtn0',[[['dxbDisabled_Aqua1'],[''],[''],['','TC']]]);
+
+//-->
+</script><a class="dxbButton_Aqua1 dxgvADHB dxbButtonSys" data-args="[[&#39;HideAdaptiveDetail&#39;,0],0]" id="grdAccount_DXCBtn1"><img title="X" class="dxGridView_gvHideAdaptiveDetailButton_Aqua1 dx-vam" src="/V2018/DXR.axd?r=1_30-XZeUe" alt="X" /></a><script id="dxss_932823553" type="text/javascript">
+<!--
+ASPx.AddDisabledItems('grdAccount_DXCBtn1',[[['dxbDisabled_Aqua1'],[''],[''],['','TC']]]);
+
+//-->
+</script></td>
+			</tr><tr id="grdAccount_DXDataRow1" class="dxgvDataRow_Aqua1 dxgvDataRowAlt_Aqua1" style="background-color:#D9ECFF;">
+				<td class="dxgv dx-ac" style="border-bottom-width:0px;">27/07/2024</td><td class="dxgv dx-al" style="border-bottom-width:0px;">xyz456       </td><td id="grdAccount_tccell1_3" class="dxgv dx-ar" style="border-bottom-width:0px;">
+                                    <span class="dxeBase" id="grdAccount_cell1_3_lblAmount_1">-9,999.00</span>
+                                </td><td class="dxgv dx-ar" style="border-bottom-width:0px;">27/07/2024 1:30:23 CH</td><td id="grdAccount_tccell1_5" class="dxgv dx-ac" style="vertical-align:Middle;border-right-width:0px;border-bottom-width:0px;">
+                                    <input type="image" name="ctl00$HolderBody$ucTranDetail$grdAccount$cell1_5$TC$cmdView" id="grdAccount_cell1_5_cmdView_1" src="../Resources/Images/Search.png" style="height:19px;width:18px;border-width:0px;" />
+                                </td><td class="dxgvAIC dxgv" style="width:0px;border-left-width:0px;border-bottom-width:0px;"><a class="dxbButton_Aqua1 dxgvADSB dxbButtonSys" data-args="[[&#39;ShowAdaptiveDetail&#39;,1],0]" id="grdAccount_DXCBtn2"><img title="..." class="dxGridView_gvShowAdaptiveDetailButton_Aqua1 dx-vam" src="/V2018/DXR.axd?r=1_30-XZeUe" alt="..." /></a><script id="dxss_2045173011" type="text/javascript">
+<!--
+ASPx.AddDisabledItems('grdAccount_DXCBtn2',[[['dxbDisabled_Aqua1'],[''],[''],['','TC']]]);
+
+//-->
+</script><a class="dxbButton_Aqua1 dxgvADHB dxbButtonSys" data-args="[[&#39;HideAdaptiveDetail&#39;,1],0]" id="grdAccount_DXCBtn3"><img title="X" class="dxGridView_gvHideAdaptiveDetailButton_Aqua1 dx-vam" src="/V2018/DXR.axd?r=1_30-XZeUe" alt="X" /></a><script id="dxss_1406071990" type="text/javascript">
+<!--
+ASPx.AddDisabledItems('grdAccount_DXCBtn3',[[['dxbDisabled_Aqua1'],[''],[''],['','TC']]]);
+
+//-->
+</script></td>
+			</tr>
+		</table><table id="grdAccount_LP" class="dxgvLoadingPanel_Aqua1" style="left:0px;top:0px;z-index:30000;display:none;">
+			<tr>
+				<td class="dx"><img class="dxlp-imgPosTop" src="../App_Themes/Aqua1/GridView/Loading.gif" alt="" style="margin-bottom:8px;vertical-align:middle;" /><br /><span id="grdAccount_TL">Loading&hellip;</span></td>
+			</tr>
+		</table><div id="grdAccount_LD" class="dxgvLoadingDiv_Aqua1" style="display:none;z-index:29999;position:absolute;">
 
-
-
-            <!--End utilities-->
-
-            <style type="text/css">
-                .ty_gia .box-body label {
-                    line-height: 40px;
-                }
-
-                .ty_gia table th {
-                    width: 30%;
-                }
-
-                .layout-boxed .wrapper {
-                    max-width: none !important;
-                }
-
-                .bx-controls {
-                    position: relative;
-                }
-
-                .note_pg {
-                    font-style: italic;
-                    font-size: 13px;
-                }
-
-                    .note_pg a {
-                        text-decoration: underline;
-                        color: #1e88e5;
-                        font-size: 13px;
-                    }
-            </style>
-            <!--<footer class="footer_login_page">
-    	<div class="container">
-       
-         <div class="text-left">
-         	<p>Bản quyền © 2017 thuộc về Ngân hàng TMCP Xăng dầu Petrolimex (PG Bank)</p>
-         </div>
-         
- 	   </div>
-    </footer>-->
-
+		</div><img id="grdAccount_IADD" class="dxGridView_gvDragAndDropArrowDown_Aqua1" src="/V2018/DXR.axd?r=1_30-XZeUe" alt="|" style="position:absolute;visibility:hidden;top:-100px;" /><img id="grdAccount_IADU" class="dxGridView_gvDragAndDropArrowUp_Aqua1" src="/V2018/DXR.axd?r=1_30-XZeUe" alt="|" style="position:absolute;visibility:hidden;top:-100px;" /><img id="grdAccount_IADL" class="dxGridView_gvDragAndDropArrowLeft_Aqua1" src="/V2018/DXR.axd?r=1_30-XZeUe" alt="|" style="position:absolute;visibility:hidden;top:-100px;" /><img id="grdAccount_IADR" class="dxGridView_gvDragAndDropArrowRight_Aqua1" src="/V2018/DXR.axd?r=1_30-XZeUe" alt="|" style="position:absolute;visibility:hidden;top:-100px;" /><img id="grdAccount_IDHF" class="dxGridView_gvDragAndDropHideColumn_Aqua1" src="/V2018/DXR.axd?r=1_30-XZeUe" alt="Hide" style="position:absolute;visibility:hidden;top:-100px;" /></td>
+	</tr>
+</table><script id="dxss_1776153294" type="text/javascript">
+<!--
+
+var dxo = new ASPxClientGridView('grdAccount');
+dxo.InitGlobalVariable('grdAccount');
+dxo.SetProperties({
+	'callBack':function(arg) { WebForm_DoCallback('ctl00$HolderBody$ucTranDetail$grdAccount',arg,ASPx.Callback,'grdAccount',ASPx.CallbackError,true); },
+	'uniqueID':'ctl00$HolderBody$ucTranDetail$grdAccount',
+	'stateObject':{
+		'selection':'',
+		'callbackState':'BwMHAwIERGF0YQatAQAAAAACAAAAAgAAAAAAAAACAAAAAAUAAAAKVFJOX1JFRl9OTwpUUk5fUkVGX05PBwAAAQhWQUxVRV9EVAhWQUxVRV9EVAgAAAEKTENZX0FNT1VOVApMQ1lfQU1PVU5UBQAAAQtUUkFOX0RFVEFJTAtUUkFOX0RFVEFJTAcAAAELU19TWVNURU1fRFQLU19TWVNURU1fRFQIAAABCgAAAANTVFQFQUNfTk8IRFJDUl9JTkQKQU1PVU5UX1RBRwhTWVNfREFURQ1DUkVESVRfQU1PVU5UDERFQklUX0FNT1VOVApTX1ZBTFVFX0RUC0VWRU5UX1NSX05PBk1PRFVMRQAAAAAHAAcABwAHAAcABv//BwIQOTkzQk5UVjI0MjA5SnhSdQgCBADA7A7PrdwIBQM89BAAAAAAAAAAAAAAAAIABwINYWJjMTIzICAgICAgIAgCBABF/Pk/rtwIBwAHAAb//wcCEDQ0N0JORDEyNDIwOTA0MDMIAgQAwOwOz63cCAUD3EEPAAAAAAAAAAAAAAACgAcCDXh5ejQ1NiAgICAgICAIAgSAwX1EQK7cCAILRm9ybWF0U3RhdGUHAAIFU3RhdGUHZQcGBwACAQcBAgAHAgIBBwMCAQcEAgEHBQIBBwAHAAcABwACAAUAAACACQIKVFJOX1JFRl9OTwcBAgpUUk5fUkVGX05PBwkCAAIAAwcEAgAHAAIBBwIHAAIAAgEHAAcABwAHAAcA',
+		'keys':['993BNTV24209JxRu','447BND1242090403']
+	},
+	'callBacksEnabled':false,
+	'pageRowCount':2,
+	'pageRowSize':10,
+	'pageIndex':0,
+	'pageCount':1,
+	'selectedWithoutPageRowCount':0,
+	'visibleStartIndex':0,
+	'focusedRowIndex':-1,
+	'allowFocusedRow':false,
+	'allowSelectByItemClick':false,
+	'allowSelectSingleRowOnly':false,
+	'callbackOnFocusedRowChanged':false,
+	'callbackOnSelectionChanged':false,
+	'editState':0,
+	'editItemVisibleIndex':-1,
+	'searchPanelFilter':'',
+	'columns':[
+		new ASPxClientGridViewColumn('',0,-1,'VALUE_DT',true,'',false,true,true,true,true,false,0,0),
+		new ASPxClientGridViewColumn('',1,-1,'TRN_REF_NO',false,'',false,true,true,true,false,true,0,0),
+		new ASPxClientGridViewColumn('',2,-1,'TRAN_DETAIL',true,'',false,true,true,true,false,false,0,0),
+		new ASPxClientGridViewColumn('',3,-1,'',true,'',false,false,false,true,false,false,0,0),
+		new ASPxClientGridViewColumn('',4,-1,'S_SYSTEM_DT',true,'',false,true,true,true,true,false,0,0),
+		new ASPxClientGridViewColumn('',5,-1,'',true,'',false,false,false,true,false,false,0,0)
+	],
+	'editMode':2,
+	'indentColumnCount':0,
+	'allowMultiColumnAutoFilter':false,
+	'bandedDataRowsDepth':1
+});
+dxo.InitializeProperties({
+	'adaptiveModeInfo':{
+		'hideDataCellsWindowInnerWidth':0,
+		'allowTextTruncationInAdaptiveMode':[false,false,false,false,false],
+		'allowOnlyOneAdaptiveDetailExpanded':true,
+		'adaptivityMode':1,
+		'adaptiveDetailColumnCount':1,
+		'adaptiveColumnsOrder':[2,4,3,5,0]
+	}
+});
+dxo.AfterCreate();
+
+//-->
+</script><script id="dxss_821209814" type="text/javascript">
+<!--
+ASPxClientGridBase.InitializeStyles('grdAccount',({
+	'sel':{'css':'dxgvSelectedRow_Aqua1'},
+	'fi':{'css':'dxgvFocusedRow_Aqua1'},
+	'ei':'<tr class="dxgvEditingErrorRow_Aqua1">\r\n\t<td class="dxgv" data-colSpan="5" style="border-right-width:0px;"></td><td class="dxgvAIC dxgv" style="border-left-width:0px;border-right-width:0px;">&nbsp;</td>\r\n</tr>',
+	'fc':{'css':'dxgvFocusedCell_Aqua1'},
+	'bec':{'css':'dxgvBatchEditCell_Aqua1 dxgv'},
+	'bemc':{'css':'dxgvBatchEditModifiedCell_Aqua1 dxgv'},
+	'bemergmc':{'css':'dxgvBatchEditCell_Aqua1 dxgvBatchEditModifiedCell_Aqua1 dxgv'},
+	'fgi':{'css':'dxgvFocusedGroupRow_Aqua1'}
+}),['grdAccount_DXCBtn0','grdAccount_DXCBtn1','grdAccount_DXCBtn2','grdAccount_DXCBtn3'])
+//-->
+</script>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="box-footer">
+            <input type="submit" name="ctl00$HolderBody$ucTranDetail$btnBack" value="Quay lại" id="ctl00_HolderBody_ucTranDetail_btnBack" class="btn btn-info pull-right" />
+            <input type="submit" name="ctl00$HolderBody$ucTranDetail$cmdExportExcel" value="Xuất Excel" id="ctl00_HolderBody_ucTranDetail_cmdExportExcel" class="btn btn-info pull-right" />
             
+        </div>
+    </div>
+</div>
 
-            <style type="text/css">
-                footer a {
-                    color: #fff;
-                }
-            </style>
-        
+   
+
+                        </div>
+                        
+<div class="box box-info quickbar" style="margin-bottom: 10px">
+    <div class="box-header">
+        <i class="fa fa-sign-in"></i>
+        <h3 class="box-title">
+            <span id="ctl00_uctRecentTransactions_Label3" class="lblLabel">Truy cập nhanh</span>
+        </h3>
+    </div>
+
+    <div class="box-body">
+        <div class="table-responsive">
+            <div class="row">
+                
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <a href='/V2018/Pages/cardOpenClose.aspx' style="text-align: left; text-transform: uppercase;">
+                                <div class="info-box">
+                                    <span class='info-box-icon bg-blue'><i class='ion ion-stats-bars'></i></span>
+                                    <div class="info-box-content">
+                                        Khóa/Mở khóa thẻ
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                            </a>
+                            <!-- /.info-box -->
+                        </div>
+                    
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <a href='/V2018/Pages/acbalance.aspx' style="text-align: left; text-transform: uppercase;">
+                                <div class="info-box">
+                                    <span class='info-box-icon bg-green'><i class='ion ion-thumbsup'></i></span>
+                                    <div class="info-box-content">
+                                        Thông tin tài khoản
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                            </a>
+                            <!-- /.info-box -->
+                        </div>
+                    
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <a href='/V2018/Pages/FTMoneyLimit.aspx' style="text-align: left; text-transform: uppercase;">
+                                <div class="info-box">
+                                    <span class='info-box-icon bg-purple'><i class='ion ion-bag'></i></span>
+                                    <div class="info-box-content">
+                                        Cài đặt hạn mức chuyển tiền
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                            </a>
+                            <!-- /.info-box -->
+                        </div>
+                    
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <a href='/V2018/Pages/TKCalculator.aspx' style="text-align: left; text-transform: uppercase;">
+                                <div class="info-box">
+                                    <span class='info-box-icon bg-red'><i class='ion ion-person-stalker'></i></span>
+                                    <div class="info-box-content">
+                                        Hỗ trợ tính toán
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                            </a>
+                            <!-- /.info-box -->
+                        </div>
+                    
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <a href='/V2018/Pages/ctrselect.aspx' style="text-align: left; text-transform: uppercase;">
+                                <div class="info-box">
+                                    <span class='info-box-icon bg-yellow'><i class='ion ion-stats-bars'></i></span>
+                                    <div class="info-box-content">
+                                        Truy vấn tra soát
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                            </a>
+                            <!-- /.info-box -->
+                        </div>
+                    
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <a href='/V2018/Pages/TranSelect.aspx' style="text-align: left; text-transform: uppercase;">
+                                <div class="info-box">
+                                    <span class='info-box-icon bg-green'><i class='ion ion-thumbsup'></i></span>
+                                    <div class="info-box-content">
+                                        Chi tiết giao dịch theo ngày
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                            </a>
+                            <!-- /.info-box -->
+                        </div>
+                    
+                <!-- fix for small devices only -->
+                <div class="clearfix visible-sm-block"></div>
+                <!-- /.col -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                    </section>
+                    <!-- /.content -->
+
+                </div>
+                <!-- /.content-wrapper -->
+                <!-- /.content-wrapper -->
+                <footer class="main-footer">
+                    <div class="pull-right d-none d-sm-inline-block">
+                        <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg4">
+                            Điều khoản sử dụng</a>
+                        
+                    </div>
+                    Copyright &copy; 2017 PGBank
+                </footer>
+                <input type="hidden" name="ctl00$dumpValue" id="dumpValue" />
+
+
+                <!-- Control Sidebar -->
+                <aside class="control-sidebar control-sidebar-dark">
+                    <!-- Create the tabs -->
+                    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                        <li class="nav-item"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+                        <li class="nav-item"><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-cog fa-spin"></i></a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <!-- Home tab content -->
+                        <div class="tab-pane" id="control-sidebar-home-tab">
+                            <h3 class="control-sidebar-heading">Recent Activity</h3>
+                            <ul class="control-sidebar-menu">
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+                                        <div class="menu-info">
+                                            <h4 class="control-sidebar-subheading">Admin Birthday</h4>
+
+                                            <p>Will be July 24th</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <i class="menu-icon fa fa-user bg-yellow"></i>
+
+                                        <div class="menu-info">
+                                            <h4 class="control-sidebar-subheading">Jhone Updated His Profile</h4>
+
+                                            <p>New Email:  jhone_doe@demo.com</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+
+                                        <div class="menu-info">
+                                            <h4 class="control-sidebar-subheading">Disha Joined Mailing List</h4>
+
+                                            <p>disha@demo.com</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <i class="menu-icon fa fa-file-code-o bg-green"></i>
+
+                                        <div class="menu-info">
+                                            <h4 class="control-sidebar-subheading">Code Change</h4>
+
+                                            <p>Execution time 15 Days</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- /.control-sidebar-menu -->
+
+                            <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                            <ul class="control-sidebar-menu">
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <h4 class="control-sidebar-subheading">Web Design
+                <span class="label label-danger pull-right">40%</span>
+                                        </h4>
+
+                                        <div class="progress progress-xxs">
+                                            <div class="progress-bar progress-bar-danger" style="width: 40%"></div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <h4 class="control-sidebar-subheading">Update Data
+                <span class="label label-success pull-right">75%</span>
+                                        </h4>
+
+                                        <div class="progress progress-xxs">
+                                            <div class="progress-bar progress-bar-success" style="width: 75%"></div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <h4 class="control-sidebar-subheading">Order Process
+                <span class="label label-warning pull-right">89%</span>
+                                        </h4>
+
+                                        <div class="progress progress-xxs">
+                                            <div class="progress-bar progress-bar-warning" style="width: 89%"></div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <h4 class="control-sidebar-subheading">Development 
+                <span class="label label-primary pull-right">72%</span>
+                                        </h4>
+
+                                        <div class="progress progress-xxs">
+                                            <div class="progress-bar progress-bar-primary" style="width: 72%"></div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- /.control-sidebar-menu -->
+
+                        </div>
+                        <!-- /.tab-pane -->
+                        <!-- Stats tab content -->
+                        <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+                        <!-- /.tab-pane -->
+                        <!-- Settings tab content -->
+                        <div class="tab-pane" id="control-sidebar-settings-tab">
+                            <div class="post">
+                                <h3 class="control-sidebar-heading">General Settings</h3>
+
+                                <div class="form-group">
+                                    <input type="checkbox" id="report_panel" class="chk-col-grey">
+                                    <label for="report_panel" class="control-sidebar-subheading ">Report panel usage</label>
+
+                                    <p>
+                                        general settings information
+                                    </p>
+                                </div>
+                                <!-- /.form-group -->
+
+                                <div class="form-group">
+                                    <input type="checkbox" id="allow_mail" class="chk-col-grey">
+                                    <label for="allow_mail" class="control-sidebar-subheading ">Mail redirect</label>
+
+                                    <p>
+                                        Other sets of options are available
+                                    </p>
+                                </div>
+                                <!-- /.form-group -->
+
+                                <div class="form-group">
+                                    <input type="checkbox" id="expose_author" class="chk-col-grey">
+                                    <label for="expose_author" class="control-sidebar-subheading ">Expose author name</label>
+
+                                    <p>
+                                        Allow the user to show his name in blog posts
+                                    </p>
+                                </div>
+                                <!-- /.form-group -->
+
+                                <h3 class="control-sidebar-heading">Chat Settings</h3>
+
+                                <div class="form-group">
+                                    <input type="checkbox" id="show_me_online" class="chk-col-grey">
+                                    <label for="show_me_online" class="control-sidebar-subheading ">Show me as online</label>
+                                </div>
+                                <!-- /.form-group -->
+
+                                <div class="form-group">
+                                    <input type="checkbox" id="off_notifications" class="chk-col-grey">
+                                    <label for="off_notifications" class="control-sidebar-subheading ">Turn off notifications</label>
+                                </div>
+                                <!-- /.form-group -->
+
+                                <div class="form-group">
+                                    <label class="control-sidebar-subheading">
+                                        <a href="javascript:void(0)" class="text-red margin-r-5"><i class="fa fa-trash-o"></i></a>
+                                        Delete chat history
+                                    </label>
+                                </div>
+                                <!-- /.form-group -->
+                            </div>
+                        </div>
+                        <!-- /.tab-pane -->
+                    </div>
+                </aside>
+                <!-- /.control-sidebar -->
+
+                <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
+                <div class="control-sidebar-bg"></div>
+
+            </div>
+            <!-- ./wrapper -->
+
+        </div>
+
+    
 
 <script type="text/javascript">
 //<![CDATA[
-WebForm_AutoFocus('ctl00_txtloginName');//]]>
+
+var callBackFrameUrl='/V2018/WebResource.axd?d=G1zqdPKxtmvsWtdsFCd-YdtrMF5py-UhshMz1PPVPztUHln3CQH_l22AXBvRkZvQ9YViNXvJxCBbVH2DqsDJYZgB2bQ1&t=638526636345524026';
+WebForm_InitCallback();//]]>
 </script>
 </form>
-        <div class="modal fade bs-example-modal-lg4" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content" style="text-align: justify">
-                    <div class="modal-header ">
+
+    <div class="clearfix" />
+    <table class="dxlpLoadingPanel_Aqua1 dxlpControl_Aqua1" id="ctl00_BusyBox" style="height:90px;width:300px;position:absolute;left:0px;top:0px;z-index:30000;display:none;">
+	<tr>
+		<td class="dx" style="text-align:Center;"><img class="dxlp-imgPosTop" src="../Resources/Images/Loading.gif" alt="" style="vertical-align:middle;" /><br /><span id="ctl00_BusyBox_TL">Processing...</span></td>
+	</tr>
+</table><div id="ctl00_BusyBox_LD" class="dxlpLoadingDiv_Aqua1 dxlpControl_Aqua1 dx-ft" style="left:0px;top:0px;z-index:29999;display:none;position:absolute;">
+
+</div><script id="dxss_1401069139" type="text/javascript">
+<!--
+
+var dxo = new ASPxClientLoadingPanel('ctl00_BusyBox');
+dxo.InitGlobalVariable('BusyBox');
+dxo.SetProperties({'uniqueID':'ctl00$BusyBox'});
+dxo.AfterCreate();
+
+//-->
+</script>
+    <div class="modal fade bs-example-modal-lg4" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="text-align: justify">
+                <div class="modal-header ">
 <h4 class="modal-title" id="myLargeModalLabel" style="margin: 0 auto; font-size: 24px; text-transform: uppercase;">Điều khoản sử dụng</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     </div>
@@ -805,534 +1462,332 @@ WebForm_AutoFocus('ctl00_txtloginName');//]]>
                     </div>
                 </div>
                 <!-- /.modal-content -->
-                </div>
-                <!-- /.modal-dialog -->
             </div>
-            <script src="../Resources/Pgb_theme/assets/components/jquery/dist/jquery.js"></script>
-
-            <!-- jQuery UI 1.11.4 -->
-            
-
-            <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-            <script>
-                $.widget.bridge('uibutton', $.ui.button);
-            </script>
-
-            <!-- popper -->
-            <script src="../Resources/Pgb_theme/assets/components/popper/popper.min.js"></script>
-
-            <!-- Bootstrap v4.0.0-beta -->
-            <script src="../Resources/Pgb_theme/assets/components/bootstrap/dist/js/bootstrap.js"></script>
-
-            <!-- ChartJS -->
-            <script src="../Resources/Pgb_theme/assets/components/chart-js/chart.js"></script>
-
-            <!-- daterangepicker -->
-            <script src="../Resources/Pgb_theme/assets/components/moment/min/moment.min.js"></script>
-            <script src="../Resources/Pgb_theme/assets/components/bootstrap-daterangepicker/daterangepicker.js"></script>
-
-            <!-- datepicker -->
-            <script src="../Resources/Pgb_theme/assets/components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
-
-            <!-- Bootstrap WYSIHTML5 -->
-            <script src="../Resources/Pgb_theme/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js"></script>
-
-            <!-- Slimscroll -->
-            <script src="../Resources/Pgb_theme/assets/components/jquery-slimscroll/jquery.slimscroll.js"></script>
-
-            <!-- FastClick -->
-            <script src="../Resources/Pgb_theme/assets/components/fastclick/lib/fastclick.js"></script>
-
-            <script src="../Resources/Pgb_theme/js/template.js"></script>
-            <script src="../Resources/Pgb_theme/js/pages/dashboard.js"></script>
-
-            <!-- maximum_admin for demo purposes -->
-            <script src="../Resources/Pgb_theme/js/demo.js"></script>
-
-            <script src="../Resources/Pgb_theme/js/jquery.bxslider.min.js"></script>
-            <script type="text/javascript">
-
-                $(document).ready(function () {
-                    $('form[autocomplete="off"] input, input[autocomplete="off"]').each(function () {
-                        var input = this;
-                        setTimeout(function () {
-                            $(input).removeAttr('readonly');
-                        }, 300); // 100 does not work - too fast.
-                    });
-                    window.sc
-
-                });
-                var windowsize = $(window).width();
-                var slider = $('.slides').bxSlider({
-                    auto: true,
-                    autoHover: true,
-                    controls: false,
-                    infiniteLoop: true,
-                    onSliderLoad: function (currentIndex) {
-                        if (windowsize < 768) {
-                            $("#slides").html("");
-                            $('.bxslider li').eq(currentIndex + 1).find(".caption").clone().appendTo("#caption");
-                        }
-                    },
-                    onSlideBefore: function ($slideElement, oldIndex, newIndex) {
-                        if (windowsize < 768) {
-                            $("#caption").html("");
-                            $slideElement.find(".caption").clone().appendTo("#caption");
-                        }
-                    }
-                });
-                $(window).resize(function () {
-                    slider.reloadSlider({
-                        auto: true,
-                        autoHover: true,
-                        controls: false,
-                        infiniteLoop: true,
-                        onSliderLoad: function (currentIndex) {
-                            if (windowsize < 768) {
-                                $("#caption").html("");
-                                $('.slides li').eq(currentIndex + 1).find(".caption").clone().appendTo("#caption");
-                            }
-                        },
-                        onSlideBefore: function ($slideElement, oldIndex, newIndex) {
-                            if (windowsize < 768) {
-                                $("#caption").html("");
-                                $slideElement.find(".caption").clone().appendTo("#caption");
-                            }
-                        }
-                    });
-
-                });
-
-                function reportWindowSize() {
-                    var winsize = $(window).width();
-                    if (winsize < 992) {
-                        this.document.getElementById('dvCapcha').style.display = 'block'
-                        this.document.getElementById('Label7').style.width = '130px';
-                        this.document.getElementById('tbSMS').placeholder = 'Nhập OTP...'
-
-                    }
-                    else {
-                        this.document.getElementById('dvCapcha').style.display = 'flex';
-                        this.document.getElementById('Label7').style.width = '80px';
-                        this.document.getElementById('tbSMS').placeholder = 'Nhập mã xác thực OTP được gửi đến số điện thoại của Quý khách'
-                    }
-                }
-                window.onresize = reportWindowSize;
-
-            </script>
-            <script type="text/javascript">
-
-                function fnRemoveEmpty(e) {
-                    var idInput = e.getAttribute('id')
-
-                    var tbFullName = document.getElementById('tbFullName').value;
-                    var tbIdentify = document.getElementById('tbIdentify').value;
-                    var tbCardNumber = document.getElementById('tbCardNumber').value;
-                    var tbPin = document.getElementById('tbPin').value;
-                    var tbPhoneNumber = document.getElementById('tbPhoneNumber').value;
-                    //  var tbSmsOTP = document.getElementById('tbSMS').value;
-                    var tbCapcha = document.getElementById('tbCapcha').value;
-
-
-                    if (idInput == 'tbFullName' && !isEmpty(tbFullName))
-                        //code here
-                        document.getElementById('tbFullNameMsg').style.display = 'none';
-
-                    if (idInput == 'tbIdentify' && !isEmpty(tbIdentify))
-                        //code here
-                        document.getElementById('tbIdentifyMsg').style.display = 'none';
-
-                    if (idInput == 'tbCardNumber' && !isEmpty(tbCardNumber))
-                        //code here
-                        document.getElementById('tbCardNumberMsg').style.display = 'none';
-
-                    if (idInput == 'tbPin' && !isEmpty(tbPin))
-                        //code here
-                        document.getElementById('tbPinMsg').style.display = 'none';
-
-                    if (idInput == 'tbPhoneNumber' && !isEmpty(tbPhoneNumber))
-                        //code here
-                        document.getElementById('tbPhoneNumberMsg').style.display = 'none';
-
-                    if (idInput == 'tbCapcha' && !isEmpty(tbCapcha))
-                        //code here
-                        document.getElementById('tbCapchaMsg').style.display = 'none';
-
-
-                }
-
-                function openModal() {
-
-                    reportWindowSize()
-                    document.getElementById('tbSMS').disabled = true;
-
-                    var tbFullName = document.getElementById('tbFullName');
-                    var tbIdentify = document.getElementById('tbIdentify');
-                    var tbCardNumber = document.getElementById('tbCardNumber');
-                    var tbPin = document.getElementById('tbPin');
-                    var tbPhoneNumber = document.getElementById('tbPhoneNumber');
-                    var tbSmsOTP = document.getElementById('tbSMS');
-                    var tbCapcha = document.getElementById('tbCapcha');
-
-                    var btSubmit = document.getElementById('btSubmit');
-                    var lbCountTime = document.getElementById('lbCountTime')
-                    var lbError = document.getElementById('lbError')
-                    var cmdSMS = document.getElementById('cmdSMS')
-
-                    var tbFullNameMsg = document.getElementById('tbFullNameMsg');
-                    var tbIdentifyMsg = document.getElementById('tbIdentifyMsg');
-                    var tbCardNumberMsg = document.getElementById('tbCardNumberMsg');
-                    var tbPinMsg = document.getElementById('tbPinMsg');
-                    var tbPhoneNumberMsg = document.getElementById('tbPhoneNumberMsg');
-                    var tbCapchaMsg = document.getElementById('tbCapchaMsg');
-
-                    tbFullNameMsg.style.display = "none";
-                    tbIdentifyMsg.style.display = "none";
-                    tbCardNumberMsg.style.display = "none";
-                    tbPinMsg.style.display = "none";
-                    tbPhoneNumberMsg.style.display = "none";
-                    tbCapchaMsg.style.display = "none";
-
-                    document.getElementById('divCode').style.display = 'none';
-                    document.getElementById('divContent').style.display = 'block';
-                    document.getElementById('modalContent').style.marginTop = '0%';
-                    document.getElementById('divAuthSms').style.display = "none";
-
-                    tbFullName.disabled = false;
-                    tbIdentify.disabled = false;
-                    tbCardNumber.disabled = false;
-                    tbPin.disabled = false;
-                    tbPhoneNumber.disabled = false;
-                    //  tbSmsOTP.disabled = false;
-                    btSubmit.disabled = false;
-                    tbCapcha.disabled = false;
-
-                    tbFullName.value = '';
-                    tbIdentify.value = '';
-                    tbCardNumber.value = '';
-                    tbPin.value = '';
-                    tbPhoneNumber.value = '';
-                    tbCapcha.value = '';
-                    tbSmsOTP.value = '';
-                    lbCountTime.innerHTML = '';
-                    lbError.innerHTML = '';
-
-                    cmdSMS.style.display = "block";
-                    cmdSMS.style.visibility = "visible";
-                    GetCapcha();
-
-
-                }
-
-                function ReloadCapcha_Onclick() {
-                    GetCapcha();
-                }
-
-
-                function GetCapcha() {
-                    var sndData = {
-                        imgcheck: '1'
-                    };
-
-                    $.getJSON("api/ApiEbank/GetImgVerify", sndData,
-                        function (data) {
-                            $.each(data, function (key, val) {
-                                //viet code o day
-                                if (key == "url" && val != "error") {
-                                    document.getElementById('imgCapcha').src = val;
-                                } else return;
-
-                            });
-                        });
-                }
-
-                function SubmitForgotPass() {
-                    document.getElementById('loading').style.display = 'block';
-
-                    var tbFullName = document.getElementById('tbFullName');
-                    var tbIdentify = document.getElementById('tbIdentify');
-                    var tbCardNumber = document.getElementById('tbCardNumber');
-                    var tbPin = document.getElementById('tbPin');
-                    var tbPhoneNumber = document.getElementById('tbPhoneNumber');
-                    var tbSmsOTP = document.getElementById('tbSMS');
-                    var btSubmit = document.getElementById('btSubmit');
-                    var tbCapcha = document.getElementById("tbCapcha")
-                    var lengthUrl = (document.getElementById("imgCapcha").src).length;
-                    var imgCapcha = (document.getElementById("imgCapcha").src).slice(lengthUrl - 12, lengthUrl)
-
-                    var tbFullNameMsg = document.getElementById('tbFullNameMsg');
-                    var tbIdentifyMsg = document.getElementById('tbIdentifyMsg');
-                    var tbCardNumberMsg = document.getElementById('tbCardNumberMsg');
-                    var tbPinMsg = document.getElementById('tbPinMsg');
-                    var tbPhoneNumberMsg = document.getElementById('tbPhoneNumberMsg');
-                    var tbCapchaMsg = document.getElementById('tbCapchaMsg');
-
-                    tbFullNameMsg.style.display = "none";
-                    tbIdentifyMsg.style.display = "none";
-                    tbCardNumberMsg.style.display = "none";
-                    tbPinMsg.style.display = "none";
-                    tbPhoneNumberMsg.style.display = "none";
-                    tbCapchaMsg.style.display = "none";
-
-                    if (isEmpty(tbFullName.value)) {
-                        document.getElementById('loading').style.display = 'none';
-                        tbFullNameMsg.style.display = "block";
-                        tbFullNameMsg.innerHTML = 'Quý khách vui lòng nhập Họ và tên';
-                        return;
-                    } else if (isEmpty(tbIdentify.value)) {
-                        document.getElementById('loading').style.display = 'none';
-                        tbIdentifyMsg.style.display = "block";
-                        tbIdentifyMsg.innerHTML = 'Quý khách vui lòng nhập Số CMND/CCCD/Hộ chiếu';
-                        return;
-                    }
-                    else if (isEmpty(tbCardNumber.value)) {
-                        document.getElementById('loading').style.display = 'none';
-                        tbCardNumberMsg.style.display = "block";
-                        tbCardNumberMsg.innerHTML = 'Quý khách vui lòng nhập Số thẻ';
-                        return;
-
-                    }
-                    else if (isEmpty(tbPin.value)) {
-                        document.getElementById('loading').style.display = 'none';
-                        tbPinMsg.style.display = "block";
-                        tbPinMsg.innerHTML = 'Quý khách vui lòng nhập Mã PIN';
-                        return;
-
-                    }
-                    else if (isEmpty(tbPhoneNumber.value)) {
-                        document.getElementById('loading').style.display = 'none';
-                        tbPhoneNumberMsg.style.display = "block";
-                        tbPhoneNumberMsg.innerHTML = 'Quý khách vui lòng nhập Số điện thoại';
-                        return;
-
-                    }
-                    else if (isEmpty(tbCapcha.value)) {
-
-                        document.getElementById('loading').style.display = 'none';
-                        tbCapchaMsg.style.display = "block";
-                        tbCapchaMsg.innerHTML = 'Quý khách vui lòng nhập Mã kiểm tra';
-                        return;
-                    }
-
-                    if (document.getElementById('divAuthSms').style.display == "block" && document.getElementById('tbSMS').value == "") {
-                        document.getElementById('lbError').style.display = 'block';
-                        document.getElementById('lbError').innerHTML = 'Quý khách vui lòng nhập Mã xác thực OTP';
-                        document.getElementById('loading').style.display = 'none';
-                        return;
-                    }
-
-                    //if (isEmpty(tbFullName.value) || isEmpty(tbIdentify.value) || isEmpty(tbCardNumber.value)
-                    //    || isEmpty(tbPin.value) || isEmpty(tbPhoneNumber.value)
-                    //    || isEmpty(tbCapcha.value)) {
-                    //    document.getElementById('loading').style.display = 'none';
-                    //      document.getElementById('lbError').style.visibility = "visible";
-                    //                document.getElementById('lbError').innerHTML = 'Thông tin chưa chính xác/không hợp lệ. Quý khách vui lòng kiểm tra lại hoặc gọi hotline 1900555574 để được hỗ trợ.';
-                    //    return;
-                    //}
-                    var sndData = {
-                        fullName: vatrau(tbFullName.value),
-                        identify: tbIdentify.value,
-                        cardNumber: tbCardNumber.value,
-                        pinCode: tbPin.value,
-                        phoneNumber: tbPhoneNumber.value,
-                        smsOTP: tbSmsOTP.value,
-                        capChaCode: tbCapcha.value,
-                        imgUrl: imgCapcha
-                    };
-                    $.ajax({
-                        dataType: 'json',
-                        type: 'POST',
-                        url: 'api/ApiEbank/SubmitForgotPass',
-                        data: JSON.stringify(sndData),
-                        contentType: 'application/json; charset=utf-8',
-                        success: function (data) { //change spelling here
-                            //viet code o day
-                            document.getElementById('loading').style.display = 'none';
-                            document.getElementById('lbCountTime').style.display = "none";
-                            var err = data.err;
-                            if (err == "ok") {
-                                tbFullName.disabled = true;
-                                tbIdentify.disabled = true;
-                                tbCardNumber.disabled = true;
-                                tbPin.disabled = true;
-                                tbPhoneNumber.disabled = true;
-                                btSubmit.disabled = true;
-                                document.getElementById('tbSMS').disabled = true;
-                                document.getElementById('cmdSMS').style.display = "none";
-                            } else if (err == "ok_info") {
-                                document.getElementById('divAuthSms').style.display = "block";
-                                document.getElementById('lbError').innerHTML = '';
-                                if (isEmpty(tbSmsOTP.value)) {
-                                    tbFullName.disabled = true;
-                                    tbIdentify.disabled = true;
-                                    tbCardNumber.disabled = true;
-                                    tbPin.disabled = true;
-                                    tbPhoneNumber.disabled = true;
-                                    tbCapcha.disabled = true;
-                                }
-                            }
-                            else if (err == "user_not_pilot") {
-                                document.getElementById('cmdSMS').style.visibility = "visible";
-                                document.getElementById('lbError').style.display = 'block';
-                                document.getElementById('lbError').innerHTML = 'Chức năng "Quên mật khẩu" hiện đang trong quá trình hoàn thiện. Quý khách vui lòng thử lại sau.';
-                                GetCapcha();
-                                return;
-                            }
-                            else if (err == "error_otp") {
-                                document.getElementById('lbError').style.display = 'block';
-                                document.getElementById('lbError').innerHTML = 'Mã xác thực OTP không đúng. Quý khách vui lòng thử lại';
-                                document.getElementById('lbCountTime').style.display = 'block';
-
-                                return;
-                            } else if (err == "error_identify") {
-                                
-                                document.getElementById('lbError').style.display = 'block';
-                                document.getElementById('lbError').innerHTML = 'Thông tin chưa chính xác/không hợp lệ. Quý khách vui lòng kiểm tra lại hoặc gọi hotline 1900555574 để được hỗ trợ.';
-                                document.getElementById('lbCountTime').style.display = 'none';
-                                GetCapcha();
-                                return;
-                            } else if (err == "error") {
-
-                                document.getElementById('cmdSMS').style.visibility = "visible";
-                                document.getElementById('lbError').style.display = 'block';
-                                document.getElementById('lbError').innerHTML = 'Hệ thống đang bận. Quý khách vui lòng thử lại';
-                                GetCapcha();
-                                return;
-                            } else if (err == "error_capcha") {
-                                document.getElementById('cmdSMS').style.visibility = "visible";
-                                document.getElementById('lbError').style.display = 'block';
-                                document.getElementById('lbError').innerHTML = 'Mã kiểm tra chưa đúng. Quý khách vui lòng thử lại';
-                                GetCapcha();
-                                return;
-                            }
-
-                            if (err == "ok" && data.code.length > 0) {
-                                document.getElementById('divCode').style.display = 'block';
-                                document.getElementById('divContent').style.display = 'none';
-                                document.getElementById('modalContent').style.marginTop = '20%';
-                                document.getElementById('codeNum').innerHTML = 'Mã số bảo mật của quý khách là: <b style="font-weight: bold; font-size: 19px">' + data.code + '</b>. Quý khách vui lòng gọi số Hotline <a style="color: blue; text-decoration: underline;" href="tel:1900555574">1900555574</a> trong vòng 60 phút bằng số điện thoại đăng ký với PG Bank, cung cấp mã số bảo mật trên để được cấp lại mật khẩu.';
-
-                            }
-                        },
-                        error: function (data) {
-                            console.log("error again!" + data);
-                            document.getElementById('cmdSMS').style.visibility = "visible";
-                            document.getElementById('lbError').style.display = 'block';
-                            document.getElementById('lbError').innerHTML = 'Hệ thống đang bận. Quý khách vui lòng thử lại';
-                            GetCapcha();
-                            return;
-                        }
-                    });
-                }
-
-                function GetSMSForgotClick() {
-
-                    var phoneNum = document.getElementById('tbPhoneNumber').value.replace(/ /g, "");
-                    if (phoneNum == "") {
-
-                        document.getElementById('tbPhoneNumberMsg').style.display = "block";
-                        document.getElementById('tbPhoneNumberMsg').innerHTML = 'Quý khách vui lòng nhập số điện thoại';
-                        return;
-                    }
-                    document.getElementById('loading').style.display = 'block';
-                    document.getElementById('lbError').style.display = "none";
-
-                    var sndData = {
-                        fullName: vatrau(tbFullName.value),
-                        identify: tbIdentify.value,
-                        cardNumber: tbCardNumber.value,
-                        pinCode: tbPin.value,
-                        phoneNumber: tbPhoneNumber.value,
-
-                        capChaCode: tbCapcha.value,
-                        imgUrl: imgCapcha
-                    };
-
-
-                    $.ajax({
-                        dataType: 'json',
-                        type: 'POST',
-                        url: 'api/ApiEbank/GetSMSForgotClick',
-                        data: JSON.stringify(sndData),
-                        contentType: 'application/json; charset=utf-8',
-                        success: function (data) { //change spelling here
-                            //viet code o day
-                            document.getElementById('loading').style.display = 'none';
-
-                            var err = data.err;
-                            var elem = document.getElementById('lbCountTime');
-                            elem.style.display = 'block';
-                            if (err == "ok") {
-
-                                $("#txtOtpCode").focus();
-                                //document.getElementById('lbError').style.visibility = "hidden";
-                                // document.getElementById('lbError').innerHTML = ""
-                                document.getElementById('cmdSMS').style.visibility = "hidden";
-
-                                var timeLeft = 120;
-                                
-                                var timerId = setInterval(countdown, 1000);
-                                function countdown() {
-                                    if (timeLeft == -1) {
-                                        clearTimeout(timerId);
-                                        document.getElementById('cmdSMS').style.visibility = "visible";
-                                    } else {
-
-                                        elem.innerHTML = 'Mã OTP đã được gửi đến số điện thoại của quý khách và có hiệu lực trong ' + timeLeft + 's';
-                                        timeLeft--;
-                                    }
-                                }
-                                document.getElementById('loading').style.display = 'none';
-                                document.getElementById('tbPhoneNumberMsg').style.display = "none";
-                                document.getElementById('tbSMS').disabled = false;
-                            } else if (err == "error_identify") {
-                                elem.innerHTML = 'Thông tin chưa chính xác/không hợp lệ. Quý khách vui lòng kiểm tra lại hoặc gọi hotline 1900555574 để được hỗ trợ.';
-                                return;
-                            } else if (err == "SMS_LIMIT") {
-                                elem.innerHTML = 'Quý khách đã sử dụng hết số lần gửi SMS trong ngày. Quý khách vui lòng thử lại sau';
-                                return;
-                            }
-                            else {
-                                elem.innerHTML = 'Hệ thống đang bận. Quý khách vui lòng thử lại';
-                                return;
-                            }
-                        },
-                        error: function (data) {
-                            document.getElementById('lbCountTime').display = 'block';
-                            document.getElementById('lbCountTime').innerHTML = 'Hệ thống đang bận. Quý khách vui lòng thử lại';
-                            return;
-                        }
-
-                    });
-                }
-
-                function isEmpty(str) {
-                    return (!str || str.length === 0);
-                }
-
-                $(function () {
-
-                    $(".input-group-btn .dropdown-menu li a").click(function () {
-
-                        var selText = $(this).html();
-
-                        //working version - for single button //
-                        //$('.btn:first-child').html(selText+'<span class="caret"></span>');  
-
-                        //working version - for multiple buttons //
-                        $(this).parents('.input-group-btn').find('.btn-search').html(selText);
-
-                    });
-
-                });
-                function customValidate(str) {
-
-
-                }
-
-            </script>
-            
+            <!-- /.modal-content -->
         </div>
+        <!-- /.modal-dialog -->
     </div>
+    <!-- jQuery 3 -->
+    
+    <script src="../Resources/JavaScript/jquery-1.10.2.js?v=20231228"></script>
+
+    <!-- jQuery UI 1.11.4 -->
+    
+
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        //$.widget.bridge('uibutton', $.ui.button);
+    </script>
+
+    <!-- popper -->
+    <script src="../Resources/Pgb_theme/assets/components/popper/popper.min.js?v=20231228"></script>
+
+    <!-- Bootstrap v4.0.0-beta -->
+    <script src="../Resources/Pgb_theme/assets/components/bootstrap/dist/js/bootstrap.js?v=20231228"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js?v=20231228"></script>
+    <!-- ChartJS -->
+    <script src="../Resources/Pgb_theme/assets/components/chart-js/chart.js?v=20231228"></script>
+
+    <!-- daterangepicker -->
+    <script src="../Resources/Pgb_theme/assets/components/moment/moment.js?v=20231228"></script>
+    <script src="../Resources/Pgb_theme/assets/components/bootstrap-daterangepicker/daterangepicker.js?v=20231228"></script>
+
+    <!-- datepicker -->
+    <script src="../Resources/Pgb_theme/assets/components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js?v=20231228"></script>
+
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="../Resources/Pgb_theme/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js?v=20231228"></script>
+
+    <!-- Slimscroll -->
+    <script src="../Resources/Pgb_theme/assets/components/jquery-slimscroll/jquery.slimscroll.js?v=20231228"></script>
+
+    <!-- FastClick -->
+    <script src="../Resources/Pgb_theme/assets/components/fastclick/lib/fastclick.js?v=20231228"></script>
+
+    <script src="../Resources/Pgb_theme/js/template.js?v=20231228"></script>
+    
+
+    <!-- maximum_admin for demo purposes -->
+    <script src="../Resources/Pgb_theme/js/demo.js?v=20231228"></script>
+
+    <script src="../Resources/Pgb_theme/js/jquery.bxslider.min.js?v=20231228"></script>
+    <script src="../Resources/JavaScript/fingerprint.js?v=20231228"></script>
+
+    <script type="text/javascript">
+
+        $(function () {
+
+            $(".input-group-btn .dropdown-menu li a").click(function () {
+
+                var selText = $(this).html();
+
+                //working version - for single button //
+                //$('.btn:first-child').html(selText+'<span class="caret"></span>');  
+
+                //working version - for multiple buttons //
+                $(this).parents('.input-group-btn').find('.btn-search').html(selText);
+
+            });
+            var fp = new Fingerprint({
+                canvas: true,
+                ie_activex: true,
+                screen_resolution: true
+            });
+            $("#dumpValue").val(fp.get());
+        });
+
+        //$('.slides').bxSlider({
+        //    controls: false,
+        //    auto: true,
+        //    pause: 10000,
+        //    autoControls: false,
+        //    mode: 'horizontal',
+        //    preventDefaultSwipeY: true,
+        //    preventDefaultSwipeX: false,
+
+
+        //});
+
+
+
+    </script>
+    <script type="text/javascript">
+        function ShowBusyBox() {
+            BusyBox.Show();
+            //fix tam loi khong hide content
+            document.getElementById('ctl00_BusyBox_LD').style.top = 0;
+        }
+        function HideBusyBox() {
+
+        }
+        var is_chrome = function () { return Boolean(window.chrome); }
+        function btnPrint_onclick() {
+            var printContent = document.getElementById("print_div");
+            var windowUrl = 'about:blank';
+            var uniqueName = new Date();
+            var windowName = 'Print' + uniqueName.getTime();
+
+            var printWindow = window.open(windowUrl, windowName, 'height=' + screen.height + ',width=' + screen.width + ',resizable=yes,scrollbars=yes,toolbar=yes,menubar=yes,location=yes');
+            printWindow.moveTo(0, 0);
+            printWindow.document.write('<html>\n');
+            printWindow.document.write('<head>\n');
+            printWindow.document.write('<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />\n');
+            printWindow.document.write('<meta http-equiv="X-UA-Compatible" content="IE=edge">');
+            printWindow.document.write('<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">');
+            if (navigator.userAgent.toLowerCase().indexOf("chrome") > -1) {
+
+            }
+            else {
+                printWindow.document.write('<link href="../Resources/StyleSheet/eBanking.css?v=20231228" rel="Stylesheet" type="text/css" />\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/assets/components/bootstrap/dist/css/bootstrapX.css?v=20231228" rel="Stylesheet" type="text/css" />\n');
+                printWindow.document.write('<link href="../Resources/StyleSheet/font-awesome.min.css?v=20231228" rel="Stylesheet" type="text/css" />\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/assets/components/font-awesome/css/font-awesome.css?v=20231228" rel="Stylesheet" type="text/css" />\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/assets/components/Ionicons/css/ionicons.css?v=20231228" rel="Stylesheet" type="text/css" />\n');
+                printWindow.document.write('<link href="../Resources/JavaScript/ebScript.js?v=20231228" type="text/javascript" />\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/css/master_style.css?v=20231228" type="text/css" rel="Stylesheet" />\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/css/skins/_all-skins.css?v=20231228" type="text/css" rel="Stylesheet" />\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/assets/components/morris.js/morris.css?v=20231228" type="text/css" rel="Stylesheet" />\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/assets/components/jvectormap/jquery-jvectormap.css?v=20231228" type="text/css" rel="Stylesheet" />\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/assets/components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css?v=20231228" rel="Stylesheet" type="text/css" />\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/assets/components/bootstrap-daterangepicker/daterangepicker.css?v=20231228" rel="Stylesheet" type="text/css" />\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css?v=20231228" rel="Stylesheet" type="text/css" />\n');
+                printWindow.document.write('<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="Stylesheet"/>\n');
+                printWindow.document.write('<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;subset=vietnamese" rel="Stylesheet"/>\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/css/animate.min.css?v=20231228" rel="Stylesheet"/>\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/css/pg.css?v=20231228" rel="Stylesheet"/>\n');
+                printWindow.document.write('<link href="../Resources/StyleSheet/eBanking.css?v=20231228" rel="Stylesheet" type="text/css" />\n');
+            }
+
+            printWindow.document.write('<script>\n');
+
+            if (navigator.userAgent.toLowerCase().indexOf("chrome") > -1) {
+                printWindow.document.write('var chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/StyleSheet/eBanking.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/assets/components/bootstrap/dist/css/bootstrapX.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/StyleSheet/font-awesome.min.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/assets/components/font-awesome/css/font-awesome.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/assets/components/Ionicons/css/ionicons.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "javascript";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/JavaScript/ebScript.js?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/css/master_style.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/css/skins/_all-skins.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/assets/components/morris.js/morris.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/assets/components/jvectormap/jquery-jvectormap.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/assets/components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/assets/components/bootstrap-daterangepicker/daterangepicker.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;subset=vietnamese";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/css/animate.min.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/css/pg.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/StyleSheet/eBanking.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+            }
+
+            printWindow.document.write('function winPrint()\n');
+            printWindow.document.write('{\n');
+            printWindow.document.write('window.focus();\n');
+
+
+            if (navigator.userAgent.toLowerCase().indexOf("chrome") > -1) {
+                printWindow.document.write('printChrome();\n');
+            }
+            else {
+                printWindow.document.write('window.print();\n');
+            }
+
+
+            if (navigator.userAgent.toLowerCase().indexOf("firefox") > -1) {
+                printWindow.document.write('window.close();\n');
+            }
+            else {
+                printWindow.document.write('chkstate();\n');
+            }
+            printWindow.document.write('}\n');
+
+
+            printWindow.document.write('function chkstate()\n');
+            printWindow.document.write('{\n');
+            printWindow.document.write('if(document.readyState=="complete")');
+            printWindow.document.write('{\n');
+            printWindow.document.write('window.close();\n');
+            printWindow.document.write('}\n');
+            printWindow.document.write('else{\n');
+            printWindow.document.write('setTimeout("chkstate();",3000);\n');
+            printWindow.document.write('}\n');
+            printWindow.document.write('}\n');
+
+            printWindow.document.write('function printChrome()\n');
+            printWindow.document.write('{\n');
+            printWindow.document.write('if(document.readyState=="complete")');
+            printWindow.document.write('{\n');
+            printWindow.document.write('window.print();\n');
+            printWindow.document.write('}\n');
+            printWindow.document.write('else{\n');
+            printWindow.document.write('setTimeout("printChrome();",3000);\n');
+            printWindow.document.write('}\n');
+            printWindow.document.write('}\n');
+
+
+            printWindow.document.write('</scr');
+            printWindow.document.write('ipt>');
+
+            printWindow.document.write('</head>');
+            printWindow.document.write('<body onload="winPrint()" >');
+            printWindow.document.write('<div class="content">');
+            printWindow.document.write('<div class="box box-default">');
+            printWindow.document.write('<div class="box-body">');
+            printWindow.document.write('<div class="row">');
+            printWindow.document.write(printContent.innerHTML);
+            printWindow.document.write('</div>');
+            printWindow.document.write('</div>');
+            printWindow.document.write('</div>');
+            printWindow.document.write('</div>');
+            printWindow.document.write('</body>');
+            printWindow.document.write('</html>');
+            printWindow.document.close();
+
+
+
+        }
+        function isEmail(strEmail) {
+            var filter = /^(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6}$/;
+            if (!filter.test(strEmail))
+                return false;
+            else
+                return true;
+        }
+
+        function isMobile(strEmail) {
+            var filter = /^(((09)\d{8})|(01)\d{9})$/;
+            if (!filter.test(strEmail))
+                return false;
+            else
+                return true;
+        }
+
+        function isUserId(strEmail) {
+            var filter = /^[a-z0-9A-Z_\-\.]{6,20}$/;
+            if (!filter.test(strEmail))
+                return false;
+            else
+                return true;
+        }
+        var ClassName = {
+            fixed: 'fixed',
+            holdTransition: 'hold-transition',
+            sidebar_open: 'sidebar-open',
+            contentWrapper: '.content-wrapper'
+        }
+        function fixSidebar() {
+            if ($(document).width() < 480) {
+                if ($('body').hasClass(ClassName.sidebar_open)) {
+                    $(ClassName.contentWrapper).css('height', 'auto')
+                }
+                else { $(ClassName.contentWrapper).css('height', $('.sidebar-footer').offset().top) }
+            }
+        }
+
+
+        //  $(document).ready(function () {
+
+        //    var withLeftSide = $('.main-sidebar').width();
+        //  var withFullSite = $('#myModal').width();
+        // $("#myModal").width(withFullSite - withLeftSide);
+        //$("#myModal").css({left: withLeftSide })
+        // });
+    </script>
+    
 </body>
 </html>
