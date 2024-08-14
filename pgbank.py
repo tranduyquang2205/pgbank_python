@@ -22,6 +22,7 @@ from urllib.parse import quote
 class PGBank:
     def __init__(self, username, password, account_number):
         self.session = requests.Session()
+        self.cookies_file = f"data/cookies/{account_number}.json"
         self.is_login = False
         self.time_login = time.time()
         self.file = f"data/{username}.txt"
@@ -83,7 +84,17 @@ class PGBank:
         self.sessionId = data.get('sessionId', '')
         self.time_login = data.get("time_login", "")
         self.is_login = data.get("is_login", "")
-        
+    def save_cookies(self,cookie_jar):
+        with open(self.cookies_file, 'w') as f:
+            json.dump(cookie_jar.get_dict(), f)
+    def load_cookies(self):
+        try:
+            with open(self.cookies_file, 'r') as f:
+                cookies = json.load(f)
+                self.cookies = cookies
+                return
+        except (FileNotFoundError, json.decoder.JSONDecodeError):
+            return requests.cookies.RequestsCookieJar()
     def init_guid(self):
         self._IBDeviceId = self.generate_device_id()
         
@@ -123,7 +134,9 @@ class PGBank:
         'Priority': 'u=0, i',
         'TE': 'trailers'
         }
+        self.load_cookies()
         response = self.session.get(url, headers=headers,allow_redirects=True)
+        self.save_cookies(self.session.cookies)
         self.referer_url = url
         try:
             return response.json()
@@ -158,8 +171,9 @@ class PGBank:
             'sec-ch-ua-mobile': '?0',
             'sec-ch-ua-platform': '"Windows"'
             }
-
+        self.load_cookies()
         response = self.session.post(url, headers=headers, data=data)
+        self.save_cookies(self.session.cookies)
         self.referer_url = url
         try:
             return response.json()
@@ -257,7 +271,7 @@ class PGBank:
         table = soup.find('table', id='grdAccount_DXMainTable')
         
         if not table:
-            raise ValueError("Table with ID 'grdAccount_DXMainTable' not found.")
+            return 'error'
         
         transactions = []
         
@@ -530,6 +544,7 @@ class PGBank:
     
     def get_transactions_by_page(self,url,page,limit):
         response = self.curlGet(url)
+        response
         transaction_history = self.extract_transaction_history(response)
 
         if page*10 < limit:
@@ -547,16 +562,17 @@ class PGBank:
 
     def getHistories(self, fromDate="16/06/2023", toDate="16/06/2023", account_number=''):
         self.transactions = []
-        if not self.is_login or time.time() - self.time_login > 1790:
-            login = self.doLogin()
-            if 'success' not in login or not login['success']:
-                return login
+        # if not self.is_login or time.time() - self.time_login > 1790:
+        #     login = self.doLogin()
+        #     if 'success' not in login or not login['success']:
+        #         return login
+        self.get_balance(account_number)
         param = {}
         url = "https://home.pgbank.com.vn/V2018/Pages/TranSelect.aspx"
         
         response = self.curlGet(url)
-        # with open("111.html", "w", encoding="utf-8") as file:
-        #     file.write(response)
+        with open("111.html", "w", encoding="utf-8") as file:
+            file.write(response)
         __EVENTVALIDATION = self.extract___EVENTVALIDATION(response)
         __VIEWSTATE = self.extract___VIEWSTATE(response)
         __VIEWSTATEGENERATOR = self.extract___VIEWSTATEGENERATOR(response)
@@ -590,8 +606,9 @@ class PGBank:
         # for k, v in payload_dict.items():
         #     print(k,v)
         #     payload_converted = '&'.join(f'{quote(k)}={quote(v)}')
-            
+        payload_dict = {k: v if v is not None else '' for k, v in payload_dict.items()}
         payload_converted = '&'.join(f'{quote(k)}={quote(v)}' for k, v in payload_dict.items())
+        
         headers = {
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
         'accept-language': 'en-US,en;q=0.9',
@@ -611,11 +628,19 @@ class PGBank:
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0'
         }
         response = self.curlPost(self.url['getHistories'],payload_converted,headers)
-        # with open("222.html", "w", encoding="utf-8") as file:
-        #     file.write(response)
+        with open("222.html", "w", encoding="utf-8") as file:
+            file.write(response)
         # return 1
         transactions =  self.extract_transaction_history(response)
-        if  transactions:
+        if transactions == 'error':
+            self.is_login = False
+            self.save_data()
+            return {'code':500,'success': False, 'message': 'Đã xảy ra lỗi',
+                    'data':{
+                        'message': 'No data',
+                        'transactions':[],
+            }}
+        elif  transactions:
             return {'code':200,'success': True, 'message': 'Thành công',
                     'data':{
                         'transactions':transactions,

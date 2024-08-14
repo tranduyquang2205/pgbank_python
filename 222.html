@@ -1,0 +1,1338 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta content="text/html;charset=UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /><meta http-equiv="Cache-Control" content="no-cache, no-store, max-age=0, must-revalidate" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="0" /><meta http-equiv="refresh" content="600" /><title>
+	PGBank dịch vụ Ngân hàng điện tử
+</title><link rel="shortcut icon" href="Resources/Images/PGBANK.ICO?v=3453" type="image/x-icon" /><link rel="icon" href="Resources/Pgb_theme/images/pg/favicon.png?v=45435" type="image/ico" />
+
+    <!-- Vender -->
+    <link href="Resources/StyleSheet/font-awesome.min.css?v=20231228" rel="stylesheet" />
+    
+
+    <!--create for new css pgb-->
+    <link rel="stylesheet" href="Resources/Pgb_theme/assets/components/bootstrap/dist/css/bootstrapX.css?v=20231228" />
+
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="Resources/Pgb_theme/assets/components/font-awesome/css/font-awesome.css?v=20231228" />
+
+    <!-- ionicons -->
+    <link rel="stylesheet" href="Resources/Pgb_theme/assets/components/Ionicons/css/ionicons.css?v=20231228" />
+
+    <!-- theme style -->
+    <link rel="stylesheet" href="Resources/Pgb_theme/css/master_style.css?v=20231228" /><link rel="stylesheet" href="Resources/Pgb_theme/css/skins/_all-skins.css?v=20231228" /><link rel="stylesheet" href="Resources/Pgb_theme/css/pg.css?v=20231228" />
+    <!-- morris chart -->
+    <link rel="stylesheet" href="Resources/Pgb_theme/assets/components/morris.js/morris.css?v=20231228" />
+
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="Resources/Pgb_theme/assets/components/jvectormap/jquery-jvectormap.css?v=20231228" />
+
+    <!-- date picker -->
+    <link rel="stylesheet" href="Resources/Pgb_theme/assets/components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css?v=20231228" />
+
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="Resources/Pgb_theme/assets/components/bootstrap-daterangepicker/daterangepicker.css?v=20231228" />
+
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="Resources/Pgb_theme/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css?v=20231228" />
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+	<script src="assets/js/fix/html5shiv.min.js" ></script>
+	<script src="assets/js/fix/respond.min.js"></script>
+	<![endif]-->
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;subset=vietnamese" rel="stylesheet" /><link href="Resources/Pgb_theme/css/animate.min.css?v=20231228" rel="stylesheet" />
+
+    
+    <script type="text/javascript" src="../Resources/javascript/RemoveVNAccent.js"></script>
+
+    <style type="text/css">
+        .lnkInline:hover {
+            color: white;
+        }
+
+        .lnkInline {
+            color: white;
+        }
+
+        .modal-custom-feild {
+            margin-bottom: 2px !important;
+        }
+
+        .lbModal {
+            font-weight: bold !important;
+        }
+
+        .custom_btsendOTP {
+            color: #17a2b8;
+        }
+
+            .custom_btsendOTP:hover {
+                color: paleturquoise;
+            }
+
+        .loading {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 999992;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(192, 192, 192, 0.5);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+
+        .centerx {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+            border: 10px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 10px solid #3498db;
+            width: 80px;
+            height: 80px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .cs_custom_button {
+            border: none;
+            background-color: #1e88e5;
+            color: white;
+            height: 40px;
+            width: 130px;
+        }
+
+        .cs_custom_button2 {
+            border: none;
+            background-color: #1e88e5;
+            color: white;
+            height: 40px;
+        }
+
+        .msgCustomBlank {
+            display: none;
+            font-size: 13px;
+            color: red;
+        }
+    </style>
+</head>
+
+
+<body class="hold-transition skin-blue layout-boxed sidebar-mini">
+    <div id="loading" class="loading">
+        <div class="centerx" style="z-index: 9999922"></div>
+    </div>
+    <div class="wrapper">
+        <form onsubmit="return false">
+            <div class="modal fade" id="myModal" role="dialog" style="z-index: 999991">
+
+                <div class="modal-dialog modal-lg">
+                    <div id="modalContent" class="modal-content">
+                        <div class="modal-header" style="height: 50px; margin-top: 5px; display: flex; align-items: center; justify-content: center">
+                            <h4 style="text-align: center">Quên mật khẩu</h4>
+                            
+                        </div>
+                        <div class="modal-body">
+                            <div id="divCode" style="display: none;">
+                                
+                                <div id="contentCode" style="margin-top: 5px; margin-left: 10px; margin-right: 10px; display: flex; align-items: center; justify-content: center;">
+                                    <b id="codeNum" style="font-size: 17px; font-weight: normal"></b>
+                                </div>
+                                <div style="height: 36px; margin-top: 15px; margin-left: 10px; margin-right: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px">
+                                    <input id="btnClose" type="button" class="cs_custom_button" data-dismiss="modal" value="Đóng" />
+                                </div>
+
+                            </div>
+                            <div id="divContent" class="form-element" style="margin-left: 40px; margin-right: 40px; display: block">
+                                
+                                <div class="form-group has-feedback modal-custom-feild">
+                                    <label class="adLabelFooter" id="Label9">Họ và tên</label>
+                                    <input type="text" id="tbFullName" placeholder="Họ và tên" name="account" class="form-control " onkeyup="fnRemoveEmpty(this)" />
+                                    <label class="msgCustomBlank" id="tbFullNameMsg" />
+                                </div>
+                                
+                                <div class="form-group has-feedback modal-custom-feild">
+                                    <label class="adLabelFooter" id="Label5">Số CMND/CCCD/Hộ chiếu</label>
+                                    <input type="text" id="tbIdentify" placeholder="Số CMND/CCCD/HC đăng ký tại PG Bank" name="account" class="form-control " onkeyup="fnRemoveEmpty(this)" />
+                                    <label class="msgCustomBlank" id="tbIdentifyMsg" />
+                                </div>
+                                
+                                <div class="form-group has-feedback modal-custom-feild">
+                                    <label class="adLabelFooter" id="Label1">Số thẻ</label>
+                                    <input type="number" id="tbCardNumber" placeholder="Số thẻ Ghi nợ nội địa/Trả trước Online" name="account" class="form-control " onkeyup="fnRemoveEmpty(this)" />
+                                    <label class="msgCustomBlank" id="tbCardNumberMsg" />
+                                </div>
+
+                                
+                                <div class="form-group has-feedback modal-custom-feild">
+                                    <label class="adLabelFooter" id="Label4">Mã PIN</label>
+                                    <input type="password" pattern="[0-9]*" inputmode="numeric" id="tbPin" placeholder="Mã PIN của thẻ" name="account" class="form-control " onkeyup="fnRemoveEmpty(this)" />
+                                    <label class="msgCustomBlank" id="tbPinMsg" />
+                                </div>
+
+                                
+                                <div class="form-group has-feedback modal-custom-feild">
+                                    <label class="adLabelFooter" id="Label6">Số điện thoại</label>
+                                    <input type="number" id="tbPhoneNumber" placeholder="Số ĐT đăng ký DV Ngân hàng điện tử" name="account" class="form-control " onkeyup="fnRemoveEmpty(this)" />
+                                    <label class="msgCustomBlank" id="tbPhoneNumberMsg" />
+                                </div>
+                                
+                                <div class="form-group has-feedback modal-custom-feild" style="margin-bottom: 10px !important">
+                                    <label class="adLabelFooter" id="Label99">Mã kiểm tra</label>
+
+                                    <div id="dvCapcha" style="display: flex">
+                                        <input type="text" id="tbCapcha" placeholder="Nhập mã kiểm tra" name="account" class="form-control col-sm-8" onkeyup="fnRemoveEmpty(this)" />
+
+                                        <div style="display: flex" class="col-sm-1">
+                                            <img id="imgCapcha" alt="capcha" style="border: 2px solid gray;">
+                                            <span class="ion ion-loop" style="color: blue; padding-left: 15px; font-size: 21px; padding-top: 6px" onclick="ReloadCapcha_Onclick()"></span>
+                                        </div>
+                                    </div>
+                                    <label class="msgCustomBlank" id="tbCapchaMsg" />
+                                </div>
+                                
+                                <div style="display: none" id="divAuthSms">
+
+                                    <div class="d-flex mb-3">
+                                        <label id="Label7" style="padding-top: 8px; width: 80px">Mã OTP</label>
+
+                                        <input type="text" id="tbSMS" placeholder="Nhập mã xác thực OTP được gửi đến số điện thoại của Quý khách" name="account" class="form-control " disabled />
+
+                                        <input id="cmdSMS" type="button" class="cs_custom_button" style="height: 33px" value="Gửi OTP" onclick="GetSMSForgotClick()" />
+                                    </div>
+
+                                </div>
+                                <div style="text-align: center">
+                                    <label class="adLabelFooter" id="lbCountTime" style="color: red; font-size: 13px; padding: 3px!important;"></label>
+                                    <label class="adLabelFooter" id="lbError" style="color: red; font-size: 13px; padding: 3px!important;"></label>
+                                </div>
+                                <div style="display: flex">
+                                    <div style="flex-grow: 1"></div>
+                                    <input id="btClose" type="button" style="width: 30%; flex-grow: 1" class="cs_custom_button2" data-dismiss="modal" value="Đóng" />
+                                    <div style="flex-grow: 1; width: 10%;"></div>
+                                    <input id="btSubmit" type="submit" style="width: 30%; flex-grow: 1" class="cs_custom_button2" value="Xác nhận" onclick="SubmitForgotPass()" />
+
+                                    <div style="flex-grow: 1"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <form name="aspnetForm" method="post" action="./Login.aspx" id="aspnetForm" autocomplete="off">
+<div>
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="RRH95UJFZyOXaYZuarAD/rqtY0FaNyQiHHWUvraZw+onAJoALL+nVlReoOYcmZWYzpT4hVDuUaqcV8dG1WeZHOz/Ky7v3RvSCFuMSmPdTFkj54/KONJuZRxLG9XZ4xnpIw1Yoig79lTrcmuL7SND7C8h17kxj1STSMVSnfYCweT82TEgrImA8jLRTrLHdF95YwI5TzV+t5yTGNcH2ji1rUmzQAJ1UEUpl9U45qH0Z/RHjdA9vJYYx+dvHIiByd9fUxRYq2aqUCHtMP+9mRIW9k2GNNT9GQX0mi/8B+xTEXIG9FMW3sL2gxhfjUh1kt8DRkfnlA==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/V2018/WebResource.axd?d=KKTX3uB_RIPKrmm2o6vWjZpH_luEddPXDzwgnJyzMdb9Cd2uPhcWKPIr5ChRZGtuHK65J4Hrn4Pa0hh305Mt8Wgu7HM1&amp;t=638526636345524026" type="text/javascript"></script>
+
+
+<script src="/V2018/WebResource.axd?d=hJAepYXykG1nO2VUPVR8NVm9rZab6xPo0JMoVtEY24LwujxJv5O6PYJ_p9zo4bAvSm9sr5G1a5WHlInVtBvujD8roek1&amp;t=638526636345524026" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="6A5FEB30" />
+	<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+	<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="0kyF+dzZTTRk0k70+o//X1AAT6jpadPoCsz62Xvs8Xk289P84tyCe60XqQfhSzOwKTWxzGs1MEVTeVA26/9Zp1j2f4pg2+sMdjlHtm+6kwJUh46E0XyNF2cKy44lVlw+0/PDGN9kc97x32bmp1r0B9nPFJhCxVXX6hc6rubYaL1rdFShfnvFXYYnaQem0ObUj1oxVg==" />
+</div>
+            <!-- Modal -->
+
+            <nav class="navbar navbar-default navbar-expand-lg navbar-light fixed-top">
+                <div class="container">
+                    <a class="navbar-brand  mr-auto" href="#">
+                        <img src="../Resources/Pgb_theme/images/logo.png" /></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
+                        <ul class="navbar-nav mt-2 mt-lg-0">
+                            <li>
+                                <span id="ctl00_Label2" class="adLabelFooter">Điện thoại:</span>
+                                <a href="tel:1900555574">
+                                    <span id="ctl00_Telphone" class="adLabelFooter">1900555574</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="mailto:dvkh.pgbank@petrolimex.com.vn">
+                                    <span id="ctl00_Label3" class="adLabelFooter">Trợ giúp</span>
+                                </a>
+                            </li>
+
+
+                            <li class="lang">
+                                <a id="ctl00_hplVnLanguage" class="active" href="Login.aspx?lang=vi-VN">
+                                        <img src="../Resources/Pgb_theme/images/Flag_vn.jpg?v=20231228" />&nbsp;
+                                </a>
+                                <a id="ctl00_hplEnLanguage" href="Login.aspx?lang=en-US">
+                                        <img src="../Resources/Pgb_theme/images/Flag_EN.jpg?v=20231228" />&nbsp;
+                                </a>
+                                <div class="clearfix"></div>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+            <div class="container-fluid bs-reset content_login" style="overflow: hidden">
+
+                <div class="row bs-reset">
+
+
+                    <!-- Slider PC -->
+                    <div id="slider_banner_pc" class="banner-top d-none d-lg-block bs-reset">
+                        <div class="main_slides_banner">
+                            <section class="slides">
+                                <article class="item-slides">
+
+                                    <div class="featured">
+                                        <img src="../Resources/Pgb_theme/images/login_banner.png" title="A field of dreams" /> 
+                                    </div>
+
+                                </article>
+
+                               
+                            </section>
+                        </div>
+                    </div>
+
+                    <!-- /.Slider PC -->
+
+                    <div class="col-lg-7">
+                        <a id="link0" class="lnkClass" href="https://www.pgbank.com.vn/Desktop.aspx/Tin-tuc/Tin-noi-bat/PG_BANK_CHO_VAY_MUA_NHA_SIEU_TOC_CHI_TRONG_24H/">
+                            <div style="width: 100%; height: 100%">
+                            </div>
+                        </a>
+                        <a id="link1" class="lnkClass" href="http://www.pgbank.com.vn/Desktop.aspx/Tin-tuc/Tin-noi-bat/PG_Bank_trien_khai_chuong_trinh_Vay_de_dang_khong_mang_lai_suat/" style="display: none">
+                            <div style="width: 100%; height: 100%">
+                            </div>
+                        </a>
+                        <a id="link2" class="lnkClass" href="https://www.pgbank.com.vn/Desktop.aspx/Ca-nhan/Ca-nhan/" style="display: none">
+                            <div style="width: 100%; height: 100%">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-5 bs-reset login_right align-self-end float-lg-right">
+                        <div class="login-box-2 col-sm-8">
+                            <div class="login-logo">
+                            </div>
+                            <!-- /.login-logo -->
+                            <div class="login-box-body">
+
+                                <div class="form-element">
+                                    <div class="form-group has-feedback">
+                                        
+                                        <input name="ctl00$txtloginName" id="ctl00_txtloginName" type="text" name="account" class="form-control" required="true" placeholder="Tên truy cập" />
+                                        <span class="ion ion-android-contact form-control-feedback"></span>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <input name="ctl00$txtPassword" id="ctl00_txtPassword" class="form-control" name="password" type="password" value="" required="" data-validation-required-message="This field is 21312" placeholder="Mật khẩu" />
+                                        <span class="ion ion-locked form-control-feedback"></span>
+                                    </div>
+
+                                    <div class="form-group has-feedback capcha">
+                                        
+                                        
+                                    </div>
+
+                                    
+
+                                    <div class="row">
+
+                                        <div class="col-12 text-center">
+                                            
+                                            <input type="submit" name="ctl00$btnLogin" value="Đăng nhập" id="ctl00_btnLogin" class="btn btn-info btn-block btn-flat margin-top-10" type="button" />
+                                        </div>
+                                        <div class="margin-top-10 text-left col-12">
+                                            <p>
+                                                <a onclick="openModal()" href="#" data-target="#myModal" data-toggle="modal" data-backdrop="static" data-keyboard="false" class="text-info m-l-5">
+                                                    <span class="ion ion-log-in"></span>
+                                                    Quên mật khẩu?
+                                                </a>
+                                            </p>
+                                            <p>
+                                                <a href="http://www.pgbank.com.vn/Desktop.aspx/Ngan-hang-truc-tuyen/Dich-vu-Internet-Banking/20111219-Dich_vu_Internet_Banking/" class="text-info m-l-5"><span class="ion ion-log-in"></span>
+                                                    Đăng ký Internet Banking</a>
+                                            </p>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </div>
+                            <!-- /.login-box-body -->
+                        </div>
+                        <!-- /.login-box -->
+
+                        <div id="utilities">
+                            <div class="list_icon">
+                                <div class="container">
+                                    <div class="row">
+
+                                        <div class="col-md-12">
+                                            <ul class="ds-btn">
+                                                <li>
+                                                    <a href="http://www.pgbank.com.vn/Desktop.aspx/Lich-tra-theo-du-no-ban-dau/Lich-tra-theo-du-no-ban-dau/">
+                                                        <span class="icon">
+                                                            <i class="icon_normal">
+                                                                <img src="../Resources/Pgb_theme/images/pg/ico_congcu.png" /></i>
+
+                                                        </span>
+                                                        <span>
+                                                            <span class="lblLabel">Hỗ trợ tính toán</span>
+                                                        </span>
+                                                    </a>
+
+                                                </li>
+                                                <li>
+                                                    <a href="http://www.pgbank.com.vn/Desktop.aspx/Lai-suat-huy-dong/Lai-suat-huydong/">
+                                                        <span class="icon">
+                                                            <i class="icon_normal">
+                                                                <img src="../Resources/Pgb_theme/images/pg/ico_laisuat.png" /></i>
+
+                                                        </span>
+                                                        <span>
+                                                            <span class="lblLabel">Lãi suất</span>
+                                                        </span>
+                                                    </a>
+
+                                                </li>
+                                                <li>
+                                                    <a href="ebManual.aspx">
+                                                        <span class="icon">
+                                                            <i class="icon_normal">
+                                                                <img src="../Resources/Pgb_theme/images/pg/ico_chinhanh.png" /></i>
+
+                                                        </span>
+                                                        <span>
+                                                            <span class="lblLabel">Hướng dẫn</span></span>
+                                                    </a>
+
+                                                </li>
+
+                                                <li>
+                                                    <a href="/Pages/ExchangeRate.aspx?id=1">
+
+                                                        <span class="icon">
+                                                            <i class="icon_normal">
+                                                                <img src="../Resources/Pgb_theme/images/pg/ico_tigia.png" /></i>
+
+                                                        </span>
+                                                        <span>
+                                                            <span class="lblLabel">Tỉ giá ngoại tệ</span>
+                                                        </span>
+                                                    </a>
+
+                                                </li>
+
+                                                <div class="clearfix"></div>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <!--End list_icon-->
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <footer class="footer_login_page fixed-bottom">
+
+                <div class="container">
+                    <div class="pull-right d-none d-sm-inline-block">
+                        <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg4">
+                            Điều khoản sử dụng</a>  
+                    </div>
+                    Copyright &copy; 2017 PGBank
+
+                </div>
+
+            </footer>
+            <div>
+                
+    
+
+            </div>
+
+
+
+
+            <!--End utilities-->
+
+            <style type="text/css">
+                .ty_gia .box-body label {
+                    line-height: 40px;
+                }
+
+                .ty_gia table th {
+                    width: 30%;
+                }
+
+                .layout-boxed .wrapper {
+                    max-width: none !important;
+                }
+
+                .bx-controls {
+                    position: relative;
+                }
+
+                .note_pg {
+                    font-style: italic;
+                    font-size: 13px;
+                }
+
+                    .note_pg a {
+                        text-decoration: underline;
+                        color: #1e88e5;
+                        font-size: 13px;
+                    }
+            </style>
+            <!--<footer class="footer_login_page">
+    	<div class="container">
+       
+         <div class="text-left">
+         	<p>Bản quyền © 2017 thuộc về Ngân hàng TMCP Xăng dầu Petrolimex (PG Bank)</p>
+         </div>
+         
+ 	   </div>
+    </footer>-->
+
+            
+
+            <style type="text/css">
+                footer a {
+                    color: #fff;
+                }
+            </style>
+        
+
+<script type="text/javascript">
+//<![CDATA[
+WebForm_AutoFocus('ctl00_txtloginName');//]]>
+</script>
+</form>
+        <div class="modal fade bs-example-modal-lg4" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="text-align: justify">
+                    <div class="modal-header ">
+<h4 class="modal-title" id="myLargeModalLabel" style="margin: 0 auto; font-size: 24px; text-transform: uppercase;">Điều khoản sử dụng</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center"><strong>ĐIỀU KIỆN, ĐIỀU KHOẢN VỀ ĐĂNG KÝ VÀ SỬ DỤNG DỊCH VỤ NGÂN HÀNG ĐIỆN TỬ</strong></div>
+                        <div class="text-center" style="width: 100%; margin-bottom: 10px;">
+ (Áp dụng đối với Khách hàng cá nhân)
+                        </div>
+                        Điều kiện và điều khoản sử dụng Dịch vụ Ngân hàng điện tử (sau đây được gọi tắt là Điều kiện, điều khoản) với các nội dung dưới đây là một phần không tách rời của Giấy đề nghị kiêm hợp đồng đăng ký sử dụng dịch vụ Ngân hàng điện tử/Giấy đề nghị kiêm hợp đồng mở, sử dụng Dịch vụ tài khoản thanh toán và thẻ ghi nợ nội địa, có giá trị pháp lý như là Hợp đồng dịch vụ quy định cho tất cả các Khách hàng sử dụng Dịch vụ Ngân hàng điện tử tại Ngân hàng TMCP Thịnh vượng và Phát triển (PGBank). Bằng việc xác nhận đăng ký Dịch vụ Ngân hàng điện tử/ký vào “Giấy đề nghị kiêm hợp đồng đăng ký sử dụng dịch vụ Ngân hàng điện tử” hoặc một giấy tờ/bằng chứng bất kỳ của PGBank thể hiện việc KH đăng ký sử dụng Dịch vụ Ngân hàng điện tử, Khách hàng thừa nhận đồng nghĩa với việc Khách hàng đã đọc, hiểu rõ, đồng ý, xác nhận đã ký và chấp nhận bị ràng buộc bởi các quyền và nghĩa vụ theo Điều kiện, điều khoản này. <br />
+                        <br />
+                        <strong>Điều 1.	Giải thích từ ngữ và viết tắt</strong>
+                        <ol>
+                            <li><strong>“Ngân hàng", “PGBank”</strong> là Ngân hàng TMCP Thịnh vượng và Phát triển.</li>
+                            <li><strong>“Điểm giao dịch”</strong> là Chi nhánh, Phòng giao dịch và các đơn vị khác thuộc mạng lưới hoạt động của PGBank theo quy định của pháp luật. </li>
+                            <li><strong>“Dịch vụ ngân hàng điện tử”, “Dịch vụ”</strong> là các dịch vụ ngân hàng do PGBank cung cấp cho Khách hàng thông qua mạng Internet, bao gồm nhưng không giới hạn Dịch vụ PG APP, Dịch vụ Internet Banking và các dịch vụ/kênh giao dịch khác được PGBank triển khai từng thời kỳ.</li>
+                            <li><strong>“Dịch vụ PG APP”</strong> là dịch vụ cho phép Khách hàng truy cập vào ứng dụng dịch vụ (app) được cài đặt trên thiết bị di động để sử dụng các tính năng do PGBank cung cấp. </li>
+                            <li><strong>“Dịch vụ Internet Banking”</strong> là các sản phẩm dịch vụ của PGBank cung cấp cho khách hàng có thể được truy cập thông qua địa chỉ https://*.pgbank.com.vn từ các thiết bị điện tử phù hợp. </li>
+                            <li><strong>“Khách hàng”, “KH”</strong> là các cá nhân đã đăng ký Dịch vụ Ngân hàng điện tử trên cơ sở thỏa mãn điều kiện đăng ký Dịch vụ của PGBank từng thời điểm. </li>
+                            <li><strong>“Thiết bị di động”</strong> là điện thoại di động, máy tính bảng và các thiết bị khác theo quy định của PGBank trong từng thời kỳ. </li>
+                            <li><strong>“Mã khóa bí mật/Mật khẩu truy cập”</strong> là mật khẩu để truy cập, định danh, xác thực Khách hàng sử dụng Dịch vụ PG APP, Dịch vụ Internet Banking.</li>
+                            <li><strong>“Giải pháp/Phương thức xác thực giao dịch”</strong> Là cách thức để xác thực Khách hàng và/hoặc chỉ dẫn và/hoặc yêu cầu Khách hàng thực hiện các thao tác xác nhận giao dịch trước khi PGBank thực hiện giao dịch theo yêu cầu của Khách hàng. </li>
+                            <li><strong>“Thiết bị xác thực”</strong> là thiết bị tạo mã xác thực mà KH đăng ký, lựa chọn khi đăng ký sử dụng Dịch vụ/do PGBank quy định từng thời kỳ, có chức năng tạo mã xác thực cho KH mỗi khi thực hiện giao dịch. </li>
+                            <li><strong>“Mã xác thực/ OTP (One Time Password)”</strong> là mã khóa bí mật có giá trị sử dụng một lần và có hiệu lực trong một khoảng thời gian nhất định theo quy định của PGBank và pháp luật trong từng thời kỳ, được sử dụng như một yếu tố bổ sung để xác thực Khách hàng khi sử dụng dịch vụ Ngân hàng điện tử.  </li>
+                            <li><strong>“Hạn mức giao dịch”</strong> là tổng số tiền tối đa KH được phép giao dịch qua Dịch vụ do PGBank quy định từng thời kỳ.  </li>
+                            <li><strong>“Thông tin bảo mật”</strong> là thông tin truy cập, mã xác thực, thiết bị xác thực, số điện thoại, email của KH hay bất kỳ yếu tố, thông tin nào khác mà KH đăng ký với PGBank hoặc được PGBank cung cấp. Tùy từng dịch vụ, sản phẩm, giao dịch mà KH tham gia, một hoặc một số yếu tố nên trên sẽ được PGBank sử dụng để xác thực KH và/hoặc xác thực giao dịch trên cơ sở phù hợp với phương thức xác thực mà PGBank quy định cho sản phẩm, dịch vụ, giao dịch đó. </li>
+                        </ol>
+                        <strong>Điều 2.		Quyền và trách nhiệm của Khách hàng</strong>
+                        <ol>
+                            <li>Quyền của Khách hàng:
+           
+                                <ol type="a">
+                                    <li>Truy cập Dịch vụ Ngân hàng điện tử của PGBank để thực hiện các giao dịch do PGBank cung cấp; </li>
+                                    <li>Sử dụng, thay đổi thông tin/Dịch vụ trong phạm vi đã thỏa thuận với PGBank. Khách hàng tự đảm bảo quá trình thực hiện giao dịch chính xác và đầy đủ theo hạn mức giao dịch đăng ký với PGBank (nếu có) hoặc theo quy định của PGBank từng thời kỳ. Sử dụng đúng mục đích những thông tin Dịch vụ do PGBank cung cấp; </li>
+                                    <li>Yêu cầu tra soát/khiếu nại về các sai sót, vi phạm (nếu có) phát sinh trong quá trình sử dụng Dịch vụ theo quy định của pháp luật. Việc tra soát/khiếu nại phải được lập thành văn bản hoặc bằng hình thức khác (tra soát trực tuyến, …) theo quy định của PGBank từng thời kỳ và gửi cho PGBank. KH được quyền tra soát/khiếu nại trong thời hạn theo quy định của PGBank trong từng thời kỳ phù hợp quy định của pháp luật có liên quan. Trường hợp tra soát/khiếu nại của KH không liên quan đến lỗi của PGBank, KH sẽ phải chịu phí phát sinh từ việc xử lý tra soát/khiếu nại theo quy định của PGBank; </li>
+                                    <li>Có quyền yêu cầu ngừng/chấm dứt sử dụng Dịch vụ sau khi đã gửi văn bản yêu cầu ngừng/chấm dứt sử dụng Dịch vụ theo mẫu của PGBank tại các Điểm giao dịch của PGBank và được PGBank chấp thuận; </li>
+                                    <li>Các quyền khác theo quy định của Điều kiện, điều khoản này và các quy định có liên quan của pháp luật và PGBank. </li>
+                                </ol>
+                            </li>
+                            <li>Trách nhiệm của Khách hàng: 
+                                <ol type="a">
+                                    <li>Tuân thủ các quy định về thủ tục đăng ký và/hoặc thay đổi thông tin, trình tự giao dịch, hạn mức giao dịch, phương thức xác thực, các hướng dẫn sử dụng Dịch vụ của PGBank, quy định của Điều kiện, điều khoản này và chịu toàn bộ các thiệt hại phát sinh (nếu có) đối với giao dịch được thực hiện do thông tin không chính xác, sai sót của KH hoặc do việc bị lợi dụng sử dụng không do lỗi của PGBank hoặc do KH không thực hiện đúng các cam kết tại Điều kiện, điều khoản này; </li>
+                                    <li>Đồng ý cho PGBank tạm khóa tài khoản/thẻ, tự động trích tiền từ bất kỳ tài khoản/thẻ nào để thanh toán các giá trị giao dịch, các phí liên quan đến giao dịch, các loại phí liên quan đến Dịch vụ, các loại phí liên quan đến khiếu nại, tranh chấp theo quy định của PGBank và pháp luật; </li>
+                                    <li>Chịu trách nhiệm: (i) Cung cấp đầy đủ, chính xác thông tin cá nhân của KH, giấy tờ tùy thân và các thông tin cần thiết khác mà Ngân hàng yêu cầu để Ngân hàng cung cấp Dịch vụ Ngân hàng điện tử cho KH; (ii) Kịp thời cập nhật sửa đổi/bổ sung thông tin KH và giấy tờ cần thiết cho Ngân hàng khi có sự thay đổi, đảm bảo các thông tin KH cung cấp cho Ngân hàng luôn là thông tin được cập nhật mới nhất và chính xác nhất. Bất kỳ sai sót nào trong việc lập các thông tin cũng có thể dẫn đến việc tiền được chuyển vào một tài khoản/thẻ không đúng hoặc số tiền không đúng hoặc lệnh không được thực hiện, … KH tự chịu trách nhiệm đối với bất kỳ sự không chính xác nào trong các giao dịch do KH thực hiện và tự chịu tất cả chi phí, tổn thất, thiệt hại phát sinh trong các giao dịch do KH thực hiện; </li>
+                                    <li>Đảm bảo có đủ tiền trên tài khoản/thẻ của KH để thực hiện giao dịch, thanh toán các khoản phí theo quy định của PGBank. PGBank được quyền từ chối thực hiện giao dịch nếu số dư được phép sử dụng trên tài khoản/thẻ của KH không đủ để thanh toán hoặc trong trường hợp vượt quá hạn mức giao dịch:  </li>
+                                    <li>Chịu trách nhiệm đối với tất cả các giao dịch được thực hiện bằng Thông tin bảo mật trong suốt thời gian hiệu lực của Điều kiện, điều khoản này mà không được hủy, phủ nhận, từ chối, thay đổi hay thoái thác với bất kỳ lý do nào trừ khi thỏa mãn các điều kiện tại Khoản 5 Điều 5 của Điều kiện, điều khoản này và phụ thuộc vào sự xem xét, chấp thuận của PGBank;  </li>
+                                    <li>Chịu trách nhiệm bảo mật (các) Thông tin bảo mật, bảo quản thiết bị xác thực và thực hiện tất cả các biện pháp cần thiết ở mức độ cao nhất nhằm phòng ngừa việc sử dụng trái phép các thông tin này. KH cần cập nhật thông tin, hướng dẫn của Ngân hàng về nhận dạng và hành động xử lý một số tình huống lừa đảo, giả mạo website. KH cần thông báo nhanh nhất cho PGBank để thực hiện các biện pháp bảo đảm an toàn phù hợp quy định của pháp luật đối với từng loại Dịch vụ khi: Phát hiện hoặc nghi ngờ có hiện tượng truy cập trái phép Dịch vụ; Nghi ngờ thông tin đăng nhập của KH không còn bảo mật; KH làm mất, thất lạc, hư hỏng Thiết bị xác thực, số điện thoại nhận tin nhắn SMS, thiết bị lưu trữ khóa bảo mật tạo chữ ký số (nếu có); Bị lừa đảo hoặc nghi ngờ bị lừa đảo; Bị tin tặc hoặc nghi ngờ bị tin tặc tấn công ... Khách hàng phải chịu trách nhiệm về những thiệt hại, tổn thất và rủi ro khác xảy ra do KH thực hiện không đúng, không đầy đủ trách nhiệm theo quy định tại Điều kiện, điều khoản này;  </li>
+                                    <li>Sử dụng mọi biện pháp cần thiết để ngăn chặn việc sử dụng Dịch vụ bởi những người không có thẩm quyền. Mọi giao dịch thực hiện qua Dịch vụ nếu PGBank kiểm tra thấy đúng, đủ các yếu tố định danh thì sẽ mặc nhiên coi là ý chí của KH. Khách hàng phải hoàn toàn chịu trách nhiệm về những rủi ro và thiệt hại do việc sử dụng của người không có thẩm quyền gây ra;   </li>
+                                    <li>Trong quá trình sử dụng Dịch vụ, KH không được rời khỏi máy tính, thiết bị điện tử, thiết bị di động, thiết bị xác thực hoặc để người khác sử dụng máy tính, thiết bị điện tử,  thiết bị di động, thiết bị xác thực cho đến khi KH đăng xuất ra khỏi Dịch vụ. Khách hàng có trách nhiệm đảm bảo thoát ra khỏi đăng nhập sau mỗi lần truy cập Dịch vụ; Không nên truy cập Dịch vụ bằng máy tính, thiết bị điện tử công cộng hay mạng không dây công cộng; Không lưu lại tên truy cập và mật khẩu trên các trình duyệt web; Không sử dụng các thiết bị di động đã bị phá khóa để tải và sử dụng Dịch vụ, phần mềm tạo OTP; </li>
+                                    <li>Chịu trách nhiệm áp dụng mọi biện pháp hợp lý nhằm đảm bảo an toàn, đảm bảo tính tương thích cho các loại máy móc thiết bị, phần mềm hệ thống, phần mềm ứng dụng... mà KH sử dụng để kết nối truy cập Dịch vụ của PGBank. Cài đặt và thường xuyên cập nhật các chương trình diệt virus trên các thiết bị cá nhân nhằm đảm bảo cài đặt đúng và cập nhật phiên bản ứng dụng mới nhất nhằm kiểm soát, phòng ngừa và ngăn chặn việc sử dụng hoặc truy cập trái phép Dịch vụ; </li>
+                                    <li>Khách hàng có trách nhiệm thông báo ngay cho PGBank (qua số hotline 1900555574, Điểm giao dịch của PGBank, …)/Đơn vị cung cấp dịch vụ các lỗi gặp phải, các sự cố trong quá trình sử dụng Dịch vụ;  </li>
+                                    <li>Hoàn trả cho PGBank các giao dịch nhầm lẫn mà KH không chứng minh được quyền sở hữu hợp pháp (những khoản thanh toán thừa, thanh toán quá số dư được phép trên tài khoản/thẻ và lãi phát sinh theo quy định của PGBank, những khoản tiền ghi Có nhầm, thừa vào tài khoản/thẻ do PGBank/tổ chức cung ứng dịch vụ thanh toán chuyển tiền phát hiện thấy có sai sót so với lệnh chuyển tiền của KH, …). Theo đó, KH đồng ý rằng PGBank có quyền tự động trích tiền từ tài khoản/thẻ của KH để thu hồi những khoản tiền này mà không cần thông báo cho KH; </li>
+                                    <li>Tuyên bố và cam kết tuân thủ các quy định hiện hành về quản lý ngoại hối, phòng chống rửa tiền và các quy định của PGBank, pháp luật Việt Nam, thông lệ quốc tế; </li>
+                                    <li>Hợp tác và cung cấp chứng từ, thông tin cần thiết theo yêu cầu của PGBank trên cơ sở phù hợp với thỏa thuận với PGBank và quy định của pháp luật, bao gồm cả trường hợp có thêm yêu cầu kiểm soát về tính pháp lý và tuân thủ các giao dịch đã thực hiện từ PGBank và/hoặc cơ quan có thẩm quyền; </li>
+                                    <li>Trường hợp ngừng/chấm dứt sử dụng Dịch vụ, KH vẫn phải chịu trách nhiệm, nghĩa vụ tài chính phát sinh từ những giao dịch của KH thực hiện trong thời gian sử dụng Dịch vụ;  </li>
+                                    <li>Các trách nhiệm khác theo quy định của Điều kiện, điều khoản này và các quy định có liên quan của pháp luật và PGBank.</li>
+                                </ol>
+                        </ol>
+                        <strong>Điều 3.	Quyền và trách nhiệm của PGBank</strong>
+                        <ol>
+                            <li>Quyền của PGBank: 
+           
+                                <ol type="a">
+                                    <li>Thay đổi, ngừng, chấm dứt cung cấp Dịch vụ hoặc tạm ngừng Dịch vụ để bảo trì tại bất kỳ thời điểm nào mà không cần có sự đồng ý của KH. Tuy nhiên, PGBank có trách nhiệm thông báo cho KH về việc thay đổi, ngừng, chấm dứt cung cấp Dịch vụ hoặc tạm ngừng Dịch vụ để bảo trì qua số điện thoại/email mà KH đăng ký sử dụng Dịch vụ với PGBank/công bố trên website của PGBank /hoặc bất cứ phương thức nào phù hợp với quy định của pháp luật và/hoặc theo quyết định của PGBank trong từng thời kỳ. Đối với trường hợp KH nợ phí, PGBank có quyền chấm dứt cung cấp Dịch vụ mà không cần thông báo cho KH; </li>
+                                    <li>Từ chối, trì hoãn, tạm ngừng thực hiện các giao dịch mà không cần báo trước cho KH nếu PGBank phát hiện giao dịch vào thời điểm xử lý có nội dung không hợp pháp, không hợp lệ hay không có đủ cơ sở để thực hiện xử lý, bao gồm nhưng không giới hạn các trường hợp sau: Số tiền giao dịch vượt quá số tiền còn lại trên tài khoản/thẻ hoặc vượt quá hạn mức giao dịch cho phép; Tài khoản/thẻ hạch toán bị phong tỏa/tạm khóa; Tài khoản thụ hưởng bị đóng hay do yêu cầu của cơ quan Nhà nước có thẩm quyền; Khách hàng vi phạm quy định tại Điều kiện, điều khoản này hoặc quy định của pháp luật, PGBank về việc sử dụng Dịch vụ; Khách hàng/Bên thụ hưởng/các thông tin liên quan nằm trong các danh sách Phòng, chống rửa tiền/tài trợ khủng bố của PGBank hoặc khi PGBank có căn cứ nghi ngờ về hoạt động rửa tiền, tài trợ khủng bố của KH … hoặc PGBank tạm ngừng Dịch vụ do các nguyên nhân khác nằm ngoài khả năng kiểm soát của PGBank; </li>
+                                    <li>Tự động trích nợ tài khoản/thẻ của KH (bao gồm nhưng không giới hạn từ tài khoản mặc định, tài khoản thanh toán phí của KH) để thanh toán cho các giao dịch, các loại phí giao dịch, phí dịch vụ liên quan đến dịch vụ Ngân hàng điện tử theo biểu phí của PGBank quy định từng thời kỳ, các khoản giao dịch thừa/rút quá số dư khả dụng/các khoản tiền ghi Có nhầm, thừa vào tài khoản/thẻ do PGBank hoặc tổ chức cung ứng dịch vụ thanh toán chuyển tiền phát hiện thấy có sai sót so với lệnh chuyển tiền của KH; </li>
+                                    <li>Được phép sử dụng thông tin KH trong các trường hợp sau: thực thi các yêu cầu giao dịch, phục vụ việc quản lý, giám sát, tư vấn, hỗ trợ, … giữa PGBank với KH và/hoặc sử dụng vào mục đích quảng bá, giới thiệu sản phẩm dịch vụ của PGBank cho KH và/hoặc chia sẻ cho bên thứ ba có hợp tác với PGBank nhằm cung cấp Dịch vụ và nâng cao chất lượng phục vụ, lợi ích của KH và/hoặc phục vụ việc điều tra hoạt động rửa tiền hoặc gửi cho cơ quan Nhà nước có thẩm quyền khi có căn cứ hoặc nghi ngờ; </li>
+                                    <li>Các quyền khác theo quy định của Điều kiện, điều khoản này và các quy định có liên quan của pháp luật và PGBank. </li>
+                                </ol>
+                            </li>
+                            <li>Trách nhiệm của PGBank: 
+                                <ol type="a">
+                                    <li>Đảm bảo các quyền lợi của KH theo bản Điều kiện, điều khoản này; </li>
+                                    <li>Đảm bảo hệ thống Dịch vụ Ngân hàng điện tử tuân thủ các quy định của pháp luật liên quan đến việc cung ứng Dịch vụ; </li>
+                                    <li>Ngoại trừ các trường hợp cung cấp thông tin/công bố theo quy định của pháp luật hoặc theo yêu cầu/thỏa thuận của KH (tại Điều kiện, điều khoản này và tại các văn bản, thỏa thuận khác), PGBank cam kết không bán, tiết lộ, rò rỉ các thông tin khách hàng; </li>
+                                    <li>Giải quyết các yêu cầu tra soát/khiếu nại của KH liên quan đến việc sử dụng Dịch vụ;  </li>
+                                    <li>Trong trường hợp KH muốn thu hồi, hủy bỏ hoặc sửa đổi giao dịch đã được PGBank xử lý, PGBank sẽ cố gắng bằng mọi biện pháp để thu hồi, hủy bỏ hoặc sửa đổi các giao dịch này trên cơ sở phù hợp quy định pháp luật, nhưng không chịu trách nhiệm nếu việc thu hồi, huỷ bỏ hoặc sửa đổi này không thực hiện được vì bất kỳ lý do gì; </li>
+                                    <li>Nỗ lực để các thông tin cung cấp cho KH là chính xác. Tuy nhiên, do đặc thù của Dịch vụ và một số tình huống vượt quá phạm vi kiểm soát của PGBank, PGBank không đảm bảo mọi thông tin là chính xác và không có sai sót; </li>
+                                    <li>PGBank không chịu trách nhiệm pháp lý nào (kể cả trách nhiệm bồi thường thiệt hại) đối với những thiệt hại, tổn thất của KH phát sinh trong những trường hợp sau: 
+									   <ol type="i">
+									        <li>Dịch vụ không thể thực hiện được do lỗi của nhà cung cấp dịch vụ mạng Internet, dịch vụ viễn thông (lỗi đường truyền internet, nghẽn mạng…); </li>
+									        <li>Các trường hợp bất khả kháng theo quy định của pháp luật; </li>
+									        <li>Số dư trong tài khoản/thẻ của KH không đủ để thực hiện giao dịch; </li>
+									        <li>Việc giao hàng, chất lượng hàng hóa dịch vụ khi KH thanh toán mua hàng trên mạng; </li>
+									        <li>Việc thông tin cá nhân, thông tin giao dịch và các thông tin có liên quan đến Dịch vụ bị công bố/công khai cho bất kỳ bên thứ ba nào trong các trường hợp khách quan ngoài tầm kiểm soát của PGBank (bị tin tặc tấn công trái phép, lỗi do nhà cung cấp dịch vụ viễn thông,…) sẽ là sự kiện loại trừ trách nhiệm của PGBank; </li>
+									        <li>Những trường hợp đã có cảnh báo cho KH trong quá trình thực hiện, nhưng không được KH lưu ý dẫn đến sai sót; </li>
+									        <li>KH thực hiện các giao dịch bị cấm theo quy định pháp luật. </li>
+									   </ol>
+		                            </li>
+                                    <li>PGBank không chịu trách nhiệm đối với bất kỳ thiệt hại, tổn thất của KH phát sinh trong quá trình sử dụng Dịch vụ trừ khi những thiệt hại, mất mát này do lỗi chủ quan của PGBank; </li>
+                                    <li>Các trách nhiệm khác theo quy định của Điều kiện, điều khoản này và các quy định có liên quan của pháp luật và PGBank.  </li>
+                                </ol>
+                        </ol>
+                        <strong>Điều 4.	Đăng ký, sử dụng Dịch vụ và hiệu lực ràng buộc trách nhiệm của Khách hàng với các điều khoản, điều kiện, yêu cầu về Dịch vụ  </strong>
+                        <ol>
+                            <li>Phương thức đăng ký Dịch vụ: Khách hàng được đăng ký Dịch vụ/các tính năng của Dịch vụ tại các Điểm giao dịch của PGBank hoặc đăng ký trực tuyến <i>(Bao gồm nhưng không giới hạn qua tin nhắn SMS, Mobile Banking, Internet Banking, Ứng dụng cài đặt trên thiết bị di động hoặc các kênh trực tuyến khác được PGBank triển khai trong từng thời kỳ)</i> theo quy định của PGBank từng thời kỳ. Khách hàng đăng ký trực tuyến cũng có nghĩa vụ, quyền hạn theo các quy định, điều khoản điều kiện của pháp luật và của PGBank về các dịch vụ, tính năng đăng ký.  </li>
+                            <li>Khách hàng hiểu và đồng ý rằng: 
+								<ol type="a">
+									<li>Điều kiện, điều khoản này có hiệu lực áp dụng đối với tất cả các Dịch vụ/tính năng mà  Khách hàng đã đăng ký, sử dụng thông qua bất kỳ phương thức nào nêu tại Khoản 1 Điều này.  </li>
+									<li>Ngoài việc bị ràng buộc hiệu lực áp dụng của Điều kiện, điều khoản này theo quy định tại Điểm a Khoản này, khi KH đăng ký Dịch vụ/tính năng thông qua kênh đăng ký trực tuyến quy định tại Khoản 1 Điều này <i>(Bằng việc KH đồng ý/thực hiện theo các yêu cầu/thao tác/chỉ dẫn/hướng dẫn và các hình thức khác của PGBank thể hiện trên kênh đăng ký trực tuyến đó phù hợp với quy định của pháp luật hoặc PGBank từng thời kỳ)</i>, đồng nghĩa với việc KH đã chịu sự điều chỉnh, ràng buộc về mặt pháp lý theo các Điều khoản, điều kiện, yêu cầu, quy định về Dịch vụ/tính năng tương ứng do PGBank quy định trong từng thời kỳ không phụ thuộc vào việc các Điều khoản, điều kiện, yêu cầu, quy định về Dịch vụ/tính năng tương ứng đó được PGBank công bố thông qua bất kỳ hình thức nào <i>(Bao gồm nhưng không giới hạn những hình thức như sau: Công bố trên website của PGBank và/hoặc thông báo tại các Điểm giao dịch và/hoặc bất cứ phương thức nào khác phù hợp với quy định của pháp luật và/hoặc theo quyết định của PGBank). </i>Khách hàng cũng đồng ý và hiểu rằng, các Điều khoản, điều kiện, yêu cầu, quy định về Dịch vụ tương ứng được PGBank công bố thông qua bất kỳ hình thức nào nêu tại Điểm này có giá trị áp dụng như khi được thể hiện dưới hình thức văn bản giấy, trong trường hợp này, các Bên có trách nhiệm thực hiện mà không cần phải tiến hành lập, ký kết thêm dưới hình thức văn bản giấy. </li>
+									<li>PGBank có thể sử dụng một hoặc một số các Thông tin bảo mật khi KH đăng ký/sử dụng Dịch vụ làm yếu tố bảo mật xác thực KH và/hoặc giao dịch. Vì vậy, KH phải quản lý, đảm bảo các Thông tin bảo mật không bị đánh cắp, không bị tiết lộ, không bị lợi dụng bởi bất kỳ tổ chức, cá nhân nào khác dưới bất kỳ hình thức nào và phải chịu trách nhiệm về tất cả các Thông tin bảo mật đã đăng ký với PGBank hoặc được PGBank cung cấp. </li>
+									<li>Khách hàng đồng ý rằng số điện thoại KH đăng ký Dịch vụ và/hoặc lựa chọn để nhận mã xác thực OTP sẽ là số điện thoại để xác thực mọi giao dịch Ngân hàng điện tử. </li>
+								</ol>
+		                    </li>
+		                </ol>
+                        <strong>Điều 5.	Truy cập và thực hiện giao dịch </strong>
+                        <ol>
+                            <li>Khách hàng được thực hiện giao dịch 24 giờ trong ngày và 07 ngày trong tuần. Thời gian giao dịch đối với mỗi loại giao dịch là khác nhau. Các giao dịch thực hiện sau thời điểm kết thúc giao dịch trong ngày theo quy định của PGBank có thể được chuyển tiếp xử lý và/hoặc có hiệu lực vào ngày làm việc tiếp theo. </li>
+                            <li>Khách hàng cam kết các giao dịch thực hiện qua dịch vụ Ngân hàng điện tử được KH lập, kiểm tra với thông tin chính xác và đầy đủ theo quy định của PGBank. </li>
+                            <li>Khách hàng chấp nhận rằng bất cứ hành động nào truy cập Dịch vụ của PGBank bằng Thông tin bảo mật là do KH tạo ra và KH chịu mọi trách nhiệm về các giao dịch này. PGBank được quyền xử lý giao dịch mà không cần thêm bất kỳ xác nhận và thông báo của KH. </li>
+                            <li>Bất kỳ giao dịch nào đã được thực hiện thành công (có thông báo về việc giao dịch đã được xử lý trên hệ thống của PGBank) sẽ được PGBank coi là có giá trị và không hủy ngang. KH hoàn toàn chịu trách nhiệm và có nghĩa vụ với PGBank đối với các giao dịch đó. </li>
+                            <li>Khách hàng không thể hủy, thay đổi, phủ nhận, thoái thác bất kỳ yêu cầu Dịch vụ đã được lập. Trường hợp KH muốn hủy yêu cầu thực hiện của mình, PGBank chỉ xem xét khi thỏa mãn đồng thời các điều kiện sau: (i) PGBank chưa xử lý giao dịch trên hệ thống của PGBank; (ii) Yêu cầu hủy giao dịch được gửi đến PGBank và được PGBank xác nhận tính chính xác của nội dung yêu cầu đó; (iii) Việc hủy giao dịch không ảnh hưởng đến lợi ích của PGBank đồng thời KH tự cam kết việc hủy giao dịch này không ảnh hưởng đến bất kỳ bên thứ ba nào, nếu có KH chịu hoàn toàn trách nhiệm; (iv) Việc hủy giao dịch phù hợp với quy định của PGBank, quy định pháp luật trong từng thời kỳ. </li>
+                            <li>Việc cung cấp các Dịch vụ Ngân hàng điện tử có thể bị ngắt quãng, trì hoãn, không liên tục và bị gián đoạn. KH thừa nhận rằng tại một số thời điểm nhất định có thể không truy cập, sử dụng, thực hiện được một số hoặc tất cả các giao dịch của Dịch vụ Ngân hàng điện tử do bảo trì hệ thống hoặc bất kỳ lý do nào khác. </li>
+                            <li>Giá trị các giao dịch và các khoản phí quy định tại biểu phí sử dụng Dịch vụ của PGBank và các khoản lãi/phạt (nếu có) sẽ được ghi Nợ/Có trực tiếp từ tài khoản/thẻ của KH tại PGBank. </li>
+                        </ol>
+                        <strong>Điều 6.	Biểu phí và hạn mức giao dịch</strong>
+                        <ol>
+                            <li>Biểu phí và hạn mức giao dịch của Dịch vụ được PGBank quy định và có thể thay đổi theo từng thời kỳ.  </li>
+                            <li>Khách hàng có trách nhiệm thanh toán đầy đủ các khoản phí liên quan đến Dịch vụ theo Biểu phí của PGBank. Phí dịch vụ sẽ được PGBank tự động trích Nợ từ tài khoản/thẻ của KH tại PGBank, tùy theo từng loại phí và từng loại giao dịch mà phí dịch vụ sẽ được thu trên từng giao dịch hoặc thu định kỳ theo tháng/quý/năm hoặc thu một lần trong quá trình sử dụng Dịch vụ. Trường hợp tại thời điểm thu phí tài khoản đăng ký thanh toán phí Dịch vụ của KH không đủ số dư thì PGBank có quyền trích Nợ từ tài khoản/thẻ khác của KH hoặc thu bù vào thời điểm khác hoặc yêu cầu KH thanh toán cho PGBank bằng các hình thức khác. </li>
+                            <li>Trong trường hợp số dư trong tài khoản/thẻ của KH không đủ để thanh toán các khoản phí duy trì/phí sử dụng dịch vụ, PGBank sẽ tạm dừng cung cấp dịch vụ theo quy định của PGBank và Dịch vụ sẽ được mở lại cho Khách hàng khi PGBank thu đủ phí. </li>
+                            <li>Khách hàng có thể bị tính phí bởi các nhà cung cấp dịch vụ khác khi KH tải và sử dụng ứng dụng trên thiết bị của mình. Trong trường hợp này, PGBank không chịu trách nhiệm về bất kỳ khoản phí phát sinh nào cho KH (nếu có). </li>
+                            <li>Khi có sự thay đổi về biểu phí và/hoặc hạn mức giao dịch, PGBank sẽ thông báo cho KH bằng các hình thức như sau: Công bố trên website của PGBank và/hoặc thông báo tại các Điểm giao dịch và/hoặc bất cứ phương thức nào phù hợp với quy định của pháp luật và/hoặc theo quyết định của PGBank trong từng thời kỳ. Việc KH sử dụng Dịch vụ được coi là KH đã đồng ý với biểu phí và hạn mức liên quan đến Dịch vụ. </li>
+                        </ol>
+                        <strong>Điều 7.	Chứng từ giao dịch </strong>
+                        <ol>
+                            <li>Các tài liệu, chứng từ liên quan đến việc cung cấp, sử dụng dịch vụ và/hoặc giao dịch giữa KH và PGBank cũng như các số liệu được ghi chép, xác nhận và lưu giữ bởi hệ thống các kênh phân phối điện tử của PGBank sẽ là bằng chứng về việc giao dịch của KH với PGBank. </li>
+                            <li>Chứng từ giao dịch được sử dụng đối với các dịch vụ Ngân hàng điện tử giữa KH với PGBank là chứng từ điện tử. </li>
+                            <li>Nội dung của chứng từ điện tử phải tuân thủ quy định của PGBank và các quy định khác của pháp luật liên quan đến giao dịch điện tử. </li>
+                        </ol>
+                        <strong>Điều 8.	Bảo mật thông tin</strong>
+                        <ol>
+                            <li>PGBank và KH cam kết bảo mật các thông tin dưới đây:
+							    <ol type="a">
+									<li>Tên truy cập, Mật khẩu truy cập, mã xác thực giao dịch. </li>
+									<li>Lịch sử giao dịch. </li>
+									<li>Các thông tin liên quan đến số tiền, chi tiết giao dịch và tài khoản của KH. </li>
+									<li>Và các thông tin khác theo quy định của pháp luật. </li>
+								</ol>
+							</li>
+                            <li>Các thông tin cần bảo mật chỉ được công bố theo quy định của pháp luật hoặc theo yêu cầu của KH theo đúng thỏa thuận với PGBank và theo quy định của pháp luật. </li>
+                            <li>Khách hàng chấp thuận việc PGBank công bố các thông tin bảo mật cho chính KH và sau khi xác nhận các thông tin cá nhân. </li>
+                            <li>PGBank khuyến khích Khách hàng đổi Mật khẩu truy cập thường xuyên. Để đổi Mật khẩu truy cập, Khách hàng thực hiện các thao tác/yêu cầu/thủ tục qua Dịch vụ PG APP, Dịch vụ Internet Banking/tại các Điểm giao dịch/các hình thức khác theo quy định của PGBank trong từng thời kỳ. </li>
+                        </ol>
+                        <strong>Điều 9.	Rủi ro và xử lý rủi ro</strong>
+                        <ol>
+                            <li>Khách hàng đồng ý rằng đã nhận biết được những rủi ro có thể gặp phải trong quá trình thực hiện giao dịch Ngân hàng điện tử, bao gồm nhưng không giới hạn: 
+                                <ol type="a">
+                                    <li>Lỗi kỹ thuật hệ thống phần cứng, phần mềm có thể xảy ra: do tốc độ, chất lượng đường truyền hoặc lỗi thiết bị, lỗi phần mềm, việc kết nối giữa Khách hàng và hệ thống của PGBank có thể không thực hiện được, bị gián đoạn, bị chậm,… </li>
+                                    <li>Nguy cơ ngưng trệ hoạt động của hệ thống mạng do tắc nghẽn đường truyền. </li>
+                                    <li>Các máy tính, thiết bị di động có thể bị nhiễm virus làm ngưng trệ các hoạt động trao đổi thông tin trong mạng máy tính và mạng di động. </li>
+                                    <li>Lệnh giao dịch có thể bị treo, bị ngừng, bị trì hoãn, hoặc có lỗi dữ liệu. </li>
+                                    <li>Việc nhận dạng các tổ chức hoặc người tiếp nhận giao dịch có thể bị nhầm, sai sót. </li>
+                                    <li>Số liệu giao dịch hoặc thông tin giao dịch khác có thể có lỗi hoặc sai, lệch. </li>
+                                    <li>Những rủi ro khác mà PGBank công bố trên website của PGBank và/hoặc thông báo tại các Điểm giao dịch và/hoặc bất cứ phương thức nào phù hợp với quy định của pháp luật và/hoặc theo quyết định của PGBank trong từng thời kỳ. </li>
+                                </ol>
+                            </li>
+                            <li>Khách hàng đồng ý rằng PGBank được miễn trừ trách nhiệm trong trường hợp KH không nhận được các thông báo hoặc các thông tin PGBank gửi do: 
+							    <ol type="a">
+                                    <li>Địa chỉ email của KH không nhận được thư điện tử vì bất kỳ lý do nào mà không phải do lỗi của PGBank. </li>
+                                    <li>Khách hàng thay đổi địa chỉ liên lạc, số điện thoại, fax hoặc địa chỉ email và các thông tin đã đăng ký với PGBank…mà không thông báo bằng văn bản cho PGBank.  </li>
+                                    <li>Lỗi của KH hay của bên thứ ba bất kì. </li>
+                                </ol>
+		                    </li>
+                            <li>Khách hàng đồng ý rằng PGBank được miễn trừ trách nhiệm đối với bất kỳ sai sót, thiệt hại hoặc tổn thất nào xảy ra đối với KH phát sinh trực tiếp hoặc gián tiếp từ một trong các sự kiện dưới đây: 
+							    <ol type="a">
+                                    <li>Khách hàng vô ý/cố ý để mất, mất cắp, bị lộ (các) Thông tin bảo mật dẫn đến việc/cho phép người khác sử dụng Dịch vụ và tiếp cận các thông tin mà Dịch vụ cung cấp hoặc các Thông tin bảo mật bị người khác giả mạo/lạm dụng/bị đánh cắp hoặc bị sử dụng trái phép dưới bất kỳ hình thức nào. </li>
+                                    <li>Khách hàng cung cấp chậm trễ, không đầy đủ, không rõ ràng hoặc không chính xác các thông tin cho PGBank, bao gồm các thông tin về lệnh giao dịch, số tiền giao dịch và các thông tin khác có liên quan, dẫn đến việc giao dịch của KH không thực hiện được hoặc thực hiện không chính xác. </li>
+                                    <li>Khách hàng không tuân thủ bất kỳ điều khoản, điều kiện nào của bản Điều kiện, điều khoản này.  </li>
+                                    <li>Lỗi của bất kỳ bên thứ ba nào, bao gồm cả những đối tác của PGBank trong việc cung cấp Dịch vụ. </li>
+                                    <li>Lỗi của hệ thống hay bất kỳ phương tiện kỹ thuật nào liên quan đến hệ thống, kể cả trường hợp hệ thống từ chối tên truy cập, mật khẩu vì bất kỳ lý do nào.  </li>
+                                    <li>Các trường hợp khác theo quy định của pháp luật. </li>
+                                </ol>
+		                    </li>
+                            <li>Khách hàng đồng ý rằng PGBank được miễn trừ trách nhiệm khi tạm ngừng hoặc chấm dứt cung cấp Dịch vụ khi thuộc một trong các trường hợp sau: 
+							    <ol type="a">
+                                    <li>Có yêu cầu, quyết định của cơ quan Nhà nước có thẩm quyền về việc ngừng cung cấp Dịch vụ. </li>
+                                    <li>Xuất hiện sự cố nghiêm trọng đối với hệ thống mà PGBank buộc phải tạm ngừng cung cấp Dịch vụ để khắc phục nhằm đảm bảo an toàn hệ thống; PGBank trong khả năng của mình sẽ cố gắng khắc phục nhanh nhất sự cố và đưa hệ thống về trạng thái bình thường. </li>
+                                    <li>Trường hợp việc bảo trì, bảo dưỡng, nâng cấp hệ thống dù đã được thực hiện vào những ngày không giao dịch nhưng buộc phải kéo dài ngoài sự mong đợi của PGBank, thì khi đó KH có thể lựa chọn hình thức giao dịch khác để thực hiện giao dịch của mình. </li>
+                                    <li>Khi xảy ra các sự kiện bất khả kháng khác như thiên tai, hỏa hoạn, lũ lụt, động đất; sự phá hoại tấn công, chiến tranh, nổi loạn, đình công, sự thay đổi chính sách pháp luật của Nhà nước hoặc các sự kiện khác được pháp luật xem là sự kiện bất khả kháng. </li>
+                                </ol>
+		                    </li>
+							<li>Các trường hợp bất khả kháng theo quy định pháp luật.  </li>
+                        </ol>
+						<li>
+						    Hai bên sẽ không chịu bất cứ trách nhiệm pháp lý nào về các sự cố gây cản trở, gián đoạn hoặc ngừng hoạt động của Dịch vụ nếu các sự cố đó được gây ra bởi một sự kiện bất khả kháng theo quy định của pháp luật nằm ngoài tầm kiểm soát, phòng ngừa và dự kiến của các bên. 
+						</li>
+						<strong>Điều 10.	Xử lý vi phạm </strong>
+                        <ol>
+                            <li>Mỗi bên đều có quyền yêu cầu ngừng cung cấp hoặc sử dụng Dịch vụ nếu phát hiện có sự vi phạm quy định an toàn bảo mật của Dịch vụ hoặc có sự sửa đổi Dịch vụ trái phép. </li>
+                            <li>Chứng từ giao dịch được sử dụng đối với các dịch vụ Ngân hàng điện tử giữa KH với PGBank là chứng từ điện tử. </li></li>
+                            <li>Ngoại trừ các trường hợp nêu tại Điểm f, Khoản 2, Điều 3 và Điều 9, bên nào vi phạm quy định hoặc có lỗi gây ra thiệt hại cho bên kia phải chịu trách nhiệm bồi thường mọi thiệt hại và tổn thất, bao gồm cả nghĩa vụ thanh toán mà Bên bị thiệt hại phải thực hiện đối với bên thứ ba do hậu quả của việc vi phạm hay lỗi của bên vi phạm gây ra. </li>
+                        </ol>
+						<strong>Điều 11.	Giải quyết tranh chấp  </strong>
+                        <ol>
+                            <li>Mọi tranh chấp phát sinh sẽ được các bên giải quyết thông qua thương lượng trên tinh thần hợp tác. Trường hợp thương lượng không thành thì tranh chấp sẽ được đưa ra Tòa án nhân dân có thẩm quyền để giải quyết. </li>
+                            <li>Khách hàng cam kết nơi cư trú, số điện thoại sử dụng Dịch vụ là nơi cứ trú hợp pháp, số điện thoại thuộc sở hữu của KH. Đây là địa chỉ, số điện thoại PGBank gửi tất cả các văn bản, tài liệu giao dịch trong quá trình thực hiện Dịch vụ và Điều kiện, điều khoản này và cơ quan Nhà nước có thẩm quyền gửi thư mời, thông báo, tống đạt, niêm yết công khai nhằm yêu cầu KH thực hiện nghĩa vụ theo Điều kiện, điều khoản này. KH phải thông báo cho PGBank, cơ quan địa phương về sự thay đổi địa chỉ thường trú, địa chỉ tạm trú hoặc nơi cư trú mới, số điện thoại mới. </li></li>
+                            <li>Trường hợp KH vi phạm nghĩa vụ thông báo về sự thay đổi số Chứng minh nhân dân/Căn cước công dân/Hộ chiếu, địa chỉ thường trú, địa chỉ tạm trú, nơi cư trú mới, số điện thoại mới theo quy định của Điều kiện, điều khoản này. KH được xem là cố tình giấu thông tin liên lạc nhằm trốn tránh thực hiện nghĩa vụ theo Điều kiện, điều khoản này và KH chấp nhận việc PGBank xử lý tài sản vắng mặt/Tòa án xét xử vụ án vắng mặt, kể cả trường hợp không lấy được lời khai của KH. </li>
+                        </ol>
+						<strong>Điều 12.	Thời hạn hiệu lực và điều khoản thi hành  </strong>
+                        <ol>
+                            <li>Điều kiện, điều khoản này có hiệu lực kể từ ngày KH xác nhận đăng ký Dịch vụ Ngân hàng điện tử/ký vào “Giấy đề nghị kiêm hợp đồng đăng ký sử dụng dịch vụ Ngân hàng điện tử” hoặc một giấy tờ/bằng chứng bất kỳ của PGBank thể hiện việc KH đăng ký sử dụng Dịch vụ cho đến khi chấm dứt theo quy định tại Khoản 5 Điều này. </li>
+                            <li>Khách hàng khi không còn nhu cầu sử dụng Dịch vụ phải gửi văn bản theo mẫu của PGBank để chấm dứt Điều kiện, điều khoản này. PGBank không mặc nhiên hủy tên truy cập cũng như không chịu trách nhiệm về các mất mát, rủi ro xảy ra khi KH không thực hiện trách nhiệm thông báo việc chấm dứt sử dụng Dịch vụ. </li></li>
+                            <li>Trường hợp KH đã chấm dứt sử dụng Dịch vụ, KH vẫn bị ràng buộc bởi các Điều kiện, điều khoản này và các thỏa thuận khác liên quan đến quyền và trách nhiệm của KH mà KH chưa thực hiện hoàn tất tại thời điểm chấm dứt Dịch vụ. </li>
+                            <li>Các Bên đồng ý rằng (các) điều khoản trong Điều kiện, điều khoản này có giá trị độc lập với nhau trừ trường hợp rõ ràng được dẫn chiếu một cách chính xác và đầy đủ. Việc một trong các điều khoản trong Điều kiện, điều khoản này bị vô hiệu sẽ không ảnh hưởng đến việc thực thi các điều khoản khác. Trường hợp có bất kỳ điều khoản nào bị vô hiệu thì hai Bên cam kết rằng bằng tất cả nỗ lực của mình điều chỉnh sao cho phù hợp với các quy định của pháp luật để thực thi. </li>
+                            <li>Điều kiện, điều khoản này chấm dứt hiệu lực trong các trường hợp: 
+							    <ol type="a">
+                                    <li>Khách hàng yêu cầu chấm dứt Điều kiện, điều khoản này.  </li>
+                                    <li>Khách hàng vi phạm các quy định tại Điều kiện, điều khoản này hoặc thực hiện hành vi bị cấm theo quy định của pháp luật. </li>
+                                    <li>PGBank buộc phải chấm dứt cung cấp Dịch vụ khi xảy ra các trường hợp nêu tại Khoản 4 Điều 9 của Điều kiện, điều khoản này. </li>
+                                    <li>Các trường hợp khác theo thỏa thuận của các bên hoặc theo quy định của pháp luật. </li>
+                                </ol>
+							</li>
+							 <li>PGBank và KH đồng ý rằng Điều kiện, điều khoản này có hiệu lực áp dụng tương tự trong trường hợp các giao dịch liên quan đến tài khoản/thẻ của KH mở tại PGBank được thực hiện thông qua Dịch vụ Ngân hàng điện tử hoặc các phương tiện điện tử khác. </li>
+							 <li>Điều kiện, điều khoản này thay thế cho tất cả các Điều kiện và điều khoản về đăng ký và sử dụng Dịch vụ Ngân hàng điện tử trước đây về đăng ký sử dụng Dịch vụ (nếu có). </li>
+							 <li>PGBank có quyền sửa đổi, bổ sung Điều kiện, điều khoản này bất cứ lúc nào trên cơ sở phù hợp quy định pháp luật và niêm yết công khai, thông báo nội dung thay đổi tới KH trước khi áp dụng với thời gian thông báo do PGBank hoàn toàn quyết định và phương thức niêm yết, thông báo cụ thể như sau:  
+							    <ol type="a">
+                                    <li>Niêm yết trên website: www.pgbank.com.vn của PGBank; và/hoặc  </li>
+                                    <li>Niêm yết tại các Điểm giao dịch; và/hoặc </li>
+                                    <li>Thông báo bằng văn bản hoặc email hoặc trên phương tiện thông tin đại chúng hoặc dưới bất cứ hình thức nào khác mà PGBank cho là phù hợp.</li>
+                                    <li>Trường hợp KH không đồng ý với những nội dung thay đổi, KH thực hiện gửi văn bản yêu cầu chấm dứt sử dụng Dịch vụ Ngân hàng điện tử. Việc KH tiếp tục sử dụng Dịch vụ Ngân hàng điện tử sau thời điểm PGBank sửa đổi, bổ sung, PGBank hiểu rằng KH đồng ý với những sửa đổi, bổ sung đó.  </li>
+                                </ol>
+		                     </li>
+							 <li>Điều kiện, điều khoản này bao gồm 12 Điều và các tài liệu kèm theo bao gồm nhưng không giới hạn ở: Giấy đề nghị kiêm hợp đồng mở và sử dụng dịch vụ tài khoản thanh toán, Giấy đề nghị kiêm hợp đồng đăng ký sử dụng dịch vụ Ngân hàng điện tử, văn bản yêu cầu thay đổi thông tin, lệnh giao dịch, chứng từ, tài liệu, dữ liệu điện tử, dữ liệu ghi âm có liên quan. </li>
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Đóng</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <script src="../Resources/Pgb_theme/assets/components/jquery/dist/jquery.js"></script>
+
+            <!-- jQuery UI 1.11.4 -->
+            
+
+            <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+            <script>
+                $.widget.bridge('uibutton', $.ui.button);
+            </script>
+
+            <!-- popper -->
+            <script src="../Resources/Pgb_theme/assets/components/popper/popper.min.js"></script>
+
+            <!-- Bootstrap v4.0.0-beta -->
+            <script src="../Resources/Pgb_theme/assets/components/bootstrap/dist/js/bootstrap.js"></script>
+
+            <!-- ChartJS -->
+            <script src="../Resources/Pgb_theme/assets/components/chart-js/chart.js"></script>
+
+            <!-- daterangepicker -->
+            <script src="../Resources/Pgb_theme/assets/components/moment/min/moment.min.js"></script>
+            <script src="../Resources/Pgb_theme/assets/components/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+            <!-- datepicker -->
+            <script src="../Resources/Pgb_theme/assets/components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+
+            <!-- Bootstrap WYSIHTML5 -->
+            <script src="../Resources/Pgb_theme/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js"></script>
+
+            <!-- Slimscroll -->
+            <script src="../Resources/Pgb_theme/assets/components/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+            <!-- FastClick -->
+            <script src="../Resources/Pgb_theme/assets/components/fastclick/lib/fastclick.js"></script>
+
+            <script src="../Resources/Pgb_theme/js/template.js"></script>
+            <script src="../Resources/Pgb_theme/js/pages/dashboard.js"></script>
+
+            <!-- maximum_admin for demo purposes -->
+            <script src="../Resources/Pgb_theme/js/demo.js"></script>
+
+            <script src="../Resources/Pgb_theme/js/jquery.bxslider.min.js"></script>
+            <script type="text/javascript">
+
+                $(document).ready(function () {
+                    $('form[autocomplete="off"] input, input[autocomplete="off"]').each(function () {
+                        var input = this;
+                        setTimeout(function () {
+                            $(input).removeAttr('readonly');
+                        }, 300); // 100 does not work - too fast.
+                    });
+                    window.sc
+
+                });
+                var windowsize = $(window).width();
+                var slider = $('.slides').bxSlider({
+                    auto: true,
+                    autoHover: true,
+                    controls: false,
+                    infiniteLoop: true,
+                    onSliderLoad: function (currentIndex) {
+                        if (windowsize < 768) {
+                            $("#slides").html("");
+                            $('.bxslider li').eq(currentIndex + 1).find(".caption").clone().appendTo("#caption");
+                        }
+                    },
+                    onSlideBefore: function ($slideElement, oldIndex, newIndex) {
+                        if (windowsize < 768) {
+                            $("#caption").html("");
+                            $slideElement.find(".caption").clone().appendTo("#caption");
+                        }
+                    }
+                });
+                $(window).resize(function () {
+                    slider.reloadSlider({
+                        auto: true,
+                        autoHover: true,
+                        controls: false,
+                        infiniteLoop: true,
+                        onSliderLoad: function (currentIndex) {
+                            if (windowsize < 768) {
+                                $("#caption").html("");
+                                $('.slides li').eq(currentIndex + 1).find(".caption").clone().appendTo("#caption");
+                            }
+                        },
+                        onSlideBefore: function ($slideElement, oldIndex, newIndex) {
+                            if (windowsize < 768) {
+                                $("#caption").html("");
+                                $slideElement.find(".caption").clone().appendTo("#caption");
+                            }
+                        }
+                    });
+
+                });
+
+                function reportWindowSize() {
+                    var winsize = $(window).width();
+                    if (winsize < 992) {
+                        this.document.getElementById('dvCapcha').style.display = 'block'
+                        this.document.getElementById('Label7').style.width = '130px';
+                        this.document.getElementById('tbSMS').placeholder = 'Nhập OTP...'
+
+                    }
+                    else {
+                        this.document.getElementById('dvCapcha').style.display = 'flex';
+                        this.document.getElementById('Label7').style.width = '80px';
+                        this.document.getElementById('tbSMS').placeholder = 'Nhập mã xác thực OTP được gửi đến số điện thoại của Quý khách'
+                    }
+                }
+                window.onresize = reportWindowSize;
+
+            </script>
+            <script type="text/javascript">
+
+                function fnRemoveEmpty(e) {
+                    var idInput = e.getAttribute('id')
+
+                    var tbFullName = document.getElementById('tbFullName').value;
+                    var tbIdentify = document.getElementById('tbIdentify').value;
+                    var tbCardNumber = document.getElementById('tbCardNumber').value;
+                    var tbPin = document.getElementById('tbPin').value;
+                    var tbPhoneNumber = document.getElementById('tbPhoneNumber').value;
+                    //  var tbSmsOTP = document.getElementById('tbSMS').value;
+                    var tbCapcha = document.getElementById('tbCapcha').value;
+
+
+                    if (idInput == 'tbFullName' && !isEmpty(tbFullName))
+                        //code here
+                        document.getElementById('tbFullNameMsg').style.display = 'none';
+
+                    if (idInput == 'tbIdentify' && !isEmpty(tbIdentify))
+                        //code here
+                        document.getElementById('tbIdentifyMsg').style.display = 'none';
+
+                    if (idInput == 'tbCardNumber' && !isEmpty(tbCardNumber))
+                        //code here
+                        document.getElementById('tbCardNumberMsg').style.display = 'none';
+
+                    if (idInput == 'tbPin' && !isEmpty(tbPin))
+                        //code here
+                        document.getElementById('tbPinMsg').style.display = 'none';
+
+                    if (idInput == 'tbPhoneNumber' && !isEmpty(tbPhoneNumber))
+                        //code here
+                        document.getElementById('tbPhoneNumberMsg').style.display = 'none';
+
+                    if (idInput == 'tbCapcha' && !isEmpty(tbCapcha))
+                        //code here
+                        document.getElementById('tbCapchaMsg').style.display = 'none';
+
+
+                }
+
+                function openModal() {
+
+                    reportWindowSize()
+                    document.getElementById('tbSMS').disabled = true;
+
+                    var tbFullName = document.getElementById('tbFullName');
+                    var tbIdentify = document.getElementById('tbIdentify');
+                    var tbCardNumber = document.getElementById('tbCardNumber');
+                    var tbPin = document.getElementById('tbPin');
+                    var tbPhoneNumber = document.getElementById('tbPhoneNumber');
+                    var tbSmsOTP = document.getElementById('tbSMS');
+                    var tbCapcha = document.getElementById('tbCapcha');
+
+                    var btSubmit = document.getElementById('btSubmit');
+                    var lbCountTime = document.getElementById('lbCountTime')
+                    var lbError = document.getElementById('lbError')
+                    var cmdSMS = document.getElementById('cmdSMS')
+
+                    var tbFullNameMsg = document.getElementById('tbFullNameMsg');
+                    var tbIdentifyMsg = document.getElementById('tbIdentifyMsg');
+                    var tbCardNumberMsg = document.getElementById('tbCardNumberMsg');
+                    var tbPinMsg = document.getElementById('tbPinMsg');
+                    var tbPhoneNumberMsg = document.getElementById('tbPhoneNumberMsg');
+                    var tbCapchaMsg = document.getElementById('tbCapchaMsg');
+
+                    tbFullNameMsg.style.display = "none";
+                    tbIdentifyMsg.style.display = "none";
+                    tbCardNumberMsg.style.display = "none";
+                    tbPinMsg.style.display = "none";
+                    tbPhoneNumberMsg.style.display = "none";
+                    tbCapchaMsg.style.display = "none";
+
+                    document.getElementById('divCode').style.display = 'none';
+                    document.getElementById('divContent').style.display = 'block';
+                    document.getElementById('modalContent').style.marginTop = '0%';
+                    document.getElementById('divAuthSms').style.display = "none";
+
+                    tbFullName.disabled = false;
+                    tbIdentify.disabled = false;
+                    tbCardNumber.disabled = false;
+                    tbPin.disabled = false;
+                    tbPhoneNumber.disabled = false;
+                    //  tbSmsOTP.disabled = false;
+                    btSubmit.disabled = false;
+                    tbCapcha.disabled = false;
+
+                    tbFullName.value = '';
+                    tbIdentify.value = '';
+                    tbCardNumber.value = '';
+                    tbPin.value = '';
+                    tbPhoneNumber.value = '';
+                    tbCapcha.value = '';
+                    tbSmsOTP.value = '';
+                    lbCountTime.innerHTML = '';
+                    lbError.innerHTML = '';
+
+                    cmdSMS.style.display = "block";
+                    cmdSMS.style.visibility = "visible";
+                    GetCapcha();
+
+
+                }
+
+                function ReloadCapcha_Onclick() {
+                    GetCapcha();
+                }
+
+
+                function GetCapcha() {
+                    var sndData = {
+                        imgcheck: '1'
+                    };
+
+                    $.getJSON("api/ApiEbank/GetImgVerify", sndData,
+                        function (data) {
+                            $.each(data, function (key, val) {
+                                //viet code o day
+                                if (key == "url" && val != "error") {
+                                    document.getElementById('imgCapcha').src = val;
+                                } else return;
+
+                            });
+                        });
+                }
+
+                function SubmitForgotPass() {
+                    document.getElementById('loading').style.display = 'block';
+
+                    var tbFullName = document.getElementById('tbFullName');
+                    var tbIdentify = document.getElementById('tbIdentify');
+                    var tbCardNumber = document.getElementById('tbCardNumber');
+                    var tbPin = document.getElementById('tbPin');
+                    var tbPhoneNumber = document.getElementById('tbPhoneNumber');
+                    var tbSmsOTP = document.getElementById('tbSMS');
+                    var btSubmit = document.getElementById('btSubmit');
+                    var tbCapcha = document.getElementById("tbCapcha")
+                    var lengthUrl = (document.getElementById("imgCapcha").src).length;
+                    var imgCapcha = (document.getElementById("imgCapcha").src).slice(lengthUrl - 12, lengthUrl)
+
+                    var tbFullNameMsg = document.getElementById('tbFullNameMsg');
+                    var tbIdentifyMsg = document.getElementById('tbIdentifyMsg');
+                    var tbCardNumberMsg = document.getElementById('tbCardNumberMsg');
+                    var tbPinMsg = document.getElementById('tbPinMsg');
+                    var tbPhoneNumberMsg = document.getElementById('tbPhoneNumberMsg');
+                    var tbCapchaMsg = document.getElementById('tbCapchaMsg');
+
+                    tbFullNameMsg.style.display = "none";
+                    tbIdentifyMsg.style.display = "none";
+                    tbCardNumberMsg.style.display = "none";
+                    tbPinMsg.style.display = "none";
+                    tbPhoneNumberMsg.style.display = "none";
+                    tbCapchaMsg.style.display = "none";
+
+                    if (isEmpty(tbFullName.value)) {
+                        document.getElementById('loading').style.display = 'none';
+                        tbFullNameMsg.style.display = "block";
+                        tbFullNameMsg.innerHTML = 'Quý khách vui lòng nhập Họ và tên';
+                        return;
+                    } else if (isEmpty(tbIdentify.value)) {
+                        document.getElementById('loading').style.display = 'none';
+                        tbIdentifyMsg.style.display = "block";
+                        tbIdentifyMsg.innerHTML = 'Quý khách vui lòng nhập Số CMND/CCCD/Hộ chiếu';
+                        return;
+                    }
+                    else if (isEmpty(tbCardNumber.value)) {
+                        document.getElementById('loading').style.display = 'none';
+                        tbCardNumberMsg.style.display = "block";
+                        tbCardNumberMsg.innerHTML = 'Quý khách vui lòng nhập Số thẻ';
+                        return;
+
+                    }
+                    else if (isEmpty(tbPin.value)) {
+                        document.getElementById('loading').style.display = 'none';
+                        tbPinMsg.style.display = "block";
+                        tbPinMsg.innerHTML = 'Quý khách vui lòng nhập Mã PIN';
+                        return;
+
+                    }
+                    else if (isEmpty(tbPhoneNumber.value)) {
+                        document.getElementById('loading').style.display = 'none';
+                        tbPhoneNumberMsg.style.display = "block";
+                        tbPhoneNumberMsg.innerHTML = 'Quý khách vui lòng nhập Số điện thoại';
+                        return;
+
+                    }
+                    else if (isEmpty(tbCapcha.value)) {
+
+                        document.getElementById('loading').style.display = 'none';
+                        tbCapchaMsg.style.display = "block";
+                        tbCapchaMsg.innerHTML = 'Quý khách vui lòng nhập Mã kiểm tra';
+                        return;
+                    }
+
+                    if (document.getElementById('divAuthSms').style.display == "block" && document.getElementById('tbSMS').value == "") {
+                        document.getElementById('lbError').style.display = 'block';
+                        document.getElementById('lbError').innerHTML = 'Quý khách vui lòng nhập Mã xác thực OTP';
+                        document.getElementById('loading').style.display = 'none';
+                        return;
+                    }
+
+                    //if (isEmpty(tbFullName.value) || isEmpty(tbIdentify.value) || isEmpty(tbCardNumber.value)
+                    //    || isEmpty(tbPin.value) || isEmpty(tbPhoneNumber.value)
+                    //    || isEmpty(tbCapcha.value)) {
+                    //    document.getElementById('loading').style.display = 'none';
+                    //      document.getElementById('lbError').style.visibility = "visible";
+                    //                document.getElementById('lbError').innerHTML = 'Thông tin chưa chính xác/không hợp lệ. Quý khách vui lòng kiểm tra lại hoặc gọi hotline 1900555574 để được hỗ trợ.';
+                    //    return;
+                    //}
+                    var sndData = {
+                        fullName: vatrau(tbFullName.value),
+                        identify: tbIdentify.value,
+                        cardNumber: tbCardNumber.value,
+                        pinCode: tbPin.value,
+                        phoneNumber: tbPhoneNumber.value,
+                        smsOTP: tbSmsOTP.value,
+                        capChaCode: tbCapcha.value,
+                        imgUrl: imgCapcha
+                    };
+                    $.ajax({
+                        dataType: 'json',
+                        type: 'POST',
+                        url: 'api/ApiEbank/SubmitForgotPass',
+                        data: JSON.stringify(sndData),
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) { //change spelling here
+                            //viet code o day
+                            document.getElementById('loading').style.display = 'none';
+                            document.getElementById('lbCountTime').style.display = "none";
+                            var err = data.err;
+                            if (err == "ok") {
+                                tbFullName.disabled = true;
+                                tbIdentify.disabled = true;
+                                tbCardNumber.disabled = true;
+                                tbPin.disabled = true;
+                                tbPhoneNumber.disabled = true;
+                                btSubmit.disabled = true;
+                                document.getElementById('tbSMS').disabled = true;
+                                document.getElementById('cmdSMS').style.display = "none";
+                            } else if (err == "ok_info") {
+                                document.getElementById('divAuthSms').style.display = "block";
+                                document.getElementById('lbError').innerHTML = '';
+                                if (isEmpty(tbSmsOTP.value)) {
+                                    tbFullName.disabled = true;
+                                    tbIdentify.disabled = true;
+                                    tbCardNumber.disabled = true;
+                                    tbPin.disabled = true;
+                                    tbPhoneNumber.disabled = true;
+                                    tbCapcha.disabled = true;
+                                }
+                            }
+                            else if (err == "user_not_pilot") {
+                                document.getElementById('cmdSMS').style.visibility = "visible";
+                                document.getElementById('lbError').style.display = 'block';
+                                document.getElementById('lbError').innerHTML = 'Chức năng "Quên mật khẩu" hiện đang trong quá trình hoàn thiện. Quý khách vui lòng thử lại sau.';
+                                GetCapcha();
+                                return;
+                            }
+                            else if (err == "error_otp") {
+                                document.getElementById('lbError').style.display = 'block';
+                                document.getElementById('lbError').innerHTML = 'Mã xác thực OTP không đúng. Quý khách vui lòng thử lại';
+                                document.getElementById('lbCountTime').style.display = 'block';
+
+                                return;
+                            } else if (err == "error_identify") {
+                                
+                                document.getElementById('lbError').style.display = 'block';
+                                document.getElementById('lbError').innerHTML = 'Thông tin chưa chính xác/không hợp lệ. Quý khách vui lòng kiểm tra lại hoặc gọi hotline 1900555574 để được hỗ trợ.';
+                                document.getElementById('lbCountTime').style.display = 'none';
+                                GetCapcha();
+                                return;
+                            } else if (err == "error") {
+
+                                document.getElementById('cmdSMS').style.visibility = "visible";
+                                document.getElementById('lbError').style.display = 'block';
+                                document.getElementById('lbError').innerHTML = 'Hệ thống đang bận. Quý khách vui lòng thử lại';
+                                GetCapcha();
+                                return;
+                            } else if (err == "error_capcha") {
+                                document.getElementById('cmdSMS').style.visibility = "visible";
+                                document.getElementById('lbError').style.display = 'block';
+                                document.getElementById('lbError').innerHTML = 'Mã kiểm tra chưa đúng. Quý khách vui lòng thử lại';
+                                GetCapcha();
+                                return;
+                            }
+
+                            if (err == "ok" && data.code.length > 0) {
+                                document.getElementById('divCode').style.display = 'block';
+                                document.getElementById('divContent').style.display = 'none';
+                                document.getElementById('modalContent').style.marginTop = '20%';
+                                document.getElementById('codeNum').innerHTML = 'Mã số bảo mật của quý khách là: <b style="font-weight: bold; font-size: 19px">' + data.code + '</b>. Quý khách vui lòng gọi số Hotline <a style="color: blue; text-decoration: underline;" href="tel:1900555574">1900555574</a> trong vòng 60 phút bằng số điện thoại đăng ký với PG Bank, cung cấp mã số bảo mật trên để được cấp lại mật khẩu.';
+
+                            }
+                        },
+                        error: function (data) {
+                            console.log("error again!" + data);
+                            document.getElementById('cmdSMS').style.visibility = "visible";
+                            document.getElementById('lbError').style.display = 'block';
+                            document.getElementById('lbError').innerHTML = 'Hệ thống đang bận. Quý khách vui lòng thử lại';
+                            GetCapcha();
+                            return;
+                        }
+                    });
+                }
+
+                function GetSMSForgotClick() {
+
+                    var phoneNum = document.getElementById('tbPhoneNumber').value.replace(/ /g, "");
+                    if (phoneNum == "") {
+
+                        document.getElementById('tbPhoneNumberMsg').style.display = "block";
+                        document.getElementById('tbPhoneNumberMsg').innerHTML = 'Quý khách vui lòng nhập số điện thoại';
+                        return;
+                    }
+                    document.getElementById('loading').style.display = 'block';
+                    document.getElementById('lbError').style.display = "none";
+
+                    var sndData = {
+                        fullName: vatrau(tbFullName.value),
+                        identify: tbIdentify.value,
+                        cardNumber: tbCardNumber.value,
+                        pinCode: tbPin.value,
+                        phoneNumber: tbPhoneNumber.value,
+
+                        capChaCode: tbCapcha.value,
+                        imgUrl: imgCapcha
+                    };
+
+
+                    $.ajax({
+                        dataType: 'json',
+                        type: 'POST',
+                        url: 'api/ApiEbank/GetSMSForgotClick',
+                        data: JSON.stringify(sndData),
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) { //change spelling here
+                            //viet code o day
+                            document.getElementById('loading').style.display = 'none';
+
+                            var err = data.err;
+                            var elem = document.getElementById('lbCountTime');
+                            elem.style.display = 'block';
+                            if (err == "ok") {
+
+                                $("#txtOtpCode").focus();
+                                //document.getElementById('lbError').style.visibility = "hidden";
+                                // document.getElementById('lbError').innerHTML = ""
+                                document.getElementById('cmdSMS').style.visibility = "hidden";
+
+                                var timeLeft = 120;
+                                
+                                var timerId = setInterval(countdown, 1000);
+                                function countdown() {
+                                    if (timeLeft == -1) {
+                                        clearTimeout(timerId);
+                                        document.getElementById('cmdSMS').style.visibility = "visible";
+                                    } else {
+
+                                        elem.innerHTML = 'Mã OTP đã được gửi đến số điện thoại của quý khách và có hiệu lực trong ' + timeLeft + 's';
+                                        timeLeft--;
+                                    }
+                                }
+                                document.getElementById('loading').style.display = 'none';
+                                document.getElementById('tbPhoneNumberMsg').style.display = "none";
+                                document.getElementById('tbSMS').disabled = false;
+                            } else if (err == "error_identify") {
+                                elem.innerHTML = 'Thông tin chưa chính xác/không hợp lệ. Quý khách vui lòng kiểm tra lại hoặc gọi hotline 1900555574 để được hỗ trợ.';
+                                return;
+                            } else if (err == "SMS_LIMIT") {
+                                elem.innerHTML = 'Quý khách đã sử dụng hết số lần gửi SMS trong ngày. Quý khách vui lòng thử lại sau';
+                                return;
+                            }
+                            else {
+                                elem.innerHTML = 'Hệ thống đang bận. Quý khách vui lòng thử lại';
+                                return;
+                            }
+                        },
+                        error: function (data) {
+                            document.getElementById('lbCountTime').display = 'block';
+                            document.getElementById('lbCountTime').innerHTML = 'Hệ thống đang bận. Quý khách vui lòng thử lại';
+                            return;
+                        }
+
+                    });
+                }
+
+                function isEmpty(str) {
+                    return (!str || str.length === 0);
+                }
+
+                $(function () {
+
+                    $(".input-group-btn .dropdown-menu li a").click(function () {
+
+                        var selText = $(this).html();
+
+                        //working version - for single button //
+                        //$('.btn:first-child').html(selText+'<span class="caret"></span>');  
+
+                        //working version - for multiple buttons //
+                        $(this).parents('.input-group-btn').find('.btn-search').html(selText);
+
+                    });
+
+                });
+                function customValidate(str) {
+
+
+                }
+
+            </script>
+            
+        </div>
+    </div>
+</body>
+</html>
