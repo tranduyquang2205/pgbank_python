@@ -23,6 +23,7 @@ class PGBank:
     def __init__(self, username, password, account_number):
         self.session = requests.Session()
         self.is_login = False
+        self.time_login = time.time()
         self.file = f"data/{username}.txt"
         self._IBDeviceId = ""
         self.dse_sessionId = ""
@@ -64,7 +65,9 @@ class PGBank:
             'username': self.username,
             'password': self.password,
             'account_number': self.account_number,
-            'sessionId': getattr(self, 'sessionId', '')
+            'sessionId': getattr(self, 'sessionId', ''),
+            'time_login': self.time_login,
+            'is_login': self.is_login,
         }
         with open(self.file, 'w') as f:
             json.dump(data, f)
@@ -78,6 +81,8 @@ class PGBank:
         self.password = data.get('password', '')
         self.account_number = data.get('account_number', '')
         self.sessionId = data.get('sessionId', '')
+        self.time_login = data.get("time_login", "")
+        self.is_login = data.get("is_login", "")
         
     def init_guid(self):
         self._IBDeviceId = self.generate_device_id()
@@ -334,6 +339,7 @@ class PGBank:
         else:
             return None
     def doLogin(self):
+        print('login')
         st = time.time()
         self.session = requests.Session()
         response = self.curlGet(self.url['login'])
@@ -388,6 +394,8 @@ class PGBank:
             file.write(response)
         if 'Số dư khả dụng' in response:
             self.is_login = True
+            self.time_login = time.time()
+            self.save_data()
             self.balance = self.extract_balance(response)
             account_number = self.extract_account_number(response)
             accounts = {
@@ -395,6 +403,7 @@ class PGBank:
                 "balance": self.balance
             }
             self.accounts_list = accounts
+            
             return {
                 'code': 200,
                 'success': True,
@@ -432,9 +441,10 @@ class PGBank:
                     'message': "Unknown Error!"
             }
     def get_balance(self,account_number):
-        login = self.doLogin()
-        if not login['success']:
-            return login
+        if not self.is_login or time.time() - self.time_login > 1800:
+            login = self.doLogin()
+            if 'success' not in login or not login['success']:
+                return login
         account = self.accounts_list
         if account.get('account_number'):
             if account.get('account_number') == account_number:
@@ -446,6 +456,8 @@ class PGBank:
             else:
                 return {'code':404,'success': False, 'message': 'account_number not found!'} 
         else:
+            self.is_login = False
+            self.save_data()
             return {'code':520 ,'success': False, 'message': 'Unknown Error!'} 
     def saveData(self):
         data = {
@@ -560,9 +572,9 @@ class PGBank:
 
     def getHistories(self, fromDate="16/06/2023", toDate="16/06/2023", account_number=''):
         self.transactions = []
-        if not self.is_login:
+        if not self.is_login or time.time() - self.time_login > 1800:
             login = self.doLogin()
-            if not login['success']:
+            if 'success' not in login or not login['success']:
                 return login
         param = {}
         url = "https://home.pgbank.com.vn/V2018/Pages/TranSelect.aspx"
