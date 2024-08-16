@@ -52,12 +52,13 @@ class Transactions(BaseModel):
     account_number: str
     from_date: str
     to_date: str
+    limit: int
     
 @app.post('/get_transactions', tags=["get_transactions"])
 def get_transactions_api(input: Transactions):
     try:
         pgbank = PGBank(input.username, input.password, input.account_number)
-        response = pgbank.getHistories(input.from_date, input.to_date, input.account_number)
+        response = pgbank.getHistories(input.from_date, input.to_date, input.account_number,input.limit)
         return APIResponse.json_format(response)
     except Exception as e:
         response = str(e)

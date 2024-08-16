@@ -28,10 +28,14 @@ class PGBank:
         self.file = f"data/{username}.txt"
         self._IBDeviceId = ""
         self.dse_sessionId = ""
+        self.__VIEWSTATE = ""
+        self.__EVENTVALIDATION =""
+        self.__VIEWSTATEGENERATOR = ""
         self.balance = None
         self.referer_url = ""
         self.load_account_url = ""
         self.dse_processorId = ""
+        self.callbackState = ""
         self.account_cif = None
         self.dse_pageId = 0
         self.available_balance = 0
@@ -237,6 +241,7 @@ class PGBank:
         pattern = r'<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="(.*)" />'
         match = re.search(pattern, html_content)
         return match.group(1) if match else None
+
     def extract_captcha_url(self,html_content):
         html_content = self.session.get('https://home.pgbank.com.vn/V2018/api/ApiEbank/GetImgVerify?imgcheck=1').json()
         url = html_content['url']
@@ -264,12 +269,6 @@ class PGBank:
         pattern = r'<span class="lblLabel" style="color:Black;">Số dư khả dụng</span>: <span style="color: black"><strong>\s+(.*) VND</strong></span><br />'
         match = re.search(pattern, html_content)
         return int(match.group(1).replace(',','').strip()) if match else None
-    def get_total_transaction(self,html_content):
-        soup = BeautifulSoup(html_content, 'html.parser')
-        h4_element = soup.find('h4')
-        if h4_element:
-            h4_text = h4_element.get_text(strip=True)
-        return int(h4_text.replace('Tổng số bản ghi','').strip()) if h4_element else 0
     def extract_page_url(self,html_content,page):
         soup = BeautifulSoup(html_content, 'html.parser')
         div = soup.find('div', class_='so-trang')
@@ -279,6 +278,10 @@ class PGBank:
             if a_tag:
                 href = a_tag['href']
         return 'https://biz.pgbank.com.vn'+href if href else None
+    def get_total_transaction(self,html_content):
+        pattern = r'\(([0-9]+) items\)'
+        match = re.search(pattern, html_content)
+        return int(match.group(1)) if match else None
     def extract_transaction_history(self,html_string):
         # Parse the HTML content
         soup = BeautifulSoup(html_string, 'html.parser')
@@ -558,25 +561,60 @@ class PGBank:
         response = self.curlPost(url,param,headers)
         return (response)
     
-    def get_transactions_by_page(self,url,page,limit):
-        response = self.curlGet(url)
-        response
+    def get_transactions_by_page(self,page,limit):
+        payload_dict = {
+            '__EVENTTARGET': 'ctl00$HolderBody$ucTranDetail$grdAccount',
+            '__EVENTARGUMENT': '12|PAGERONCLICK3|PN'+str(page-1),
+            '__VIEWSTATE': self.__VIEWSTATE,
+            '__VIEWSTATEGENERATOR': self.__VIEWSTATEGENERATOR,
+            '__EVENTVALIDATION': self.__EVENTVALIDATION,
+            'ctl00$HolderBody$ucTranDetail$hfacc_card':self.account_number,
+            'ctl00$HolderBody$ucTranDetail$grdAccount':self.callbackState,
+            'DXScript':'',
+            'DXCss':'',
+        }
+        # print(payload_dict)
+        # for k, v in payload_dict.items():
+        #     print(k,v)
+        #     payload_converted = '&'.join(f'{quote(k)}={quote(v)}')
+        payload_dict = {k: v if v is not None else '' for k, v in payload_dict.items()}
+        payload_converted = '&'.join(f'{quote(k)}={quote(v)}' for k, v in payload_dict.items())
+        
+        headers = {
+        'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        'accept-language': 'en-US,en;q=0.9',
+        'cache-control': 'max-age=0',
+        'content-type': 'application/x-www-form-urlencoded',
+        'origin': 'https://home.pgbank.com.vn',
+        'priority': 'u=0, i',
+        'referer': 'https://home.pgbank.com.vn/V2018/pages/transelect.aspx',
+        'sec-ch-ua': '"Not)A;Brand";v="99", "Microsoft Edge";v="127", "Chromium";v="127"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'document',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-site': 'same-origin',
+        'sec-fetch-user': '?1',
+        'upgrade-insecure-requests': '1',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0'
+        }
+        response = self.curlPost("https://home.pgbank.com.vn/V2018/Pages/TranDetail.aspx",payload_converted,headers)
+        
         transaction_history = self.extract_transaction_history(response)
-
+        # with open("222.html", "w", encoding="utf-8") as file:
+        #     file.write(response)
         if page*10 < limit:
             if transaction_history:
                 self.transactions += transaction_history
             page=page+1
-            
-            page_url = self.extract_page_url(response,page)
-            if page_url:
-                return self.get_transactions_by_page(page_url,page,limit)
+        
+            return self.get_transactions_by_page(page,limit)
         else:
             if transaction_history:
                 self.transactions += transaction_history[:limit - (page-1)*10]
         return True
 
-    def getHistories(self, fromDate="16/06/2023", toDate="16/06/2023", account_number=''):
+    def getHistories(self, fromDate="16/06/2023", toDate="16/06/2023", account_number='',limit=15):
         self.transactions = []
         if not self.is_login or time.time() - self.time_login > 1790:
             login = self.doLogin()
@@ -647,6 +685,37 @@ class PGBank:
         # with open("222.html", "w", encoding="utf-8") as file:
         #     file.write(response)
         # return 1
+        self.__EVENTVALIDATION = self.extract___EVENTVALIDATION(response)
+        self.__VIEWSTATE = self.extract___VIEWSTATE(response)
+        self.__VIEWSTATEGENERATOR = self.extract___VIEWSTATEGENERATOR(response)
+        self.callbackState = self.extract_by_pattern(response,r'\'stateObject\':(.*\n.*\n.*\n.*\n.*\}),')
+        original_dict = eval(self.callbackState.replace("'", '"'))
+
+        # Convert the dictionary to a JSON string
+        json_string = json.dumps(original_dict)
+
+        # Replace double quotes with &quot;
+        self.callbackState = json_string.replace('"', '&quot;').replace(' ','')
+
+        total_transaction = self.get_total_transaction(response)
+        if total_transaction > 0:
+            self.transactions = self.extract_transaction_history(response)
+            if total_transaction > 10:
+                # page_url = self.extract_page_url(response,2)
+                # # print(page_url)
+                # if page_url:
+                self.get_transactions_by_page(2,limit)
+            return {'code':200,'success': True, 'message': 'Thành công',
+                    'data':{
+                        'transactions':self.transactions,
+            }}
+        else:
+            return {'code':200,'success': True, 'message': 'Thành công',
+                    'data':{
+                        'message': 'No data',
+                        'transactions':[],
+            }}
+            
         transactions =  self.extract_transaction_history(response)
         if transactions == 'error':
             self.is_login = False
