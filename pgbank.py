@@ -698,6 +698,8 @@ class PGBank:
         self.callbackState = json_string.replace('"', '&quot;').replace(' ','')
 
         total_transaction = self.get_total_transaction(response)
+        if not total_transaction:
+            total_transaction = 10
         if total_transaction > 0:
             self.transactions = self.extract_transaction_history(response)
             if total_transaction > 10:
