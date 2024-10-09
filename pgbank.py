@@ -561,7 +561,8 @@ class PGBank:
         response = self.curlPost(url,param,headers)
         return (response)
     
-    def get_transactions_by_page(self,page,limit):
+    def get_transactions_by_page(self,page,limit, sort=False):
+        # print('get_transactions_by_page',page)
         payload_dict = {
             '__EVENTTARGET': 'ctl00$HolderBody$ucTranDetail$grdAccount',
             '__EVENTARGUMENT': '12|PAGERONCLICK3|PN'+str(page-1),
@@ -601,20 +602,34 @@ class PGBank:
         response = self.curlPost("https://home.pgbank.com.vn/V2018/Pages/TranDetail.aspx",payload_converted,headers)
         
         transaction_history = self.extract_transaction_history(response)
-        # with open("222.html", "w", encoding="utf-8") as file:
+        # with open("page_"+str(page)+".html", "w", encoding="utf-8") as file:
         #     file.write(response)
-        if page*10 < limit:
-            if transaction_history:
-                self.transactions += transaction_history
-            page=page+1
-        
-            return self.get_transactions_by_page(page,limit)
+        if sort:
+            # Reverse pagination: Start from the last page and move backward
+            if page > 0 and len(self.transactions) < limit:
+                if transaction_history:
+                    transaction_history.reverse()
+                    self.transactions = self.transactions + transaction_history
+                if len(self.transactions) < limit:
+                    return self.get_transactions_by_page(page - 1, limit, sort=True)
         else:
-            if transaction_history:
-                self.transactions += transaction_history[:limit - (page-1)*10]
+            # Forward pagination: Start from the first page and move forward
+            if page * 10 < limit:
+                if transaction_history:
+                    self.transactions += transaction_history
+                return self.get_transactions_by_page(page + 1, limit, sort=False)
+        
+        if transaction_history:
+            # Adjust transaction count based on limit when close to last page
+            remaining_transactions = limit - len(self.transactions)
+            if remaining_transactions > 0:
+                self.transactions += transaction_history[:remaining_transactions]
+            if remaining_transactions < 0:
+                self.transactions = self.transactions[:limit]
+        
         return True
 
-    def getHistories(self, fromDate="16/06/2023", toDate="16/06/2023", account_number='',limit=15):
+    def getHistories(self, fromDate="16/06/2023", toDate="16/06/2023", account_number='',limit=15, sort=False):
         self.transactions = []
         if not self.is_login or time.time() - self.time_login > 1790:
             login = self.doLogin()
@@ -684,11 +699,13 @@ class PGBank:
         response = self.curlPost(self.url['getHistories'],payload_converted,headers)
         # with open("222.html", "w", encoding="utf-8") as file:
         #     file.write(response)
-        # return 1
         self.__EVENTVALIDATION = self.extract___EVENTVALIDATION(response)
         self.__VIEWSTATE = self.extract___VIEWSTATE(response)
         self.__VIEWSTATEGENERATOR = self.extract___VIEWSTATEGENERATOR(response)
         self.callbackState = self.extract_by_pattern(response,r'\'stateObject\':(.*\n.*\n.*\n.*\n.*\}),')
+        if not self.callbackState:
+            self.is_login = False
+            return self.getHistories(fromDate, toDate, account_number,limit, sort)
         original_dict = eval(self.callbackState.replace("'", '"'))
 
         # Convert the dictionary to a JSON string
@@ -701,12 +718,18 @@ class PGBank:
         if not total_transaction:
             total_transaction = 10
         if total_transaction > 0:
-            self.transactions = self.extract_transaction_history(response)
-            if total_transaction > 10:
-                # page_url = self.extract_page_url(response,2)
-                # # print(page_url)
-                # if page_url:
-                self.get_transactions_by_page(2,limit)
+            if sort:
+                # Start from the last page for reverse order
+                last_page = (total_transaction // 10) + 1
+                
+                self.get_transactions_by_page(last_page, limit, sort=True)
+                # self.transactions.reverse()
+            else:
+                self.transactions = self.extract_transaction_history(response)
+                # Start from the second page for forward order
+                if total_transaction > 10:
+                    self.get_transactions_by_page(2, limit, sort=False)
+                
             return {'code':200,'success': True, 'message': 'Thành công',
                     'data':{
                         'transactions':self.transactions,
@@ -717,25 +740,5 @@ class PGBank:
                         'message': 'No data',
                         'transactions':[],
             }}
-            
-        transactions =  self.extract_transaction_history(response)
-        if transactions == 'error':
-            self.is_login = False
-            self.save_data()
-            return {'code':500,'success': False, 'message': 'Đã xảy ra lỗi',
-                    'data':{
-                        'message': 'No data',
-                        'transactions':[],
-            }}
-        elif  transactions:
-            return {'code':200,'success': True, 'message': 'Thành công',
-                    'data':{
-                        'transactions':transactions,
-            }}
-        else:
-            return {'code':200,'success': True, 'message': 'Thành công',
-                    'data':{
-                        'message': 'No data',
-                        'transactions':[],
-            }}
+
 
