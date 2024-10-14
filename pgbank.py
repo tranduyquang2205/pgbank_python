@@ -46,6 +46,7 @@ class PGBank:
     "solve_captcha": "https://captcha.pay2world.vip/pgbank",
     "getCaptcha": "https://biz.pgbank.com.vn/servlet/ImageServlet",
     "login": "https://home.pgbank.com.vn/V2018/login.aspx",
+    "logout": "https://home.pgbank.com.vn/V2018/Pages/logout.aspx",
     "getHistories": "https://home.pgbank.com.vn/V2018/pages/transelect.aspx",
 }
         self.lang =  "vi"
@@ -192,7 +193,7 @@ class PGBank:
             'sec-ch-ua-platform': '"Windows"'
             }
         self.load_cookies()
-        response = self.session.post(url, headers=headers, data=data)
+        response = self.session.post(url, headers=headers, data=data,allow_redirects=True)
         self.save_cookies()
         self.referer_url = url
         try:
@@ -343,10 +344,12 @@ class PGBank:
     def solveCaptcha(self,url):
         response = self.session.get(url)
         base64_captcha_img = base64.b64encode(response.content).decode('utf-8')
+        print(base64_captcha_img)
         result = self.createTaskCaptcha(base64_captcha_img)
         # captchaText = self.checkProgressCaptcha(json.loads(task)['taskId'])
         if 'prediction' in result and result['prediction']:
             captcha_value = result['prediction']
+            print('captcha_value',captcha_value)
             return {"status": True, "captcha": captcha_value}
         else:
             return {"status": False, "msg": "Error solve captcha", "data": result}
@@ -371,11 +374,123 @@ class PGBank:
             return 'https://biz.pgbank.com.vn'+match_url.group(0)
         else:
             return None
+    def relogin_captcha(self,response):
+        print('relogin')
+        __EVENTVALIDATION = self.extract___EVENTVALIDATION(response)
+        __VIEWSTATE = self.extract___VIEWSTATE(response)
+        __VIEWSTATEGENERATOR = self.extract___VIEWSTATEGENERATOR(response)
+        payload_dict = {
+            '__LASTFOCUS': '',
+            '__VIEWSTATE': __VIEWSTATE,
+            '__VIEWSTATEGENERATOR': __VIEWSTATEGENERATOR,
+            '__EVENTTARGET': '',
+            '__EVENTARGUMENT': '',
+            '__EVENTVALIDATION': __EVENTVALIDATION,
+            'ctl00$txtloginName': self.username,
+            'ctl00$txtPassword': self.password,
+            'ctl00$txtCaptcha': '',
+            'ctl00$btnLogin': 'Đăng nhập'
+        }
+        captcha_url = self.extract_captcha_url(response)
+        if(captcha_url):
+            solveCaptcha = self.solveCaptcha(captcha_url)
+            if not solveCaptcha["status"]:
+                return solveCaptcha
+            payload_dict['ctl00$txtCaptcha'] = solveCaptcha["captcha"]
+        print(payload_dict)
+        headers = {
+        'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        'accept-language': 'en-US,en;q=0.9',
+        'cache-control': 'max-age=0',
+        'content-type': 'application/x-www-form-urlencoded',
+        'origin': 'https://home.pgbank.com.vn',
+        'priority': 'u=0, i',
+        'referer': 'https://home.pgbank.com.vn/V2018/login.aspx',
+        'sec-ch-ua': '"Not)A;Brand";v="99", "Microsoft Edge";v="127", "Chromium";v="127"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'document',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-site': 'same-origin',
+        'sec-fetch-user': '?1',
+        'upgrade-insecure-requests': '1',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0'
+        }
+        # Convert the dictionary to payload format
+        payload_converted = '&'.join(f'{quote(k)}={quote(v)}' for k, v in payload_dict.items())
+        print(payload_converted)
+        response = self.curlPost(self.url['login'],payload_converted,headers)
+        #print(time.time()-st)
+        with open('payload2_re.html', 'w', encoding='utf-8') as file:
+            file.write(response)
+        if 'Số dư khả dụng' in response:
+            self.is_login = True
+            self.time_login = time.time()
+            self.save_data()
+            self.balance = self.extract_balance(response)
+            account_number = self.extract_account_number(response)
+            accounts = {
+                "account_number": account_number,
+                "balance": self.balance
+            }
+            self.accounts_list = accounts
+            
+            return {
+                'code': 200,
+                'success': True,
+                'message': 'Đăng nhập thành công',
+                'data':self.accounts_list
+            }
+        elif 'Tài khoản không tồn tại hoặc không hợp lệ.' in response:
+                return {
+                            'code': 404,
+                            'success': False,
+                            'message': 'Tài khoản không tồn tại hoặc không hợp lệ.',
+                            }
+        elif 'Sai tên hoặc mật khẩu' in response:
+                return {
+                            'code': 444,
+                            'success': False,
+                            'message': 'Tài khoản hoặc mật khẩu không đúng',
+                            }
+        elif 'Mã Tiếp tục không hợp lệ' in response:
+                return {
+                    'code': 422,
+                    'success': False,
+                    'message': 'Mã Tiếp tục không hợp lệ',
+                    }
+        elif 'Mã xác thực không đúng' in response:
+                return {
+                    'code': 422,
+                    'success': False,
+                    'message': 'Mã xác thực không đúng',
+                    }
+        elif 'Tài khoản của quý khách đã bị khóa' in response:
+                return {
+                    'code': 449,
+                    'success': False,
+                    'message': 'Blocked account!'                    
+                    }
+        elif 'Tài khoản của quý khách đã bị khóa' in response:
+                return {
+                    'code': 449,
+                    'success': False,
+                    'message': 'Blocked account!'                    
+                    }
+        else:
+            return {
+                    'code': 520,
+                    'success': False,
+                    'message': "Unknown Error!"
+            }
     def doLogin(self):
+        response = self.curlGet(self.url['logout'])
         print('login')
         st = time.time()
         # self.session = requests.Session()
         response = self.curlGet(self.url['login'])
+        # with open('login.html', 'w', encoding='utf-8') as file:
+        #     file.write(response)
         #print(time.time()-st)
         __EVENTVALIDATION = self.extract___EVENTVALIDATION(response)
         __VIEWSTATE = self.extract___VIEWSTATE(response)
@@ -461,6 +576,18 @@ class PGBank:
                     'success': False,
                     'message': 'Mã Tiếp tục không hợp lệ',
                     }
+        elif 'Mã xác thực không đúng' in response:
+                return {
+                    'code': 422,
+                    'success': False,
+                    'message': 'Mã xác thực không đúng',
+                    }
+        elif 'Tài khoản của quý khách đã bị khóa' in response:
+                return {
+                    'code': 449,
+                    'success': False,
+                    'message': 'Blocked account!'                    
+                    }
         elif 'Tài khoản của quý khách đã bị khóa' in response:
                 return {
                     'code': 449,
@@ -468,6 +595,10 @@ class PGBank:
                     'message': 'Blocked account!'                    
                     }
         else:
+            is_captcha = self.check_captcha(response)
+            if is_captcha:
+                return self.relogin_captcha(response)
+                    
             return {
                     'code': 520,
                     'success': False,
