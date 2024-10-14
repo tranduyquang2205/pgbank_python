@@ -421,8 +421,8 @@ class PGBank:
         print(payload_converted)
         response = self.curlPost(self.url['login'],payload_converted,headers)
         #print(time.time()-st)
-        with open('payload2_re.html', 'w', encoding='utf-8') as file:
-            file.write(response)
+        # with open('payload2_re.html', 'w', encoding='utf-8') as file:
+        #     file.write(response)
         if 'Số dư khả dụng' in response:
             self.is_login = True
             self.time_login = time.time()
