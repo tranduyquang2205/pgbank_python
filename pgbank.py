@@ -719,9 +719,13 @@ class PGBank:
     
     def get_transactions_by_page(self,page,limit, sort=False):
         # print('get_transactions_by_page',page)
+        if page > 10:
+            page_on_click = 'PAGERONCLICK4'
+        else:
+            page_on_click = 'PAGERONCLICK3'
         payload_dict = {
             '__EVENTTARGET': 'ctl00$HolderBody$ucTranDetail$grdAccount',
-            '__EVENTARGUMENT': '12|PAGERONCLICK3|PN'+str(page-1),
+            '__EVENTARGUMENT': '12|'+page_on_click+'|PN'+str(page-1),
             '__VIEWSTATE': self.__VIEWSTATE,
             '__VIEWSTATEGENERATOR': self.__VIEWSTATEGENERATOR,
             '__EVENTVALIDATION': self.__EVENTVALIDATION,
