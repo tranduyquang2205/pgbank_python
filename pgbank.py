@@ -18,6 +18,7 @@ from bs4 import BeautifulSoup
 from lxml import html
 import urllib.parse
 from urllib.parse import quote
+from urllib.parse import urlencode
 
 class PGBank:
     def __init__(self, username, password, account_number):
@@ -66,6 +67,7 @@ class PGBank:
             self.username = username
             self.password = password
             self.account_number = account_number
+            
     def save_data(self):
         data = {
             'username': self.username,
@@ -162,6 +164,8 @@ class PGBank:
         try:
             return response.json()
         except:
+            if 'imgVerify' in url:
+                return response
             response = response.text
             # dse_pageId = self.extract_dse_pageId(response)
             # if dse_pageId:
@@ -247,10 +251,14 @@ class PGBank:
         html_content = self.session.get('https://home.pgbank.com.vn/V2018/api/ApiEbank/GetImgVerify?imgcheck=1').json()
         url = html_content['url']
         return "https://home.pgbank.com.vn/V2018/"+str(url) if 'url' in html_content else None
+    def extract_captcha_url_from_res(self,html_content):
+        html_content = self.session.get('https://home.pgbank.com.vn/V2018/api/ApiEbank/GetImgVerify?imgcheck=1').json()
+        url = html_content['url']
+        return "https://home.pgbank.com.vn/V2018/"+str(url) if 'url' in html_content else None
     def check_captcha(self,html_content):
         pattern = r'<img id="ctl00_imgVerify" class="img-responsive" src="(.*)" style="border-style:Solid;border-width:0px;" />'
         match = re.search(pattern, html_content)
-        return True if match else False
+        return "https://home.pgbank.com.vn/V2018/"+str(match.group(1)) if match else False
     def check_captcha_1(self,html_content):
         html_content = self.session.get('https://home.pgbank.com.vn/V2018/api/ApiEbank/GetImgVerify?imgcheck=1').json()
         url = html_content['url']
@@ -264,6 +272,10 @@ class PGBank:
         return match.group(1) if match else None
     def extract_load_account(self,html_content):
         pattern = r'/Request?&dse_sessionId=(.)*&dse_applicationId=-1&dse_pageId=(.)*&dse_operationName=corpUserLoginProc&dse_processorState=initial&dse_nextEventName=loadAccounts'
+        match = re.search(pattern, html_content)
+        return match.group(1) if match else None
+    def extract_error_message(self,html_content):
+        pattern = r'<span id="ctl00_lblNote" class="lblLabel">(.*)</span>'
         match = re.search(pattern, html_content)
         return match.group(1) if match else None
     def extract_balance(self,html_content):
@@ -342,14 +354,14 @@ class PGBank:
                 continue
         return {}
     def solveCaptcha(self,url):
-        response = self.session.get(url)
+        response = self.curlGet(url)
         base64_captcha_img = base64.b64encode(response.content).decode('utf-8')
-        print(base64_captcha_img)
+        # print(base64_captcha_img)
         result = self.createTaskCaptcha(base64_captcha_img)
         # captchaText = self.checkProgressCaptcha(json.loads(task)['taskId'])
         if 'prediction' in result and result['prediction']:
             captcha_value = result['prediction']
-            print('captcha_value',captcha_value)
+            # print('captcha_value',captcha_value)
             return {"status": True, "captcha": captcha_value}
         else:
             return {"status": False, "msg": "Error solve captcha", "data": result}
@@ -374,30 +386,30 @@ class PGBank:
             return 'https://biz.pgbank.com.vn'+match_url.group(0)
         else:
             return None
-    def relogin_captcha(self,response):
+    def relogin_captcha(self,response,captcha_url):
         print('relogin')
         __EVENTVALIDATION = self.extract___EVENTVALIDATION(response)
         __VIEWSTATE = self.extract___VIEWSTATE(response)
         __VIEWSTATEGENERATOR = self.extract___VIEWSTATEGENERATOR(response)
         payload_dict = {
-            '__LASTFOCUS': '',
-            '__VIEWSTATE': __VIEWSTATE,
-            '__VIEWSTATEGENERATOR': __VIEWSTATEGENERATOR,
-            '__EVENTTARGET': '',
-            '__EVENTARGUMENT': '',
-            '__EVENTVALIDATION': __EVENTVALIDATION,
-            'ctl00$txtloginName': self.username,
-            'ctl00$txtPassword': self.password,
-            'ctl00$txtCaptcha': '',
-            'ctl00$btnLogin': 'Đăng nhập'
+            "__LASTFOCUS": "",
+            "__EVENTTARGET": "",
+            "__EVENTARGUMENT": "",
+            "__VIEWSTATE": __VIEWSTATE,
+            "__VIEWSTATEGENERATOR": __VIEWSTATEGENERATOR,
+            "__EVENTVALIDATION": __EVENTVALIDATION,
+            "ctl00$txtloginName": self.username,
+            "ctl00$txtPassword": self.password,
+            "ctl00$txtCaptcha": "",
+            "ctl00$btnLogin": "Đăng nhập"
         }
-        captcha_url = self.extract_captcha_url(response)
+        # print(captcha_url)
         if(captcha_url):
             solveCaptcha = self.solveCaptcha(captcha_url)
             if not solveCaptcha["status"]:
                 return solveCaptcha
             payload_dict['ctl00$txtCaptcha'] = solveCaptcha["captcha"]
-        print(payload_dict)
+        
         headers = {
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
         'accept-language': 'en-US,en;q=0.9',
@@ -417,8 +429,9 @@ class PGBank:
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0'
         }
         # Convert the dictionary to payload format
-        payload_converted = '&'.join(f'{quote(k)}={quote(v)}' for k, v in payload_dict.items())
-        print(payload_converted)
+        # payload_converted = '&'.join(f'{quote(k)}={quote(v)}' for k, v in payload_dict.items())
+        payload_converted = urlencode(payload_dict, encoding='utf-8', doseq=True)
+        payload_converted = payload_converted.replace('%C4%90%C4%83ng+nh%E1%BA%ADp','%C4%90%C4%83ng%20nh%E1%BA%ADp')
         response = self.curlPost(self.url['login'],payload_converted,headers)
         #print(time.time()-st)
         # with open('payload2_re.html', 'w', encoding='utf-8') as file:
@@ -478,6 +491,13 @@ class PGBank:
                     'message': 'Blocked account!'                    
                     }
         else:
+            error_message = self.extract_error_message(response)
+            if error_message:
+                return {
+                    'code': 500,
+                    'success': False,
+                    'message': error_message                   
+                    }
             return {
                     'code': 520,
                     'success': False,
@@ -506,14 +526,12 @@ class PGBank:
             'ctl00$txtPassword': self.password,
             'ctl00$btnLogin': 'Đăng nhập'
         }
-        is_captcha = self.check_captcha(response)
-        if is_captcha:
-            captcha_url = self.extract_captcha_url(response)
-            if(captcha_url):
-                solveCaptcha = self.solveCaptcha(captcha_url)
-                if not solveCaptcha["status"]:
-                    return solveCaptcha
-                payload_dict['ctl00$txtCaptcha'] = solveCaptcha["captcha"]
+        captcha_url = self.check_captcha(response)
+        if captcha_url:
+            solveCaptcha = self.solveCaptcha(captcha_url)
+            if not solveCaptcha["status"]:
+                return solveCaptcha
+            payload_dict['ctl00$txtCaptcha'] = solveCaptcha["captcha"]
         #print(time.time()-st)
         headers = {
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
@@ -537,7 +555,7 @@ class PGBank:
         payload_converted = '&'.join(f'{quote(k)}={quote(v)}' for k, v in payload_dict.items())
         
         response = self.curlPost(self.url['login'],payload_converted,headers)
-        #print(time.time()-st)
+        # print(time.time()-st)
         # with open('payload2.html', 'w', encoding='utf-8') as file:
         #     file.write(response)
         if 'Số dư khả dụng' in response:
@@ -595,9 +613,16 @@ class PGBank:
                     'message': 'Blocked account!'                    
                     }
         else:
-            is_captcha = self.check_captcha(response)
-            if is_captcha:
-                return self.relogin_captcha(response)
+            error_message = self.extract_error_message(response)
+            if error_message:
+                return {
+                    'code': 500,
+                    'success': False,
+                    'message': error_message                   
+                    }
+            captcha_url = self.check_captcha(response)
+            if captcha_url:
+                return self.relogin_captcha(response,captcha_url)
                     
             return {
                     'code': 520,
@@ -737,7 +762,7 @@ class PGBank:
         #     file.write(response)
         if sort:
             # Reverse pagination: Start from the last page and move backward
-            if page > 0 and len(self.transactions) < limit:
+            if page > 1 and len(self.transactions) < limit:
                 if transaction_history:
                     transaction_history.reverse()
                     self.transactions = self.transactions + transaction_history
