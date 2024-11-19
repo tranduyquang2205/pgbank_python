@@ -719,7 +719,11 @@ class PGBank:
     
     def get_transactions_by_page(self,page,limit, sort=False):
         # print('get_transactions_by_page',page)
-        if page > 10:
+        if page > 1000:
+            page_on_click = 'PAGERONCLICK6'
+        elif page > 100:
+            page_on_click = 'PAGERONCLICK5'
+        elif page > 10:
             page_on_click = 'PAGERONCLICK4'
         else:
             page_on_click = 'PAGERONCLICK3'
@@ -875,6 +879,7 @@ class PGBank:
         self.callbackState = json_string.replace('"', '&quot;').replace(' ','')
 
         total_transaction = self.get_total_transaction(response)
+        print('total_transaction',total_transaction)
         if not total_transaction:
             total_transaction = 10
         if total_transaction > 0:
