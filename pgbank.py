@@ -630,6 +630,7 @@ class PGBank:
                     'message': "Unknown Error!"
             }
     def get_balance(self,account_number):
+        
         if not self.is_login or time.time() - self.time_login > 1790:
             login = self.doLogin()
             if 'success' not in login or not login['success']:
