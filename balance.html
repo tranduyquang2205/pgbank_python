@@ -1,0 +1,1637 @@
+
+<!DOCTYPE html>
+
+<html>
+<head><link rel="stylesheet" type="text/css" href="/V2018/DXR.axd?r=1_24-XZeUe" /><link rel="stylesheet" type="text/css" href="/V2018/DXR.axd?r=1_26-XZeUe" /><link rel="stylesheet" type="text/css" href="../App_Themes/Aqua1/Web/styles.css?v=20231228" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /><meta name="description" /><meta name="author" /><link rel="icon" href="../Resources/Pgb_theme/images/pg/favicon_logo.png?v=4543" /><title>
+	PGBank dịch vụ Ngân hàng điện tử
+</title>
+
+
+    <!-- Bootstrap v4.0.0-beta -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css?v=20231228" /><link rel="stylesheet" href="../Resources/Pgb_theme/assets/components/bootstrap/dist/css/bootstrapX.css?v=20231228" /><link rel="stylesheet" href="../Resources/Pgb_theme/css/newStyle.css?v=20231228" /><link href="../Resources/StyleSheet/font-awesome.min.css?v=20231228" rel="stylesheet" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="../Resources/Pgb_theme/assets/components/font-awesome/css/font-awesome.css?v=20231228" />
+
+    <!-- ionicons -->
+    <link rel="stylesheet" href="../Resources/Pgb_theme/assets/components/Ionicons/css/ionicons.css?v=20231228" />
+    <script src="../Resources/Pgb_theme/assets/components/jquery/dist/jquery.js?v=20231228"></script>
+    <link rel="stylesheet" href="../Resources/JavaScript/ebScript.js?v=20231228" />
+
+    <!-- theme style -->
+    <link rel="stylesheet" href="../Resources/Pgb_theme/css/master_style.css?v=20231228" /><link rel="stylesheet" href="../Resources/Pgb_theme/css/skins/_all-skins.css?v=20231228" />
+
+    <!-- morris chart -->
+    <link rel="stylesheet" href="../Resources/Pgb_theme/assets/components/morris.js/morris.css?v=20231228" />
+
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="../Resources/Pgb_theme/assets/components/jvectormap/jquery-jvectormap.css?v=20231228" />
+
+    <!-- date picker -->
+    <link rel="stylesheet" href="../Resources/Pgb_theme/assets/components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css?v=20231228" />
+
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="../Resources/Pgb_theme/assets/components/bootstrap-daterangepicker/daterangepicker.css?v=20231228" />
+
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="../Resources/Pgb_theme/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css?v=20231228" />
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+	<script src="assets/js/fix/html5shiv.min.js?v=20231228" ></script>
+	<script src="assets/js/fix/respond.min.js?v=20231228"></script>
+	<![endif]-->
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" /><link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;subset=vietnamese" rel="stylesheet" /><link href="../Resources/Pgb_theme/css/animate.min.css?v=20231228" rel="stylesheet" /><link rel="stylesheet" href="../Resources/Pgb_theme/css/pg.css?v=20231228" />
+    <script src="../Resources/JavaScript/swfobject.js?v=20231228" type="text/javascript"></script>
+
+    <style type="text/css">
+        .box-body .col-md-4 label, .box-body .col-md-4, .box-body .col-md-8 span, .box-body .col-md-2 span, .box-body .col-md-4 span, .box-body .col-md-6 span, .box-body .col-md-10 span, .box-body .col-md-10 form-control span {
+            line-height: 28px;
+        }
+
+        .box-body .heading span {
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .box-body .radio-button, .box-body .form_content {
+            margin-left: 6%;
+            margin-top: 20px;
+            margin-bottom: 60px;
+        }
+
+            .box-body .form_content .form-group span {
+                font-size: 11px;
+                font-weight: 400;
+                color: #7d7d7d;
+                margin-left: 4%;
+            }
+
+        .form_content .form-control {
+            width: 50%;
+        }
+
+        .box-body .radio-button label {
+            display: block;
+        }
+        /*dongph*/
+        .menuChilActive {
+            color: #33bbed !important; 
+        }
+    </style>
+    <script>
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            console.log(event.target)
+            if (event.target == document.getElementById("myModal")) {
+                document.getElementById("myModal").style.display = "none";
+            }
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        function closeOnClick() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <form name="aspnetForm" method="post" action="./acbalance.aspx" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="5C3DA762" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="6k7lrSYwac6jV7Ei/xI+IGjZ1nsqLC6ksIWWgjD3gGQnHa/FNrB53Lq6wO+8VrLQu0+6VQSyk4z0IvUGCKnIt9NehDUF3jdR6PrKenul7hitZNpecZGJIZ3+MrbH4erbqaI4UOvZ7BSpgemabzTqA8JWlX4Arvdzz+CPmgPKrnrewsJQvcaFXecqnjyXlECXourZpCxgPDDjilObQwW5JAL8OydqMRBWQRhpchBI0BVmoYcJd++nR+ttezWRnEsgoKm3hel/gzbj+I4pQka02SNzWvDw0KkgEyUcrBfYnSIFyH5JYmTPFrOGGKSMEgzCxpTHrfwXyRjKrMSDqljIIhL/pIH0TKJ6cwPBiH/JhhmXTbD13fwMBlMDZ7iz1xg1N9FN3OzHkkkJVvu6YWJ4LV8e69XvyGe2yFqjA/UILXHP2OS4jnHsdfeUZ0T2TMM2XeaN1VHiR5LZpFr5uFysbglrIWKde9g5uB9c0X0dbkuJtJXhfk/akPdbXohfBZ3fL1l8rPsc5l2MhK+HqgPSkHK6674SWsINkaUmbVFUiSjxP14tO/Fd+pSxSz1p3DgYDDpSaNS/j5qms4eCqdiH6/JViWtUGkDbYHtmUdV8plk2fNNxdC6zc/8c2Mh7MA9sFOWup1KTVgpT15XX41lCAGQVnGfgSCHIyq2RDml+sNr/MWo276SBFEeQlZS5jF6xDyDEJbad85pgsYTqUm3Pa5qe1cl/O17jcnBXEmqwsEFYHoMGPAgYamJE1PyAwcvm4hOoLcBTQymF5mKrR4AhGxDJsosZ7ps1aJAbc/PNneKHiTB8P48k902g3hjYLZfUDdunIcLP4RvfhB4jZYelM/DgHFz+tBRQ8lAlwV1ZTzKO7LW8JMBECMDkrpzgM9N5gUopK/AQSKSUwyfZotAB4c1ZPGeiWDZXarFLqoYlYlAC/f60JVeCKk1vqCZsuZ7rJmi8H0ZzbfUtkJMy19wPVbYJYmZOyqFvwMrHYi/9SwHvIXiwycqpiyeNZQf/Sqz/Q1eK7PS0/8tsecgNoj1ND2+NiYISR/r2NYYCQlTPtpW8MJlF" />
+</div>
+        <div class="hold-transition skin-blue layout-boxed sidebar-mini">
+            <div class="wrapper">
+
+                <header class="main-header">
+
+                    <!-- Logo -->
+                    <a href="../Pages/acbalance.aspx" class="logo">
+                        <!-- mini logo for sidebar mini 50x50 pixels -->
+                        <span class="logo-mini">
+                            <img src="../Resources/Pgb_theme/images/pg/top_left_min.png" /></span>
+                        <!-- logo for regular state and mobile devices -->
+                        <img src="../Resources/Pgb_theme/images/pg/top_left.png" />
+                        <!-- <span class="logo-lg">Hoang Nam</span> -->
+                    </a>
+
+
+
+                    <!-- Header Navbar: style can be found in header.less -->
+                    <nav class="navbar navbar-static-top">
+                        <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button" onclick="fixSidebar();">
+                            <span class="sr-only">Toggle navigation</span>
+                        </a>
+
+                        <div class="navbar-custom-menu">
+                            <ul class="nav navbar-nav">
+                                <!-- User Account: style can be found in dropdown.less -->
+
+                                <li class="dropdown user user-menu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <span class="lblLabel" style="color:white">Xin chào</span>
+                                        <span class="d-none d-sm-inline-block">
+                                            <span id="ctl00_lblUserName" class="adBoldLabelvn">NGUYEN THANH BINH</span>
+                                        </span>
+                                        <img src="../Resources/Pgb_theme/images/user2-160x160.jpg" class="user-image rounded-circle" alt="User Image">
+                                    </a>
+                                    <ul class="dropdown-menu scale-up">
+                                        <!-- User image -->
+                                        <li class="user-header">
+                                            <br />
+                                            <br />
+                                            
+                                            <p>
+                                                <span id="ctl00_lblUserNamePopup" class="adBoldLabelvn">NGUYEN THANH BINH</span>
+                                                <small>
+                                                    <span id="ctl00_lblOpenDate" class="adBoldLabelvn">01/10/2024 12:00:00 SA</span></small>
+                                            </p>
+                                        </li>
+                                        <!-- Menu Footer-->
+                                        <div class="user-footer">
+                                            <div class="pull-left">
+                                                <a href="../pages/umeditprofile.aspx" class="btn btn-default btn-flat">
+                                                    <span class="lblLabel">Hồ sơ</span>
+                                                </a>
+                                            </div>
+                                            <div class="pull-right">
+                                                <a href="../Pages/logout.aspx" class="btn btn-default btn-flat">
+                                                    <span class="lblLabel">Đăng xuất</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </li>
+
+
+
+
+
+                                
+                            </ul>
+                        </div>
+                    </nav>
+                </header>
+
+                <!-- Left side column. contains the logo and sidebar -->
+                <aside class="main-sidebar">
+                    <!-- sidebar: style can be found in sidebar.less -->
+                    <section class="sidebar">
+                        <!-- Sidebar user panel -->
+                        <!--
+      <div class="user-panel">
+        <div class="image">
+          <img src="images/user2-160x160.jpg" class="rounded-circle" alt="User Image">
+        </div>
+        <div class="info">
+          <p>Hoang Nam</p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+	  -->
+
+
+                        <!-- sidebar menu::  style can be found in sidebar.less -->
+                        <ul class="sidebar-menu" data-widget="tree" style="white-space: normal !important;">
+                            <li class="header">&nbsp</li>
+                            <li class="active ">
+                                <a href="../Pages/acbalance.aspx">
+                                    <i class="fa fa-dashboard"></i><span>
+                                        <span class="lblLabel" style="color: white !important;">Trang chủ</span></span>
+                                </a>
+                            </li>
+                            
+                                    <li class='treeview'>
+                                        <a href="#">
+                                            <i class='fa fa-credit-card'></i>
+                                            <span>Thẻ</span>
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl00$ChildRepeater$ctl00$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Thông tin thẻ tín dụng</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl00$ChildRepeater$ctl01$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Sao kê thẻ tín dụng</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl00$ChildRepeater$ctl02$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Thanh toán thẻ tín dụng</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl00$ChildRepeater$ctl03$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Đóng/mở Thanh toán trực tuyến</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl00$ChildRepeater$ctl04$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Khóa/Mở khóa thẻ</a>
+                                                    </li>
+                                                
+                                        </ul>
+                                    </li>
+                                
+                                    <li class='treeview active'>
+                                        <a href="#">
+                                            <i class='fa fa-user'></i>
+                                            <span>Tài khoản</span>
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl01$ChildRepeater$ctl00$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Thông tin tài khoản</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl01$ChildRepeater$ctl01$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Chi tiết giao dịch theo ngày</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl01$ChildRepeater$ctl02$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Sao kê tài khoản tháng</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl01$ChildRepeater$ctl03$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Thông tin khoản vay</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl01$ChildRepeater$ctl04$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Thay đổi gói tài khoản</a>
+                                                    </li>
+                                                
+                                        </ul>
+                                    </li>
+                                
+                                    <li class='treeview'>
+                                        <a href="#">
+                                            <i class='fa fa-bank'></i>
+                                            <span>Giao dịch</span>
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl02$ChildRepeater$ctl00$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Cài đặt người thụ hưởng</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl02$ChildRepeater$ctl01$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Tìm kiếm lệnh chuyển tiền</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl02$ChildRepeater$ctl02$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Chuyển tiền</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl02$ChildRepeater$ctl03$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Cài đặt hạn mức chuyển tiền</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl02$ChildRepeater$ctl04$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Chuyển tiền định kỳ</a>
+                                                    </li>
+                                                
+                                        </ul>
+                                    </li>
+                                
+                                    <li class='treeview'>
+                                        <a href="#">
+                                            <i class='fa fa-exchange'></i>
+                                            <span>Tra soát giao dịch</span>
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl03$ChildRepeater$ctl00$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Yêu cầu tra soát</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl03$ChildRepeater$ctl01$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Truy vấn tra soát</a>
+                                                    </li>
+                                                
+                                        </ul>
+                                    </li>
+                                
+                                    <li class='treeview'>
+                                        <a href="#">
+                                            <i class='fa fa-file-text-o'></i>
+                                            <span>Thanh toán hóa đơn</span>
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl04$ChildRepeater$ctl00$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Điện lực</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl04$ChildRepeater$ctl01$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Nước</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl04$ChildRepeater$ctl02$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Viễn thông</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl04$ChildRepeater$ctl03$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Internet</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl04$ChildRepeater$ctl04$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Truyền hình</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl04$ChildRepeater$ctl05$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Vé máy bay</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl04$ChildRepeater$ctl06$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Dịch vụ Cảng</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl04$ChildRepeater$ctl07$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Phí chung cư</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl04$ChildRepeater$ctl08$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Giao thông</a>
+                                                    </li>
+                                                
+                                        </ul>
+                                    </li>
+                                
+                                    <li class='treeview'>
+                                        <a href="#">
+                                            <i class='fa fa-building-o'></i>
+                                            <span>Nạp tiền</span>
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl05$ChildRepeater$ctl00$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Nạp tiền điện thoại</a>
+                                                    </li>
+                                                
+                                        </ul>
+                                    </li>
+                                
+                                    <li class='treeview'>
+                                        <a href="#">
+                                            <i class='fa fa-money'></i>
+                                            <span>Tiết kiệm Online</span>
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl06$ChildRepeater$ctl00$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Quy định tiết kiệm Online</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl06$ChildRepeater$ctl01$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Mở tiết kiệm Online</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl06$ChildRepeater$ctl02$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Rút tiết kiệm Online</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl06$ChildRepeater$ctl03$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>In kỳ lĩnh lãi</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl06$ChildRepeater$ctl04$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Hỗ trợ tính toán</a>
+                                                    </li>
+                                                
+                                        </ul>
+                                    </li>
+                                
+                                    <li class='treeview'>
+                                        <a href="#">
+                                            <i class='fa fa-plus-square'></i>
+                                            <span>Dịch vụ giá trị gia tăng</span>
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl07$ChildRepeater$ctl00$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Chia sẻ thông báo giao dịch</a>
+                                                    </li>
+                                                
+                                        </ul>
+                                    </li>
+                                
+                                    <li class='treeview'>
+                                        <a href="#">
+                                            <i class='fa fa-cogs'></i>
+                                            <span>Cài đặt</span>
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl08$ChildRepeater$ctl00$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Thanh toán hóa đơn tự động</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl08$ChildRepeater$ctl01$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Thay đổi trạng thái Smart OTP</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl08$ChildRepeater$ctl02$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Đặt lại mật khẩu Smart OTP</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl08$ChildRepeater$ctl03$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Đồng bộ Token</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl08$ChildRepeater$ctl04$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Sửa thông tin người dùng</a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a id="ShowAnswers" class="" href="javascript:__doPostBack(&#39;ctl00$ParentRepeater$ctl08$ChildRepeater$ctl05$ShowAnswers&#39;,&#39;&#39;)">
+                                                                    <i class="fa fa-circle-o" style="margin-left:13px;"></i>Đổi mật khẩu</a>
+                                                    </li>
+                                                
+                                        </ul>
+                                    </li>
+                                
+                            <li class="active">
+                                <a href="../Pages/ebContact.aspx">
+                                    <i class="fa fa-phone-square"></i><span>
+                                        <span class="lblLabel" style="color: white !important;">Liên hệ</span>
+                                    </span>
+                                </a>
+                            </li>
+                            
+                            <a id="ctl00_hplBanner" class="banner_ads_left" href="https://www.pgbank.com.vn/Desktop.aspx/Ca-nhan/Ca-nhan/">
+                                <img src="" />
+                            </a>
+
+                        </ul>
+
+
+                    </section>
+
+
+
+
+                    <!-- /.sidebar -->
+
+                    <div class="sidebar-footer">
+                        
+                        <a href="../Pages/logout.aspx" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="fa fa-power-off"></i></a>
+                        
+                    </div>
+
+
+                </aside>
+                <div class="content-wrapper">
+                    <section class="content-header">
+                        
+                        <span id="ctl00_lblPageTitle" class="lblLabel" style="font-size: 21px; margin: 0 0 0px; font-weight: lighter;">Thông tin tài khoản</span>
+                        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                            <span style="color: red">
+                                <a id="ctl00_lblMsgChangePass" href="UMChangePass.aspx" href="javascript:__doPostBack(&#39;ctl00$lblMsgChangePass&#39;,&#39;&#39;)" style="color:Red;font-size:14px;font-style:italic;text-decoration:underline;"></a>
+                            </span>
+                        <ol class="breadcrumb" style="display: none">
+                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i>
+                                <span class="lblLabel">Trang chủ</span>
+                            </a></li>
+                            
+                                    <li class="breadcrumb-item">
+                                        <a href='#'>
+                                            <i class="fa"></i>Tài khoản
+                                        </a>
+                                    </li>
+                                
+                                    <li class="breadcrumb-item">
+                                        <a href='https://home.pgbank.com.vn/V2018/pages/acbalance.aspx'>
+                                            <i class="fa"></i>Thông tin tài khoản
+                                        </a>
+                                    </li>
+                                
+                            
+                        </ol>
+                    </section>
+                    <!-- Main content -->
+                    <section class="content">
+                        <div id="ctl00_divErrorMSG">
+                            <div id="myModal" style="z-index: 3000" class="modal">
+                                <div id="modalDialog" class="modal-dialog">
+                                    
+                                    <div id="divActions">
+                                        <input type="button" class="close" id="btnCancel" onclick="closeOnClick()" value="Hủy" />
+                                        <input type="submit" name="ctl00$btnAccept" value="Đồng ý" id="btnAccept" class="btCommand" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="overflow: hidden">
+                            
+    
+
+<style type="text/css">
+    .mouseHand {
+        cursor: pointer;
+    }
+
+        .mouseHand:hover {
+            color: #33bbed;
+        }
+</style>
+<div id="ctl00_HolderBody_ucACBalance_pnAccType0" class="box_tttk">
+    <div class="box box-info">
+        <div class="box-header">
+            <i class="fa fa-credit-card-alt"></i>
+            <h3 class="box-title">
+                <span id="ctl00_HolderBody_ucACBalance_lblAC_Type_0" class="adBoldLabelvn">Tài khoản thanh toán</span></h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <!-- Default box -->
+                    <div class="box bg-green-gradient2">
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="slimScrollDiv">
+                                        <div class="box-body chat">
+                                            
+                                                    <div class="item">
+                                                        <img src="../Resources/Pgb_theme/images/pg/card_s.jpg" alt="user image" />
+
+                                                        <p class="message">
+                                                            
+                                                            <small class="pull-right">
+
+                                                                <input id='4527040122592' onclick="MoreDataAcount(this.id); return false;" type="image" src="../Resources/Pgb_theme/images/icons8-more-96.png" alt="Submit" style="float: right" width="48" height="48">
+                                                                </br>
+                                                                <input type="image" name="ctl00$HolderBody$ucACBalance$rpAccount1$ctl00$imgLinkToDetailAccount" id="ctl00_HolderBody_ucACBalance_rpAccount1_ctl00_imgLinkToDetailAccount" title="Truy vấn" class="mouseHand" src="../Resources/Pgb_theme/images/ico_search.png" style="height:14px;width:14px;border-width:0px;" /><br />
+                                                                
+                                                                <input type="image" name="ctl00$HolderBody$ucACBalance$rpAccount1$ctl00$imgLinkToFT" id="ctl00_HolderBody_ucACBalance_rpAccount1_ctl00_imgLinkToFT" title="Chuyển tiền" class="mouseHand" src="../Resources/Pgb_theme/images/ico_chuyentien1.png" style="height:14px;width:14px;border-width:0px;" />
+                                                            </small>
+                                                            <span style="color: black"><strong>NGUYEN THANH BINH</strong></span>
+                                                            <br />
+                                                            <span class="lblLabel" style="color:Black;">Số tài khoản/Số thẻ</span>: <span style="color: black"><strong>4527040122592 </strong></span>
+
+                                                            
+                                                            <br />
+                                                            <span class="lblLabel" style="color:Black;">Số dư khả dụng</span>: <span style="color: black"><strong>171,969 VND</strong></span><br />
+                                                            
+                                                            <div id='data_4527040122592' style="display: none; font-weight: lighter;">
+                                                                <span class="lblLabel" style="color:Black;">Số dư hiện tại: </span> <span style="color: black"><strong>171,969.00 VND </strong></span>
+                                                                <br />
+                                                                <span class="lblLabel" style="color:Black;">Số tiền khoanh giữ: </span> <span style="color: black"><strong>0.00 VND</strong></span>
+                                                                <br />
+                                                                <span class="lblLabel" style="color:Black;">Hạn mức thấu chi: </span> <span style="color: black"><strong>0.00 VND</strong></span>
+                                                                <br />
+                                                                <span class="lblLabel" style="color:Black;">Ngày hết hạn thấu chi: </span> <span style="color: black"><strong> </strong></span>
+                                                            </div>
+                                                            <!--
+																<small class"home_query"><i class="fa fa-clock-o"></i> <a href="#"> Truy vấn </a></small> 
+																<small><i class="fa fa-clock-o"></i> <a href="#">Chuyển tiền </a></small>
+															-->
+                                                        </p>
+                                                    </div>
+                                                
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script type="text/javascript" language="javascript">
+    function AC_Detail(dt_today, ac_no) {
+        //var str = 'TranDetail.aspx?date_begin=' + dt_today + '&date_end='+dt_today+'&acc_no='+ac_no
+        //+'&title=Giao dịch trong ngày '+dt_today;
+        var str = 'TranDetail.aspx?date_begin=' + dt_today + '&date_end=' + dt_today + '&acc_no=' + ac_no
+        + '&title=' + 'Giao dịch trong ngày  {0}' + dt_today;
+        window.open(str, '', 'height=600,width=800,left=0,top=0,scrollbars=yes, toolbar=no,resizable=yes,menubar=no');
+    }
+
+    //LinhNX: hien thi them thong tin tai khoan
+    function MoreDataAcount(id) {
+        if ($('#data_' + id + ':visible').length == 0) {
+            $("#data_" + id).fadeIn("slow");
+            $('#' + id).attr('src', '../Resources/Pgb_theme/images/icons8-close-window-100.png');
+        }
+        else {
+            $("#data_" + id).fadeOut("slow");
+            $('#' + id).attr('src', '../Resources/Pgb_theme/images/icons8-more-96.png');
+        }
+    }
+</script>
+
+
+                        </div>
+                        
+<div class="box box-info quickbar" style="margin-bottom: 10px">
+    <div class="box-header">
+        <i class="fa fa-sign-in"></i>
+        <h3 class="box-title">
+            <span id="ctl00_uctRecentTransactions_Label3" class="lblLabel">Truy cập nhanh</span>
+        </h3>
+    </div>
+
+    <div class="box-body">
+        <div class="table-responsive">
+            <div class="row">
+                
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <a href='/V2018/Pages/cardOpenClose.aspx' style="text-align: left; text-transform: uppercase;">
+                                <div class="info-box">
+                                    <span class='info-box-icon bg-blue'><i class='ion ion-stats-bars'></i></span>
+                                    <div class="info-box-content">
+                                        Khóa/Mở khóa thẻ
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                            </a>
+                            <!-- /.info-box -->
+                        </div>
+                    
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <a href='/V2018/Pages/change_smart_otp_status.aspx' style="text-align: left; text-transform: uppercase;">
+                                <div class="info-box">
+                                    <span class='info-box-icon bg-green'><i class='ion ion-thumbsup'></i></span>
+                                    <div class="info-box-content">
+                                        Thay đổi trạng thái Smart OTP
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                            </a>
+                            <!-- /.info-box -->
+                        </div>
+                    
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <a href='/V2018/Pages/billteleselect.aspx?id=2&title=Internet' style="text-align: left; text-transform: uppercase;">
+                                <div class="info-box">
+                                    <span class='info-box-icon bg-purple'><i class='ion ion-bag'></i></span>
+                                    <div class="info-box-content">
+                                        Internet
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                            </a>
+                            <!-- /.info-box -->
+                        </div>
+                    
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <a href='/V2018/Pages/FTSetupReceiver.aspx' style="text-align: left; text-transform: uppercase;">
+                                <div class="info-box">
+                                    <span class='info-box-icon bg-red'><i class='ion ion-person-stalker'></i></span>
+                                    <div class="info-box-content">
+                                        Cài đặt người thụ hưởng
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                            </a>
+                            <!-- /.info-box -->
+                        </div>
+                    
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <a href='/V2018/Pages/billteleselect.aspx?id=3&title=Truyền hình' style="text-align: left; text-transform: uppercase;">
+                                <div class="info-box">
+                                    <span class='info-box-icon bg-yellow'><i class='ion ion-stats-bars'></i></span>
+                                    <div class="info-box-content">
+                                        Truyền hình
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                            </a>
+                            <!-- /.info-box -->
+                        </div>
+                    
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <a href='/V2018/Pages/billteleselect.aspx?id=57&title=Điện lực' style="text-align: left; text-transform: uppercase;">
+                                <div class="info-box">
+                                    <span class='info-box-icon bg-green'><i class='ion ion-thumbsup'></i></span>
+                                    <div class="info-box-content">
+                                        Điện lực
+                                    </div>
+                                    <!-- /.info-box-content -->
+                                </div>
+                            </a>
+                            <!-- /.info-box -->
+                        </div>
+                    
+                <!-- fix for small devices only -->
+                <div class="clearfix visible-sm-block"></div>
+                <!-- /.col -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                    </section>
+                    <!-- /.content -->
+
+                </div>
+                <!-- /.content-wrapper -->
+                <!-- /.content-wrapper -->
+                <footer class="main-footer">
+                    <div class="pull-right d-none d-sm-inline-block">
+                        <a href="#" data-toggle="modal" data-target=".bs-example-modal-lg4">
+                            Điều khoản sử dụng</a>
+                        
+                    </div>
+                    Copyright &copy; 2017 PGBank
+                </footer>
+                <input type="hidden" name="ctl00$dumpValue" id="dumpValue" />
+
+
+                <!-- Control Sidebar -->
+                <aside class="control-sidebar control-sidebar-dark">
+                    <!-- Create the tabs -->
+                    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                        <li class="nav-item"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+                        <li class="nav-item"><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-cog fa-spin"></i></a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <!-- Home tab content -->
+                        <div class="tab-pane" id="control-sidebar-home-tab">
+                            <h3 class="control-sidebar-heading">Recent Activity</h3>
+                            <ul class="control-sidebar-menu">
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+                                        <div class="menu-info">
+                                            <h4 class="control-sidebar-subheading">Admin Birthday</h4>
+
+                                            <p>Will be July 24th</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <i class="menu-icon fa fa-user bg-yellow"></i>
+
+                                        <div class="menu-info">
+                                            <h4 class="control-sidebar-subheading">Jhone Updated His Profile</h4>
+
+                                            <p>New Email:  jhone_doe@demo.com</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+
+                                        <div class="menu-info">
+                                            <h4 class="control-sidebar-subheading">Disha Joined Mailing List</h4>
+
+                                            <p>disha@demo.com</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <i class="menu-icon fa fa-file-code-o bg-green"></i>
+
+                                        <div class="menu-info">
+                                            <h4 class="control-sidebar-subheading">Code Change</h4>
+
+                                            <p>Execution time 15 Days</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- /.control-sidebar-menu -->
+
+                            <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                            <ul class="control-sidebar-menu">
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <h4 class="control-sidebar-subheading">Web Design
+                <span class="label label-danger pull-right">40%</span>
+                                        </h4>
+
+                                        <div class="progress progress-xxs">
+                                            <div class="progress-bar progress-bar-danger" style="width: 40%"></div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <h4 class="control-sidebar-subheading">Update Data
+                <span class="label label-success pull-right">75%</span>
+                                        </h4>
+
+                                        <div class="progress progress-xxs">
+                                            <div class="progress-bar progress-bar-success" style="width: 75%"></div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <h4 class="control-sidebar-subheading">Order Process
+                <span class="label label-warning pull-right">89%</span>
+                                        </h4>
+
+                                        <div class="progress progress-xxs">
+                                            <div class="progress-bar progress-bar-warning" style="width: 89%"></div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <h4 class="control-sidebar-subheading">Development 
+                <span class="label label-primary pull-right">72%</span>
+                                        </h4>
+
+                                        <div class="progress progress-xxs">
+                                            <div class="progress-bar progress-bar-primary" style="width: 72%"></div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- /.control-sidebar-menu -->
+
+                        </div>
+                        <!-- /.tab-pane -->
+                        <!-- Stats tab content -->
+                        <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+                        <!-- /.tab-pane -->
+                        <!-- Settings tab content -->
+                        <div class="tab-pane" id="control-sidebar-settings-tab">
+                            <div class="post">
+                                <h3 class="control-sidebar-heading">General Settings</h3>
+
+                                <div class="form-group">
+                                    <input type="checkbox" id="report_panel" class="chk-col-grey">
+                                    <label for="report_panel" class="control-sidebar-subheading ">Report panel usage</label>
+
+                                    <p>
+                                        general settings information
+                                    </p>
+                                </div>
+                                <!-- /.form-group -->
+
+                                <div class="form-group">
+                                    <input type="checkbox" id="allow_mail" class="chk-col-grey">
+                                    <label for="allow_mail" class="control-sidebar-subheading ">Mail redirect</label>
+
+                                    <p>
+                                        Other sets of options are available
+                                    </p>
+                                </div>
+                                <!-- /.form-group -->
+
+                                <div class="form-group">
+                                    <input type="checkbox" id="expose_author" class="chk-col-grey">
+                                    <label for="expose_author" class="control-sidebar-subheading ">Expose author name</label>
+
+                                    <p>
+                                        Allow the user to show his name in blog posts
+                                    </p>
+                                </div>
+                                <!-- /.form-group -->
+
+                                <h3 class="control-sidebar-heading">Chat Settings</h3>
+
+                                <div class="form-group">
+                                    <input type="checkbox" id="show_me_online" class="chk-col-grey">
+                                    <label for="show_me_online" class="control-sidebar-subheading ">Show me as online</label>
+                                </div>
+                                <!-- /.form-group -->
+
+                                <div class="form-group">
+                                    <input type="checkbox" id="off_notifications" class="chk-col-grey">
+                                    <label for="off_notifications" class="control-sidebar-subheading ">Turn off notifications</label>
+                                </div>
+                                <!-- /.form-group -->
+
+                                <div class="form-group">
+                                    <label class="control-sidebar-subheading">
+                                        <a href="javascript:void(0)" class="text-red margin-r-5"><i class="fa fa-trash-o"></i></a>
+                                        Delete chat history
+                                    </label>
+                                </div>
+                                <!-- /.form-group -->
+                            </div>
+                        </div>
+                        <!-- /.tab-pane -->
+                    </div>
+                </aside>
+                <!-- /.control-sidebar -->
+
+                <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
+                <div class="control-sidebar-bg"></div>
+
+            </div>
+            <!-- ./wrapper -->
+
+        </div>
+
+    </form>
+
+    <div class="clearfix" />
+    <script id="dxis_491244073" src="/V2018/DXR.axd?r=1_230-XZeUe" type="text/javascript"></script><script id="dxis_507721208" src="/V2018/DXR.axd?r=1_128-XZeUe" type="text/javascript"></script><script id="dxis_500419080" src="/V2018/DXR.axd?r=1_224-XZeUe" type="text/javascript"></script><script id="dxis_481244441" src="/V2018/DXR.axd?r=1_154-XZeUe" type="text/javascript"></script><script id="dxis_491795927" src="/V2018/DXR.axd?r=1_131-XZeUe" type="text/javascript"></script><script id="dxis_502581842" src="/V2018/DXR.axd?r=1_203-XZeUe" type="text/javascript"></script><div class="dx-ac" id="ctl00_BusyBox" style="height:90px;width:300px;position:absolute;left:0px;top:0px;z-index:30000;display:none;">
+	<table class="dxlpLoadingPanel_Aqua1 dxlpControl_Aqua1" style="height:100%;">
+		<tr>
+			<td class="dx" style="text-align:Center;"><img class="dxlp-imgPosTop" src="../Resources/Images/Loading.gif" alt="" style="vertical-align:middle;" /><br /><span id="ctl00_BusyBox_TL">Processing...</span></td>
+		</tr>
+	</table>
+</div><div id="ctl00_BusyBox_LD" class="dxlpLoadingDiv_Aqua1 dxlpControl_Aqua1 dx-ft" style="left:0px;top:0px;z-index:29999;display:none;position:absolute;">
+
+</div><script id="dxss_1401069139" type="text/javascript">
+<!--
+
+var dxo = new ASPxClientLoadingPanel('ctl00_BusyBox');
+dxo.InitGlobalVariable('BusyBox');
+dxo.SetProperties({'uniqueID':'ctl00$BusyBox'});
+dxo.AfterCreate();
+
+//-->
+</script>
+    <div class="modal fade bs-example-modal-lg4" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="text-align: justify">
+                <div class="modal-header ">
+<h4 class="modal-title" id="myLargeModalLabel" style="margin: 0 auto; font-size: 24px; text-transform: uppercase;">Điều khoản sử dụng</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center">
+							<strong>ĐIỀU KIỆN, ĐIỀU KHOẢN VỀ ĐĂNG KÝ VÀ SỬ DỤNG <br>DỊCH VỤ NGÂN HÀNG ĐIỆN TỬ</br>
+							</strong>
+						</div>
+                        <div class="text-center" style="width: 100%; margin-bottom: 10px;">
+								
+                        </div>
+Điều kiện, điều khoản về đăng ký và sử dụng Dịch vụ Ngân hàng điện tử (sau đây được gọi tắt là Điều kiện, điều khoản) với các nội dung dưới đây là một phần không tách rời của Giấy đề nghị kiêm hợp đồng đăng ký sử dụng dịch vụ Ngân hàng điện tử/Giấy đăng ký thông tin kiêm Giấy đề nghị kiêm Hợp đồng mở và sử dụng tài khoản thanh toán, dịch vụ tài khoản thanh toán (sau đây gọi chung là Giấy đề nghị đăng ký dịch vụ), có giá trị pháp lý như là Hợp đồng dịch vụ quy định cho tất cả các Khách hàng sử dụng Dịch vụ Ngân hàng điện tử tại Ngân hàng TMCP Thịnh vượng và Phát triển (PGBank). Bằng việc xác nhận đăng ký Dịch vụ Ngân hàng điện tử/ký vào Giấy đề nghị đăng ký dịch vụ hoặc một giấy tờ/bằng chứng bất kỳ của PGBank thể hiện việc Khách hàng (KH) đăng ký sử dụng Dịch vụ Ngân hàng điện tử, Khách hàng thừa nhận đồng nghĩa với việc Khách hàng đã đọc, hiểu rõ, đồng ý, xác nhận đã ký và chấp nhận bị ràng buộc bởi các quyền và nghĩa vụ theo Điều kiện, điều khoản này với các nội dung như sau:
+						<br />
+                        <br />
+                        <strong>Điều 1.	Giải thích từ ngữ và viết tắt</strong>
+                        <ol>
+                            <li>Ngân hàng/PGBank: Là Ngân hàng Thương mại cổ phần Thịnh vượng và Phát triển.</li>
+                            <li>Đơn vị giao dịch/Điểm giao dịch: Là Chi nhánh, Phòng giao dịch và các đơn vị khác thuộc mạng lưới hoạt động của PGBank theo quy định của pháp luật.</li>
+                            <li>Dịch vụ Ngân hàng điện tử/Dịch vụ: Là các dịch vụ ngân hàng do PGBank cung cấp cho Khách hàng thông qua mạng Internet, bao gồm nhưng không giới hạn Dịch vụ PG APP, Dịch vụ Internet Banking và các dịch vụ/kênh giao dịch khác được PGBank triển khai từng thời kỳ.</li>
+                            <li>Dịch vụ PG APP: Là dịch vụ cho phép Khách hàng truy cập vào ứng dụng dịch vụ (app) được cài đặt trên thiết bị di động để sử dụng các tính năng do PGBank cung cấp.</li>
+                            <li>Dịch vụ Internet Banking: Là các sản phẩm dịch vụ của PGBank cung cấp cho Khách hàng có thể được truy cập thông qua địa chỉ <a href="https://www.pgbank.com.vn/">www.pgbank.com.vn </a>từ các thiết bị điện tử phù hợp.</li>
+                            <li>Khách hàng/KH: Là các cá nhân đã đăng ký Dịch vụ Ngân hàng điện tử trên cơ sở thỏa mãn điều kiện đăng ký Dịch vụ của PGBank tại từng thời điểm.</li>
+                            <li>Thiết bị di động: Là điện thoại di động, máy tính bảng và các thiết bị khác theo quy định của PGBank trong từng thời kỳ.</li>
+                            <li>Mã khóa bí mật/Mật khẩu đăng nhập/Mật khẩu truy cập: Là mật khẩu để truy cập, định danh, xác thực Khách hàng sử dụng Dịch vụ PG APP, Dịch vụ Internet Banking.</li>
+                            <li>Biện pháp xác thực/Phương thức xác thực: Là cách thức và/hoặc chỉ dẫn và/hoặc yêu cầu Khách hàng thực hiện các thao tác xác nhận để xác thực Khách hàng hoặc xác thực giao dịch trước khi Khách hàng thực hiện giao dịch.</li>
+                            <li>Thiết bị xác thực: Là thiết bị tạo mã xác thực mà KH đăng ký, lựa chọn khi đăng ký sử dụng Dịch vụ/do PGBank quy định trong từng thời kỳ, có chức năng tạo mã xác thực cho KH mỗi khi thực hiện giao dịch.</li>
+                            <li>Mã xác thực/OTP (One Time Password): Là mã khóa bí mật có giá trị sử dụng một lần và có hiệu lực trong một khoảng thời gian nhất định theo quy định của PGBank và pháp luật trong từng thời kỳ, được sử dụng như một yếu tố bổ sung để xác thực Khách hàng khi sử dụng Dịch vụ Ngân hàng điện tử. </li>
+                            <li>Hạn mức giao dịch: Là tổng số tiền tối đa hoặc tối thiểu KH được phép giao dịch qua Dịch vụ do PGBank quy định trong từng thời kỳ.</li>
+                            <li>Thông tin bảo mật: Là thông tin truy cập, mã xác thực, thiết bị xác thực, số điện thoại, email của KH hay bất kỳ yếu tố, thông tin nào khác mà KH đăng ký với PGBank hoặc được PGBank cung cấp. Tùy từng dịch vụ, sản phẩm, giao dịch mà KH tham gia, một hoặc một số yếu tố nêu trên sẽ được PGBank sử dụng để xác thực KH và/hoặc xác thực giao dịch trên cơ sở phù hợp với phương thức xác thực mà PGBank quy định cho sản phẩm, dịch vụ, giao dịch đó.</li>
+                          <li>Sinh trắc học: Là các dấu hiệu nhận dạng sinh trắc học của Khách hàng khó có khả năng làm giả (như khuôn mặt, tĩnh mạch ngón tay hoặc bàn tay, vân tay, mống mắt, giọng nói…) được sử dụng làm biện pháp xác thực Khách hàng hoặc xác thực giao dịch trực tuyến.</li>
+                        </ol>
+                        <strong>Điều 2.		Quyền và trách nhiệm của Khách hàng</strong>
+                        <ol>
+                            <li>Quyền của KH:
+           
+                                <ol type="a">
+                                    <li>Truy cập Dịch vụ Ngân hàng điện tử của PGBank để thực hiện các giao dịch do PGBank cung cấp; </li>
+                                    <li>Sử dụng, thay đổi thông tin/Dịch vụ trong phạm vi đã thỏa thuận với PGBank;</li>
+                                    <li>Được quyền yêu cầu và nhận thông báo, hướng dẫn và cảnh báo từ PGBank để nhận biết và phòng tránh rủi ro khi sử dụng dịch vụ thanh toán;</li>
+                                    <li>Được yêu cầu PGBank cung cấp thông tin về việc thực hiện các dịch vụ thanh toán theo thỏa thuận với PGBank;</li>
+                                    <li>Yêu cầu tra soát/khiếu nại về các sai sót, vi phạm (nếu có) phát sinh trong quá trình sử dụng Dịch vụ theo thỏa thuận tại Điều kiện, điều khoản mở và sử dụng tài khoản thanh toán, Điều kiện, điều khoản mở và sử dụng thẻ, quy định của PGBank trong từng thời kỳ phù hợp với quy định của pháp luật;</li>
+                                  <li>Được ngừng/chấm dứt sử dụng Dịch vụ sau khi đã gửi văn bản yêu cầu ngừng/chấm dứt sử dụng Dịch vụ theo mẫu của PGBank tại các Điểm giao dịch của PGBank và được PGBank chấp thuận;</li>
+                                   <li>Được khiếu nại và yêu cầu bồi thường thiệt hại khi: PGBank thực hiện giao dịch thanh toán chậm so với thỏa thuận, không thực hiện giao dịch thanh toán hoặc thực hiện giao dịch thanh toán không khớp đúng với lệnh thanh toán, thu phí dịch vụ thanh toán không đúng loại phí hoặc mức phí mà PGBank đã công bố và các vi phạm khác trong thỏa thuận;</li>
+                                   <li>Các quyền khác theo quy định của Điều kiện, điều khoản này và các quy định có liên quan của pháp luật và PGBank.</li>
+                                </ol>
+                            </li>
+                            <li>Trách nhiệm của Khách hàng: 
+                                <ol type="a">
+                                    <li>Thực hiện đúng, đầy đủ các điều kiện, quy trình đối với các dịch vụ thanh toán theo quy định của pháp luật và thực hiện đúng, đầy đủ quy định về thủ tục đăng ký và/hoặc thay đổi thông tin, trình tự giao dịch, hạn mức giao dịch, phương thức xác thực, các hướng dẫn sử dụng Dịch vụ của PGBank, quy định của Điều kiện, điều khoản này, thỏa thuận khác giữa PGBank và Khách hàng phù hợp với quy định của pháp luật và chịu toàn bộ các thiệt hại phát sinh (nếu có) đối với giao dịch được thực hiện do thông tin không chính xác, sai sót của KH hoặc do việc bị lợi dụng sử dụng không do lỗi của PGBank hoặc do KH không thực hiện đúng các cam kết tại Điều kiện, điều khoản này;</li>                                    
+                                    <li>Khách hàng tự đảm bảo quá trình thực hiện giao dịch chính xác và đầy đủ theo hạn mức giao dịch đăng ký với PGBank (nếu có) hoặc theo quy định của PGBank trong từng thời kỳ. Sử dụng đúng mục đích những thông tin Dịch vụ do PGBank cung cấp; </li>
+                                    <li>Đồng ý cho PGBank tạm khóa, phong tỏa tài khoản/thẻ, tự động trích tiền từ bất kỳ tài khoản/thẻ nào để thanh toán các giá trị giao dịch, các phí liên quan đến giao dịch, các loại phí liên quan đến Dịch vụ, các loại phí liên quan đến khiếu nại, tranh chấp theo quy định của PGBank và pháp luật; </li>                                
+                                    <li>Chịu trách nhiệm: 
+                                       <ol type="i">
+                                            <li>Cung cấp đầy đủ, chính xác thông tin cá nhân của KH và các tài liệu, thông tin, dữ liệu cần thiết khác mà Ngân hàng yêu cầu để Ngân hàng cung cấp Dịch vụ Ngân hàng điện tử cho KH;</li>
+                                             <li>Kịp thời cập nhật sửa đổi/bổ sung thông tin KH và cung cấp giấy tờ cần thiết cho Ngân hàng khi có sự thay đổi, đảm bảo các thông tin KH cung cấp cho Ngân hàng luôn là thông tin được cập nhật mới nhất và chính xác nhất. Bất kỳ sai sót nào trong việc lập các thông tin cũng có thể dẫn đến việc tiền được chuyển vào một tài khoản/thẻ không đúng hoặc số tiền không đúng hoặc lệnh không được thực hiện… KH tự chịu trách nhiệm đối với bất kỳ sự không chính xác nào trong các giao dịch do KH thực hiện và tự chịu tất cả chi phí, tổn thất, thiệt hại phát sinh trong các giao dịch do KH thực hiện;</li>
+                                          <li>Chịu trách nhiệm trước pháp luật về tính chính xác, trung thực của các thông tin và chứng từ thanh toán mà mình cung cấp.</li>
+                                        </ol>                                   
+                                  </li>
+                                    <li>Đảm bảo có đủ tiền trên tài khoản/thẻ của KH để thực hiện giao dịch, thanh toán các khoản phí theo quy định của PGBank. PGBank được quyền từ chối thực hiện giao dịch nếu số dư được phép sử dụng trên tài khoản/thẻ của KH không đủ để thanh toán hoặc trong trường hợp vượt quá hạn mức giao dịch; </li>
+                                    <li>Chịu trách nhiệm đối với tất cả các giao dịch được thực hiện bằng Thông tin bảo mật trong suốt thời gian hiệu lực của Điều kiện, điều khoản này mà không được hủy, phủ nhận, từ chối, thay đổi hay thoái thác với bất kỳ lý do nào trừ khi thỏa mãn các điều kiện tại Khoản 5 Điều 5 của Điều kiện, điều khoản này và phụ thuộc vào sự xem xét, chấp thuận của PGBank;</li>
+                                    <li>Chịu trách nhiệm tự bảo vệ các bí mật thông tin tài khoản, giao dịch, (các) Thông tin bảo mật khác để đảm bảo an toàn, bảo mật trong quá trình sử dụng Dịch vụ, bảo mật các yếu tố định danh khác và các phương tiện điện tử dùng trong giao dịch, tránh bị lợi dụng, lừa đảo, gian lận, bảo quản thiết bị xác thực và thực hiện tất cả các biện pháp cần thiết ở mức độ cao nhất nhằm phòng ngừa việc sử dụng trái phép các thông tin này. KH cần cập nhật thông tin, hướng dẫn của Ngân hàng về nhận dạng và hành động xử lý một số tình huống lừa đảo, giả mạo website. KH cần thông báo nhanh nhất, kịp thời cho PGBank để thực hiện các biện pháp bảo đảm an toàn phù hợp quy định của pháp luật đối với từng loại Dịch vụ khi: Phát hiện hoặc nghi ngờ có hiện tượng truy cập trái phép Dịch vụ; Nghi ngờ thông tin đăng nhập của KH không còn bảo mật; KH làm mất, thất lạc, hư hỏng Thiết bị xác thực, số điện thoại nhận tin nhắn SMS, thiết bị lưu trữ khóa bảo mật tạo chữ ký số (nếu có); Bị lừa đảo hoặc nghi ngờ bị lừa đảo; Bị tin tặc hoặc nghi ngờ bị tin tặc tấn công; Khi phát hiện thấy có sai sót, nhầm lẫn trong giao dịch thanh toán hoặc nghi ngờ thông tin giao dịch bị lợi dụng... Khách hàng phải chịu trách nhiệm về những thiệt hại, tổn thất và rủi ro khác xảy ra do KH thực hiện không đúng, không đầy đủ trách nhiệm theo quy định tại Điều kiện, điều khoản này;</li>
+                                    <li>Sử dụng mọi biện pháp cần thiết để ngăn chặn việc sử dụng Dịch vụ bởi những người không có thẩm quyền. Mọi giao dịch thực hiện qua Dịch vụ nếu PGBank kiểm tra thấy đúng, đủ các yếu tố định danh thì sẽ mặc nhiên coi là ý chí của KH. Khách hàng phải hoàn toàn chịu trách nhiệm về những rủi ro và thiệt hại do việc sử dụng của người không có thẩm quyền gây ra; </li>
+                                    <li>Trong quá trình sử dụng Dịch vụ, KH không được rời khỏi máy tính, thiết bị điện tử, thiết bị di động, thiết bị xác thực hoặc để người khác sử dụng máy tính, thiết bị điện tử,  thiết bị di động, thiết bị xác thực cho đến khi KH đăng xuất ra khỏi Dịch vụ. Khách hàng có trách nhiệm đảm bảo đăng xuất sau mỗi lần truy cập Dịch vụ; Không nên truy cập Dịch vụ bằng máy tính, thiết bị điện tử công cộng hay mạng không dây công cộng; Không lưu lại tên truy cập và mật khẩu trên các trình duyệt web; Không sử dụng các thiết bị di động đã bị phá khóa để tải và sử dụng Dịch vụ, phần mềm tạo OTP;</li>
+                                    <li>Chịu trách nhiệm áp dụng mọi biện pháp hợp lý nhằm đảm bảo an toàn, đảm bảo tính tương thích cho các loại máy móc thiết bị, phần mềm hệ thống, phần mềm ứng dụng... mà KH sử dụng để kết nối truy cập Dịch vụ của PGBank. Cài đặt và thường xuyên cập nhật các chương trình diệt virus trên các thiết bị cá nhân nhằm đảm bảo cài đặt đúng và cập nhật phiên bản ứng dụng mới nhất nhằm kiểm soát, phòng ngừa và ngăn chặn việc sử dụng hoặc truy cập trái phép Dịch vụ;</li>
+                                    <li>Khách hàng có trách nhiệm thông báo ngay cho PGBank (qua số hotline 1900555574/ 024.62555.999, Điểm giao dịch của PGBank, Đơn vị cung cấp dịch vụ) các lỗi gặp phải, các sự cố trong quá trình sử dụng Dịch vụ;</li>
+                                    <li>Hoàn trả hoặc phối hợp với PGBank hoàn trả đầy đủ số tiền thụ hưởng do PGBank, tổ chức cung ứng dịch vụ thanh toán khác chuyển thừa, chuyển nhầm (bao gồm cả lỗi tác nghiệp, sự cố hệ thống PGBank). Theo đó, tại Điều kiện, điều khoản này, KH đồng ý rằng PGBank có quyền tự động trích tiền từ tài khoản/thẻ của KH để thu hồi những khoản tiền này mà không cần thêm bất kỳ sự đồng ý nào khác của KH;</li>
+                                    <li>Tuyên bố và cam kết tuân thủ các quy định hiện hành về quản lý ngoại hối, phòng chống rửa tiền và các quy định của PGBank, pháp luật Việt Nam, thông lệ quốc tế;</li>
+                                    <li>Hợp tác và cung cấp chứng từ, thông tin cần thiết theo yêu cầu của PGBank trên cơ sở phù hợp với thỏa thuận với PGBank và quy định của pháp luật, bao gồm cả trường hợp có thêm yêu cầu kiểm soát về tính pháp lý và tuân thủ các giao dịch đã thực hiện từ PGBank và/hoặc cơ quan có thẩm quyền;</li>
+                                    <li>Trường hợp ngừng/chấm dứt sử dụng Dịch vụ, KH vẫn phải chịu trách nhiệm, nghĩa vụ tài chính phát sinh từ những giao dịch của KH thực hiện trong thời gian sử dụng Dịch vụ; </li>
+                                    <li>Các trách nhiệm khác theo quy định của Điều kiện, điều khoản này và các quy định có liên quan của pháp luật và PGBank. </li>
+                                </ol>
+                        </ol>
+                        <strong>Điều 3.	Quyền và trách nhiệm của PGBank</strong>
+                        <ol>
+                            <li>Quyền của PGBank: 
+           
+                                <ol type="a">
+                                    <li>Yêu cầu Khách hàng sử dụng Dịch vụ cung cấp đầy đủ thông tin có liên quan và thực hiện các nghĩa vụ theo thỏa thuận phù hợp với quy định pháp luật trong quá trình sử dụng Dịch vụ;</li>
+                                    <li>Thay đổi, ngừng, chấm dứt cung cấp Dịch vụ hoặc tạm ngừng Dịch vụ để bảo trì tại bất kỳ thời điểm nào nếu đã thông báo cho KH về việc thay đổi, ngừng, chấm dứt cung cấp Dịch vụ hoặc tạm ngừng Dịch vụ để bảo trì qua số điện thoại/email mà KH đăng ký sử dụng Dịch vụ với PGBank/công bố trên website của PGBank hoặc bất cứ phương thức nào phù hợp với quy định của pháp luật và/hoặc theo quyết định của PGBank trong từng thời kỳ. Đối với trường hợp KH nợ phí, PGBank có quyền chấm dứt cung cấp Dịch vụ mà không cần thông báo cho KH;</li>
+                                    <li>Từ chối thực hiện các giao dịch mà không cần báo trước cho KH nếu PGBank phát hiện giao dịch vào thời điểm xử lý có nội dung không hợp pháp, không hợp lệ hay không có đủ cơ sở để thực hiện xử lý, bao gồm nhưng không giới hạn các trường hợp sau:</li>
+                                          <ol type="i">
+                                               <li>Số tiền giao dịch vượt quá số tiền còn lại trên tài khoản/thẻ hoặc vượt quá hạn mức giao dịch cho phép;  </li>
+                                               <li>Tài khoản/thẻ hạch toán bị phong tỏa/tạm khóa;  </li>
+                                               <li>Tài khoản thụ hưởng bị đóng hay do yêu cầu của cơ quan Nhà nước có thẩm quyền;   </li>
+                                               <li>Khách hàng không đáp ứng đầy đủ yêu cầu khi thực hiện giao dịch theo quy định pháp luật hoặc vi phạm các thỏa thuận tại Điều kiện, điều khoản này, thỏa thuận khác giữa PGBank với Khách hàng quy định của pháp luật và PGBank;  </li>
+                                               <li>Khi có yêu cầu bằng văn bản của cơ quan nhà nước có thẩm quyền hoặc có bằng chứng về việc giao dịch thanh toán nhằm rửa tiền, tài trợ khủng bố, tài trợ phổ biến vũ khí hủy diệt hàng loạt theo quy định của pháp luật về phòng chống rửa tiền; phòng, chống khủng bố, phổ biến vũ khí hủy diệt hàng loạt;</li>
+                                              <li>Khách hàng thuộc danh sách có nghi ngờ/danh sách đen/danh sách cảnh báo liên quan đến giao dịch gian lận, lừa đảo, rửa tiền, tài trợ khủng bố, tài trợ phổ biến vũ khí hủy diệt hàng loạt, vi phạm pháp luật của cơ quan Nhà nước có thẩm quyền…;  </li>
+                                              <li>Do các nguyên nhân khác nằm ngoài khả năng kiểm soát của PGBank. </li>
+                                          </ol>
+                                    <li>Tự động trích nợ tài khoản/thẻ của KH (bao gồm nhưng không giới hạn từ tài khoản mặc định, tài khoản thanh toán phí của KH) để thanh toán cho các giao dịch, các loại phí giao dịch, phí dịch vụ liên quan đến Dịch vụ Ngân hàng điện tử theo biểu phí của PGBank quy định từng thời kỳ, các khoản giao dịch thừa/rút quá số dư khả dụng/các khoản tiền ghi Có nhầm, thừa vào tài khoản/thẻ do PGBank hoặc tổ chức cung ứng dịch vụ thanh toán chuyển tiền phát hiện thấy có sai sót so với lệnh chuyển tiền của người chuyển tiền; </li>
+                                    <li>Được phép sử dụng thông tin KH trong các trường hợp sau: thực thi các yêu cầu giao dịch, phục vụ việc quản lý, giám sát, tư vấn, hỗ trợ… giữa PGBank với KH và/hoặc sử dụng vào mục đích quảng bá, giới thiệu sản phẩm dịch vụ của PGBank cho KH và/hoặc chia sẻ cho bên thứ ba có hợp tác với PGBank nhằm cung cấp Dịch vụ và nâng cao chất lượng phục vụ, lợi ích của KH và/hoặc phục vụ việc điều tra hoạt động rửa tiền hoặc gửi cho cơ quan Nhà nước có thẩm quyền khi có căn cứ hoặc nghi ngờ;</li>
+                                     <li>Yêu cầu Khách hàng sử dụng dịch vụ thanh toán hoàn trả đầy đủ số tiền thụ hưởng do PGBank hoặc tổ chức cung ứng dịch vụ thanh toán khác chuyển thừa, chuyển nhầm (bao gồm cả lỗi tác nghiệp, sự cố hệ thống của PGBank). Theo đó, tại Điều kiện, điều khoản này, KH đồng ý rằng PGBank có quyền tự động trích tiền từ tài khoản/thẻ của KH để thu hồi những khoản tiền này mà không cần thêm bất kỳ sự đồng ý nào khác của KH;</li>
+                                   <li>Được quyền thu phí khi cung ứng các dịch vụ theo quy định của pháp luật;</li>
+                                   <li>Các quyền khác theo quy định của Điều kiện, điều khoản này và các quy định có liên quan của pháp luật và PGBank. </li>
+                                </ol>
+                            </li>
+                            <li>Trách nhiệm của PGBank: 
+                                <ol type="a">
+                                    <li>Đảm bảo các quyền lợi của KH theo bản Điều kiện, điều khoản này; </li>
+                                    <li>Đảm bảo hệ thống Dịch vụ Ngân hàng điện tử tuân thủ các quy định của pháp luật liên quan đến việc cung ứng Dịch vụ; </li>
+                                    <li>Ngoại trừ các trường hợp cung cấp thông tin/công bố theo quy định của pháp luật hoặc theo yêu cầu/thỏa thuận của KH (tại Điều kiện, điều khoản này và tại các văn bản, thỏa thuận khác), PGBank cam kết không bán, tiết lộ, rò rỉ các thông tin khách hàng; </li>
+                                    <li>Xử lý đề nghị tra soát, thắc mắc, khiếu nại của Khách hàng trong phạm vi nghĩa vụ và quyền hạn của mình theo thỏa thuận tại Điều kiện, điều khoản này, thỏa thuận khác giữa Khách hàng và PGBank, quy định của pháp luật; </li>
+                                    <li>Nỗ lực để các thông tin cung cấp cho KH là chính xác. Tuy nhiên, do đặc thù của Dịch vụ và một số tình huống vượt quá phạm vi kiểm soát của PGBank, PGBank không đảm bảo mọi thông tin là chính xác và không có sai sót; </li>
+                                    <li>Thực hiện giao dịch thanh toán kịp thời, an toàn, chính xác theo thỏa thuận với KH; niêm yết công khai phí dịch vụ thanh toán; </li>
+                                    <li>Điều chỉnh kịp thời nhầm lẫn, sai sót của giao dịch thanh toán trong trường hợp thực hiện không đúng yêu cầu theo lệnh thanh toán của KH; có trách nhiệm phối hợp với tổ chức cung ứng dịch vụ thanh toán có liên quan để thu hồi số tiền chuyển nhầm, chuyển thừa khi thực hiện các giao dịch thanh toán theo quy định của pháp luật; </li>
+                                    <li>Các trách nhiệm khác theo quy định của Điều kiện, điều khoản này và các quy định có liên quan của pháp luật và PGBank.  </li>                             
+                                </ol>
+                        </ol>
+                        <strong>Điều 4.	Đăng ký, sử dụng Dịch vụ và hiệu lực ràng buộc trách nhiệm của Khách hàng với các điều khoản, điều kiện, yêu cầu về Dịch vụ  </strong>
+                        <ol>
+                            <li>Phương thức đăng ký Dịch vụ: Khách hàng được đăng ký Dịch vụ/các tính năng của Dịch vụ tại các Điểm giao dịch của PGBank hoặc đăng ký trực tuyến <i>(Bao gồm nhưng không giới hạn qua tin nhắn SMS, Mobile Banking, Internet Banking, Ứng dụng cài đặt trên thiết bị di động hoặc các kênh trực tuyến khác được PGBank triển khai trong từng thời kỳ)</i> theo quy định của PGBank từng thời kỳ. Khách hàng đăng ký trực tuyến cũng có nghĩa vụ, quyền hạn theo các quy định, điều khoản điều kiện của pháp luật và của PGBank về các dịch vụ, tính năng đăng ký.  </li>
+                            <li>Khách hàng hiểu và đồng ý rằng: 
+								<ol type="a">
+									<li>Điều kiện, điều khoản này có hiệu lực áp dụng đối với tất cả các Dịch vụ/tính năng mà  Khách hàng đã đăng ký, sử dụng thông qua bất kỳ phương thức nào nêu tại Khoản 1 Điều này.  </li>
+									<li>Ngoài việc bị ràng buộc hiệu lực áp dụng của Điều kiện, điều khoản này theo quy định tại Điểm a Khoản này, khi KH đăng ký Dịch vụ/tính năng thông qua kênh đăng ký trực tuyến quy định tại Khoản 1 Điều này <i>(Bằng việc KH đồng ý/thực hiện theo các yêu cầu/thao tác/chỉ dẫn/hướng dẫn và các hình thức khác của PGBank thể hiện trên kênh đăng ký trực tuyến đó phù hợp với quy định của pháp luật hoặc PGBank từng thời kỳ)</i>, đồng nghĩa với việc KH đã chịu sự điều chỉnh, ràng buộc về mặt pháp lý theo các Điều khoản, điều kiện, yêu cầu, quy định về Dịch vụ/tính năng tương ứng do PGBank quy định trong từng thời kỳ không phụ thuộc vào việc các Điều khoản, điều kiện, yêu cầu, quy định về Dịch vụ/tính năng tương ứng đó được PGBank công bố thông qua bất kỳ hình thức nào <i>(Bao gồm nhưng không giới hạn những hình thức như sau: Công bố trên website của PGBank và/hoặc thông báo tại các Điểm giao dịch và/hoặc bất cứ phương thức nào khác phù hợp với quy định của pháp luật và/hoặc theo quyết định của PGBank). </i>Khách hàng cũng đồng ý và hiểu rằng, các Điều khoản, điều kiện, yêu cầu, quy định về Dịch vụ tương ứng được PGBank công bố thông qua bất kỳ hình thức nào nêu tại Điểm này có giá trị áp dụng như khi được thể hiện dưới hình thức văn bản giấy, trong trường hợp này, các Bên có trách nhiệm thực hiện mà không cần phải tiến hành lập, ký kết thêm dưới hình thức văn bản giấy. </li>
+                  </ol>
+									<li>PGBank có thể sử dụng một hoặc một số các Thông tin bảo mật khi KH đăng ký/sử dụng Dịch vụ làm yếu tố bảo mật xác thực KH và/hoặc giao dịch. Vì vậy, KH phải quản lý, đảm bảo các Thông tin bảo mật không bị đánh cắp, không bị tiết lộ, không bị lợi dụng bởi bất kỳ tổ chức, cá nhân nào khác dưới bất kỳ hình thức nào và phải chịu trách nhiệm về tất cả các Thông tin bảo mật đã đăng ký với PGBank hoặc được PGBank cung cấp. </li>
+									<li>Khách hàng đồng ý rằng số điện thoại KH đăng ký Dịch vụ và/hoặc lựa chọn để nhận mã xác thực OTP sẽ là số điện thoại để xác thực mọi giao dịch Ngân hàng điện tử. </li>
+
+		                </ol>
+                        <strong>Điều 5.	Truy cập và thực hiện giao dịch </strong>
+                        <ol>
+                            <li>Khách hàng được thực hiện giao dịch 24 giờ trong ngày và 07 ngày trong tuần. Thời gian giao dịch đối với mỗi loại giao dịch là khác nhau. Các giao dịch thực hiện sau thời điểm kết thúc giao dịch trong ngày theo quy định của PGBank có thể được chuyển tiếp xử lý và/hoặc có hiệu lực vào ngày làm việc tiếp theo. </li>
+                            <li>Khách hàng cam kết các giao dịch thực hiện qua dịch vụ Ngân hàng điện tử được KH lập, kiểm tra với thông tin chính xác và đầy đủ theo quy định của PGBank. </li>
+                            <li>Khách hàng chấp nhận rằng bất cứ hành động nào truy cập Dịch vụ của PGBank bằng Thông tin bảo mật là do KH tạo ra và KH chịu mọi trách nhiệm về các giao dịch này. PGBank được quyền xử lý giao dịch mà không cần thêm bất kỳ xác nhận và thông báo của KH. </li>
+                            <li>Bất kỳ giao dịch nào đã được thực hiện thành công (có thông báo về việc giao dịch đã được xử lý trên hệ thống của PGBank) sẽ được PGBank coi là có giá trị và không hủy ngang. KH hoàn toàn chịu trách nhiệm và có nghĩa vụ với PGBank đối với các giao dịch đó. </li>
+                            <li>Khách hàng không thể hủy, thay đổi, phủ nhận, thoái thác bất kỳ yêu cầu Dịch vụ đã được lập. Trường hợp KH muốn hủy yêu cầu thực hiện của mình, PGBank chỉ xem xét khi thỏa mãn đồng thời các điều kiện sau: (i) PGBank chưa xử lý giao dịch trên hệ thống của PGBank; (ii) Yêu cầu hủy giao dịch được gửi đến PGBank và được PGBank xác nhận tính chính xác của nội dung yêu cầu đó; (iii) Việc hủy giao dịch không ảnh hưởng đến lợi ích của PGBank đồng thời KH tự cam kết việc hủy giao dịch này không ảnh hưởng đến bất kỳ bên thứ ba nào, nếu có KH chịu hoàn toàn trách nhiệm; (iv) Việc hủy giao dịch phù hợp với quy định của PGBank, quy định pháp luật trong từng thời kỳ. </li>
+                            <li>Việc cung cấp các Dịch vụ Ngân hàng điện tử có thể bị ngắt quãng, trì hoãn, không liên tục và bị gián đoạn. KH thừa nhận rằng tại một số thời điểm nhất định có thể không truy cập, sử dụng, thực hiện được một số hoặc tất cả các giao dịch của Dịch vụ Ngân hàng điện tử do bảo trì hệ thống hoặc bất kỳ lý do nào khác. </li>
+                            <li>Giá trị các giao dịch và các khoản phí quy định tại biểu phí sử dụng Dịch vụ của PGBank và các khoản lãi/phạt (nếu có) sẽ được ghi Nợ/Có trực tiếp từ tài khoản/thẻ của KH tại PGBank. </li>
+                            <li>Thông báo về bằng chứng giao dịch thanh toán được PGBank gửi cho KH qua thông báo trên Dịch vụ PG APP hoặc tin nhắn SMS hoặc thư điện tử hoặc các kênh thông báo khác theo đăng ký của KH hoặc quyết định của PGBank trong từng thời kỳ. Nội dung cụ thể trong thông báo về bằng chứng giao dịch thanh toán do PGBank quyết định, triển khai trong từng thời kỳ phù hợp quy định pháp luật. </li>
+                        </ol>
+                        <strong>Điều 6.	Biểu phí và hạn mức giao dịch</strong>
+                        <ol>
+                            <li>Biểu phí và hạn mức giao dịch của Dịch vụ được PGBank quy định và có thể thay đổi theo từng thời kỳ.  </li>
+                            <li>Khách hàng có trách nhiệm thanh toán đầy đủ các khoản phí liên quan đến Dịch vụ theo Biểu phí của PGBank. Phí dịch vụ sẽ được PGBank tự động trích Nợ từ tài khoản/thẻ của KH tại PGBank, tùy theo từng loại phí và từng loại giao dịch mà phí dịch vụ sẽ được thu trên từng giao dịch hoặc thu định kỳ theo tháng/quý/năm hoặc thu một lần trong quá trình sử dụng Dịch vụ. Trường hợp tại thời điểm thu phí tài khoản đăng ký thanh toán phí Dịch vụ của KH không đủ số dư thì PGBank có quyền trích Nợ từ tài khoản/thẻ khác của KH hoặc thu bù vào thời điểm khác hoặc yêu cầu KH thanh toán cho PGBank bằng các hình thức khác. </li>
+                            <li>Trong trường hợp số dư trong tài khoản/thẻ của KH không đủ để thanh toán các khoản phí duy trì/phí sử dụng dịch vụ, PGBank sẽ tạm dừng cung cấp dịch vụ theo quy định của PGBank và Dịch vụ sẽ được mở lại cho Khách hàng khi PGBank thu đủ phí. </li>
+                            <li>Khách hàng có thể bị tính phí bởi các nhà cung cấp dịch vụ khác khi KH tải và sử dụng ứng dụng trên thiết bị của mình. Trong trường hợp này, PGBank không chịu trách nhiệm về bất kỳ khoản phí phát sinh nào cho KH (nếu có). </li>
+                            <li>Khi có sự thay đổi về biểu phí và/hoặc hạn mức giao dịch, PGBank sẽ thông báo cho KH bằng các hình thức như sau: Công bố trên website của PGBank và/hoặc thông báo tại các Điểm giao dịch và/hoặc bất cứ phương thức nào phù hợp với quy định của pháp luật và/hoặc theo quyết định của PGBank trong từng thời kỳ. Việc KH sử dụng Dịch vụ được coi là KH đã đồng ý với biểu phí và hạn mức liên quan đến Dịch vụ. </li>
+                        </ol>
+                        <strong>Điều 7.	Chứng từ giao dịch </strong>
+                        <ol>
+                            <li>Các tài liệu, chứng từ liên quan đến việc cung cấp, sử dụng dịch vụ và/hoặc giao dịch giữa KH và PGBank cũng như các số liệu được ghi chép, xác nhận và lưu giữ bởi hệ thống các kênh phân phối điện tử của PGBank sẽ là bằng chứng về việc giao dịch của KH với PGBank. </li>
+                            <li>Chứng từ giao dịch được sử dụng đối với các dịch vụ Ngân hàng điện tử giữa KH với PGBank là chứng từ điện tử. </li>
+                            <li>Nội dung của chứng từ điện tử phải tuân thủ quy định của PGBank và các quy định khác của pháp luật liên quan đến giao dịch điện tử. </li>
+                        </ol>
+                        <strong>Điều 8.	Bảo mật thông tin</strong>
+                        <ol>
+                            <li>PGBank và KH cam kết bảo mật các thông tin dưới đây:
+							    <ol type="a">
+									<li>Tên truy cập, Mật khẩu truy cập, mã xác thực giao dịch. </li>
+									<li>Lịch sử giao dịch. </li>
+									<li>Các thông tin liên quan đến số tiền, chi tiết giao dịch và tài khoản của KH. </li>
+									<li>Các thông tin khác theo Điều kiện, điều khoản này, thỏa thuận khác giữa KH và PGBank, quy định của pháp luật. </li>
+								</ol>
+							</li>
+                            <li>Các thông tin cần bảo mật chỉ được công bố theo quy định của pháp luật hoặc theo yêu cầu của KH theo đúng thỏa thuận với PGBank và theo quy định của pháp luật. </li>
+                            <li>Khách hàng chấp thuận việc PGBank công bố các thông tin bảo mật cho chính KH sau khi xác nhận các thông tin cá nhân của KH.</li>
+                            <li>PGBank khuyến khích Khách hàng đổi Mật khẩu truy cập thường xuyên. Để đổi Mật khẩu truy cập, Khách hàng thực hiện các thao tác/yêu cầu/thủ tục qua Dịch vụ PG APP, Dịch vụ Internet Banking/tại các Điểm giao dịch/các hình thức khác theo quy định của PGBank trong từng thời kỳ. </li>
+                        </ol>
+                        <strong>Điều 9.	Rủi ro và xử lý rủi ro</strong>
+                        <ol>
+                            <li>Bằng Điều kiện điều khoản này, Khách hàng xác nhận đã được PGBank thông báo, cảnh báo để khách hàng nhận biết và phòng tránh được những rủi ro có thể gặp phải trong quá trình thực hiện giao dịch trên Dịch vụ Ngân hàng điện tử, bao gồm nhưng không giới hạn: 
+                                <ol type="a">
+                                    <li>Lỗi kỹ thuật hệ thống phần cứng, phần mềm có thể xảy ra: do tốc độ, chất lượng đường truyền hoặc lỗi thiết bị, lỗi phần mềm, việc kết nối giữa Khách hàng và hệ thống của PGBank có thể không thực hiện được, bị gián đoạn, bị chậm…; </li>
+                                    <li>Nguy cơ ngưng trệ hoạt động của hệ thống mạng do tắc nghẽn đường truyền; </li>
+                                    <li>Các máy tính, thiết bị di động có thể bị nhiễm virus làm ngưng trệ các hoạt động trao đổi thông tin trong mạng máy tính và mạng di động; </li>
+                                    <li>Lệnh giao dịch có thể bị treo, bị ngừng, bị trì hoãn, hoặc có lỗi dữ liệu; </li>
+                                    <li>Việc nhận dạng các tổ chức hoặc người tiếp nhận giao dịch có thể bị nhầm, sai sót. </li>
+                                    <li>Số liệu giao dịch hoặc thông tin giao dịch khác có thể có lỗi hoặc sai, lệch do lỗi kỹ thuật; </li>
+                                    <li>Những rủi ro khác mà PGBank công bố trên website của PGBank và/hoặc thông báo tại các Điểm giao dịch và/hoặc bất cứ phương thức nào phù hợp với quy định của pháp luật và/hoặc theo quyết định của PGBank trong từng thời kỳ.</li>
+                                </ol>
+                            </li>
+                            <li>Khách hàng đồng ý rằng KH/Bên thứ ba khác có liên quan (không gồm PGBank) tự chịu trách nhiệm đối với bất kỳ sai sót, thiệt hại hoặc tổn thất nào xảy ra đối với KH phát sinh trực tiếp hoặc gián tiếp từ một trong các sự kiện dưới đây:
+							    <ol type="a">
+                                    <li>Dịch vụ không thể thực hiện được do lỗi của nhà cung cấp dịch vụ mạng Internet, dịch vụ viễn thông (lỗi đường truyền internet, nghẽn mạng…);</li>
+                                    <li>Các trường hợp bất khả kháng theo quy định của pháp luật;</li>
+                                    <li>Số dư trong tài khoản/thẻ của KH không đủ để thực hiện giao dịch;</li>
+                                    <li>Việc giao hàng, chất lượng hàng hóa dịch vụ khi KH thanh toán mua hàng trên mạng;</li>
+                                    <li>Việc thông tin cá nhân, thông tin giao dịch và các thông tin có liên quan đến Dịch vụ bị công bố/công khai cho bất kỳ bên thứ ba nào trong các trường hợp khách quan ngoài tầm kiểm soát của PGBank (bị tin tặc tấn công trái phép, lỗi do nhà cung cấp dịch vụ viễn thông…);</li>
+                                    <li>Những trường hợp đã có cảnh báo cho KH trong quá trình thực hiện, nhưng không được KH lưu ý dẫn đến sai sót;</li>
+                                    <li>KH thực hiện các giao dịch bị cấm theo quy định pháp luật;</li>
+                                    <li>KH không nhận được các thông báo hoặc các thông tin PGBank gửi do:
+                                         <ul>
+                                            <li>Địa chỉ email của KH không nhận được thư điện tử vì bất kỳ lý do nào mà không phải do lỗi của PGBank.</li>
+                                            <li>Khách hàng thay đổi địa chỉ liên lạc, số điện thoại, fax hoặc địa chỉ email và các thông tin đã đăng ký với PGBank…mà không thông báo bằng văn bản cho PGBank.</li>
+                                            <li>Lỗi của KH hay của bên thứ ba bất kì.</li>
+                                         </ul>                                      
+</li>
+                                    <li>Khách hàng vô ý/cố ý để mất, mất cắp, bị lộ (các) Thông tin bảo mật dẫn đến việc/cho phép người khác sử dụng Dịch vụ và tiếp cận các thông tin mà Dịch vụ cung cấp hoặc các Thông tin bảo mật bị người khác giả mạo/lạm dụng/bị đánh cắp hoặc bị sử dụng trái phép dưới bất kỳ hình thức nào;</li>
+                     <li>Khách hàng cung cấp chậm trễ, không đầy đủ, không rõ ràng hoặc không chính xác các thông tin cho PGBank, bao gồm các thông tin về lệnh giao dịch, số tiền giao dịch và các thông tin khác có liên quan, dẫn đến việc giao dịch của KH không thực hiện được hoặc thực hiện không chính xác;</li>
+                     <li>Khách hàng không tuân thủ, vi phạm bất kỳ điều khoản nào của Điều kiện, điều khoản này;</li>
+                     <li>Lỗi của bất kỳ bên thứ ba nào, bao gồm cả những đối tác của PGBank trong việc cung cấp Dịch vụ;</li>
+                     <li>Lỗi của hệ thống hay bất kỳ phương tiện kỹ thuật nào liên quan đến hệ thống, kể cả trường hợp hệ thống từ chối tên truy cập, mật khẩu vì bất kỳ lý do nào;</li>
+                     <li>PGBank thực hiện chậm hay không thể thực hiện được trách nhiệm của mình do có sự trục trặc về máy móc, xử lý dữ liệu, thông tin viễn thông, thiên tai, số lượng lệnh tăng đột biến hay bất kỳ sự việc nào nằm ngoài sự kiểm soát của PGBank;</li>
+                     <li>Các trường hợp khác theo quy định của pháp luật.</li>
+                                </ol>
+		                    </li>
+                            <li>Khách hàng đồng ý rằng PGBank được quyền tạm ngừng hoặc chấm dứt cung cấp Dịch vụ khi thuộc một trong các trường hợp sau:
+							    <ol type="a">
+                                    <li>Có yêu cầu, quyết định của cơ quan Nhà nước có thẩm quyền về việc ngừng cung cấp Dịch vụ;</li>
+                                    <li>Xuất hiện sự cố nghiêm trọng đối với hệ thống mà PGBank buộc phải tạm ngừng cung cấp Dịch vụ để khắc phục nhằm đảm bảo an toàn hệ thống; PGBank trong khả năng của mình sẽ cố gắng khắc phục nhanh nhất sự cố và đưa hệ thống về trạng thái bình thường;</li>
+                                    <li>Trường hợp việc bảo trì, bảo dưỡng, nâng cấp hệ thống dù đã được thực hiện vào những ngày không giao dịch nhưng buộc phải kéo dài ngoài sự mong đợi của PGBank, thì khi đó KH có thể lựa chọn hình thức giao dịch khác để thực hiện giao dịch của mình; </li>
+                                    <li>Khi nghi ngờ giao dịch trên tài khoản/thẻ liên quan đến rửa tiền, tài trợ khủng bố, rủi ro, lừa đảo, gian lận và giả mạo; </li>
+                                    <li>Khi xảy ra các sự kiện bất khả kháng khác như thiên tai, hỏa hoạn, lũ lụt, động đất; sự phá hoại tấn công, chiến tranh, nổi loạn, đình công, sự thay đổi chính sách pháp luật của Nhà nước hoặc các sự kiện khác được pháp luật xem là sự kiện bất khả kháng.
+Hai bên sẽ không chịu bất cứ trách nhiệm pháp lý nào về các sự cố gây cản trở, gián đoạn hoặc ngừng hoạt động của Dịch vụ nếu các sự cố đó được gây ra bởi một sự kiện bất khả kháng theo quy định của pháp luật nằm ngoài tầm kiểm soát, phòng ngừa và dự kiến của các bên;
+</li>
+                                    <li>KH vi phạm bất kỳ thỏa thuận nào tại Điều kiện, điều khoản này, thỏa thuận khác giữa PGBank và KH, quy định pháp luật có liên quan; </li>
+                    <li>Các trường hợp khác theo thỏa thuận tại Điều kiện điều khoản này, thỏa thuận khác giữa PGBank và KH, quy định pháp luật. </li>
+                                </ol>
+		                    </li>
+                     
+				                        </ol>
+					<strong>Điều 10.	Xử lý vi phạm </strong>
+                        <ol>
+                            <li>Mỗi bên đều có quyền yêu cầu ngừng cung cấp hoặc sử dụng Dịch vụ nếu phát hiện có sự vi phạm quy định an toàn bảo mật của Dịch vụ hoặc có sự sửa đổi Dịch vụ trái phép. </li>
+                            <li>Mỗi bên phải hoàn toàn chịu trách nhiệm về việc bên đó gây ra lỗi cố ý hay vô ý dẫn đến việc Dịch vụ, tên truy cập, mật khẩu… bị lợi dụng để lấy thông tin trái phép hoặc lập giao dịch giả mạo gây thiệt hại cho bên kia hoặc cho một bên thứ ba.</li>
+                            <li>Ngoại trừ các trường hợp nêu tại Điểm e Khoản 2 Điều 3 và Điều 9, bên nào vi phạm quy định hoặc có lỗi gây ra thiệt hại cho bên kia phải chịu trách nhiệm bồi thường mọi thiệt hại và tổn thất, bao gồm cả nghĩa vụ thanh toán mà Bên bị thiệt hại phải thực hiện đối với bên thứ ba do hậu quả của việc vi phạm hay lỗi của bên vi phạm gây ra. </li>
+                        </ol>
+						<strong>Điều 11.	Giải quyết tranh chấp  </strong>
+                        <ol>
+                            <li>Mọi tranh chấp phát sinh sẽ được các bên giải quyết thông qua thương lượng trên tinh thần hợp tác. Trường hợp thương lượng không thành thì tranh chấp sẽ được đưa ra Tòa án nhân dân có thẩm quyền để giải quyết. </li>
+                            <li>Khách hàng cam kết nơi cư trú, số điện thoại sử dụng Dịch vụ là nơi cứ trú hợp pháp, số điện thoại thuộc sở hữu của KH. Đây là địa chỉ, số điện thoại PGBank gửi tất cả các văn bản, tài liệu giao dịch trong quá trình thực hiện Dịch vụ và Điều kiện, điều khoản này và cơ quan Nhà nước có thẩm quyền gửi thư mời, thông báo, tống đạt, niêm yết công khai nhằm yêu cầu KH thực hiện nghĩa vụ theo Điều kiện, điều khoản này. KH phải thông báo cho PGBank, cơ quan địa phương về sự thay đổi địa chỉ thường trú, địa chỉ tạm trú hoặc nơi cư trú mới, số điện thoại mới. </li></li>
+                            <li>Trường hợp KH vi phạm nghĩa vụ thông báo về sự thay đổi số Chứng minh nhân dân/Căn cước công dân/Căn cước/Hộ chiếu/giấy tờ tùy thân khác theo quy định pháp luật, địa chỉ thường trú, địa chỉ tạm trú, nơi cư trú mới, số điện thoại mới theo quy định của Điều kiện, điều khoản này, KH được xem là cố tình giấu thông tin liên lạc nhằm trốn tránh thực hiện nghĩa vụ theo Điều kiện, điều khoản này và chịu các trách nhiệm có liên quan theo Điều kiện, điều khoản này, quy định của pháp luật.</li>
+                        </ol>
+						<strong>Điều 12.	Các quy định khác  </strong>
+                        <ol>
+                            <li>Điều kiện, điều khoản này có hiệu lực kể từ ngày KH xác nhận đăng ký Dịch vụ Ngân hàng điện tử/ký vào Giấy đề nghị đăng ký dịch vụ hoặc một giấy tờ/bằng chứng bất kỳ của PGBank thể hiện việc KH đăng ký sử dụng Dịch vụ <i>(đối với Khách hàng mới đăng ký Dịch vụ Ngân hàng điện tử); hoặc từ ngày 10/09/2024 (đối với Khách hàng đã đăng ký Dịch vụ Ngân hàng điện tử trước đây, trong trường hợp này, Điều kiện, điều khoản này thay thế cho tất cả các Điều kiện và điều khoản về đăng ký và sử dụng Dịch vụ Ngân hàng điện tử trước đây về đăng ký sử dụng Dịch vụ (nếu có)). </i></li>
+                            <li>Các nội dung liên quan đến việc xử lý dữ liệu cá nhân được ghi nhận tại Thỏa thuận kiêm Điều khoản và điều kiện về bảo vệ và xử lý dữ liệu cá nhân, thỏa thuận khác có liên quan. Bản Thỏa thuận kiêm Điều khoản và điều kiện về bảo vệ và xử lý dữ liệu cá nhân (bao gồm cả các bản sửa đổi, bổ sung, điều chỉnh) được PGBank công bố, niêm yết, thông báo tại các Điểm giao dịch của PGBank và/hoặc trang thông tin điện tử của PGBank (website: <a  href="https:\\www.pgbank.com.vn"> www.pgbank.com.vn </a>) và/hoặc theo hình thức khác theo quyết định của PGBank phù hợp quy định của pháp luật. Bằng Điều kiện, điều khoản này, KH xác nhận: (i) Đã được PGBank thông báo về việc xử lý dữ liệu cá nhân theo quy định của pháp luật, theo quy định của PGBank ban hành trong từng thời kỳ; và (ii) Đã đọc, biết rõ, hiểu rõ, hoàn toàn tự nguyện đồng ý với việc thực hiện/tiếp tục thực hiện các nội dung liên quan đến việc xử lý dữ liệu cá nhân đối với tất cả các hoạt động trong quy trình xử lý dữ liệu cá nhân theo thỏa thuận tại Thỏa thuận kiêm Điều khoản và điều kiện về bảo vệ và xử lý dữ liệu cá nhân, thỏa thuận khác có liên quan; (iii) PGBank có quyền sửa đổi, bổ sung, điều chỉnh các bản Thỏa thuận kiêm Điều khoản và Điều kiện về bảo vệ và xử lý dữ liệu cá nhân mà không cần sự chấp thuận nào khác của KH. PGBank sẽ thông báo các bản Thỏa thuận kiêm Điều khoản và điều kiện được sửa đổi, bổ sung, điều chỉnh theo hình thức như quy định tại Khoản này. </li>
+                            <li>Khách hàng khi không còn nhu cầu sử dụng Dịch vụ phải gửi văn bản theo mẫu của PGBank để chấm dứt Điều kiện, điều khoản này. PGBank không mặc nhiên hủy tên truy cập cũng như không chịu trách nhiệm về các mất mát, rủi ro xảy ra khi KH không thực hiện trách nhiệm thông báo việc chấm dứt sử dụng Dịch vụ.</li>
+                            <li>Trường hợp KH đã chấm dứt sử dụng Dịch vụ, KH vẫn bị ràng buộc bởi các Điều kiện, điều khoản này và các thỏa thuận khác liên quan đến quyền và trách nhiệm của KH mà KH chưa hoàn tất tại thời điểm chấm dứt Dịch vụ.</li>
+                                   <li>Các Bên đồng ý rằng (các) điều khoản trong Điều kiện, điều khoản này có giá trị độc lập với nhau trừ trường hợp rõ ràng được dẫn chiếu một cách chính xác và đầy đủ. Việc một trong các điều khoản trong Điều kiện, điều khoản này bị vô hiệu sẽ không ảnh hưởng đến việc thực thi các điều khoản khác. Trường hợp có bất kỳ điều khoản nào bị vô hiệu thì hai Bên cam kết rằng bằng tất cả nỗ lực của mình điều chỉnh sao cho phù hợp với các quy định của pháp luật để thực thi.</li>
+                            <li>Điều kiện, điều khoản này chấm dứt hiệu lực trong các trường hợp:
+							    <ol type="a">
+                                    <li>Khách hàng yêu cầu chấm dứt Điều kiện, điều khoản này theo quy định tại Khoản 3 Điều 12 và được PGBank chấp thuận;  </li>
+                                    <li>PGBank chấm dứt cung cấp Dịch vụ khi xảy ra các trường hợp nêu tại Khoản 3 Điều 9 của Điều kiện, điều khoản này;</li>
+                                    <li>Các trường hợp khác theo thỏa thuận của các bên hoặc theo quy định của pháp luật.</li>
+                                 </ol>
+							</li>
+							 <li>PGBank và KH đồng ý rằng Điều kiện, điều khoản này có hiệu lực áp dụng tương tự trong trường hợp các giao dịch liên quan đến tài khoản/thẻ của KH mở tại PGBank được thực hiện thông qua Dịch vụ Ngân hàng điện tử hoặc các phương tiện điện tử khác. </li>
+							 <li>PGBank có quyền sửa đổi, bổ sung Điều kiện, điều khoản này bất cứ lúc nào trên cơ sở phù hợp quy định pháp luật và niêm yết công khai, thông báo nội dung thay đổi tới KH trước khi áp dụng với thời gian thông báo do PGBank hoàn toàn quyết định và phương thức niêm yết, thông báo cụ thể như sau:  
+							    <ol type="a">
+                                    <li>Niêm yết trên website:<a href="https://www.pgbank.com.vn/"> www.pgbank.com.vn </a>của PGBank; và/hoặc  </li>
+                                    <li>Niêm yết tại các Điểm giao dịch; và/hoặc </li>
+                                    <li>Thông báo bằng văn bản hoặc email hoặc trên phương tiện thông tin đại chúng hoặc dưới bất cứ hình thức nào khác mà PGBank cho là phù hợp.</li>
+                                    <li>Trường hợp KH không đồng ý với những nội dung thay đổi, KH thực hiện gửi văn bản yêu cầu chấm dứt sử dụng Dịch vụ Ngân hàng điện tử. Việc KH tiếp tục sử dụng Dịch vụ Ngân hàng điện tử sau thời điểm PGBank sửa đổi, bổ sung, PGBank hiểu rằng KH đồng ý với những sửa đổi, bổ sung đó.  </li>
+                                </ol>
+		                     </li>
+							 <li>Điều kiện, điều khoản này bao gồm 12 Điều và các tài liệu kèm theo bao gồm nhưng không giới hạn ở: Giấy đề nghị đăng ký dịch vụ, văn bản yêu cầu thay đổi thông tin, lệnh giao dịch, chứng từ, tài liệu, dữ liệu có liên quan. </li>
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger waves-effect text-left" data-dismiss="modal">Đóng</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- jQuery 3 -->
+    
+    <script src="../Resources/JavaScript/jquery-1.10.2.js?v=20231228"></script>
+
+    <!-- jQuery UI 1.11.4 -->
+    
+
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        //$.widget.bridge('uibutton', $.ui.button);
+    </script>
+
+    <!-- popper -->
+    <script src="../Resources/Pgb_theme/assets/components/popper/popper.min.js?v=20231228"></script>
+
+    <!-- Bootstrap v4.0.0-beta -->
+    <script src="../Resources/Pgb_theme/assets/components/bootstrap/dist/js/bootstrap.js?v=20231228"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js?v=20231228"></script>
+    <!-- ChartJS -->
+    <script src="../Resources/Pgb_theme/assets/components/chart-js/chart.js?v=20231228"></script>
+
+    <!-- daterangepicker -->
+    <script src="../Resources/Pgb_theme/assets/components/moment/moment.js?v=20231228"></script>
+    <script src="../Resources/Pgb_theme/assets/components/bootstrap-daterangepicker/daterangepicker.js?v=20231228"></script>
+
+    <!-- datepicker -->
+    <script src="../Resources/Pgb_theme/assets/components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js?v=20231228"></script>
+
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="../Resources/Pgb_theme/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js?v=20231228"></script>
+
+    <!-- Slimscroll -->
+    <script src="../Resources/Pgb_theme/assets/components/jquery-slimscroll/jquery.slimscroll.js?v=20231228"></script>
+
+    <!-- FastClick -->
+    <script src="../Resources/Pgb_theme/assets/components/fastclick/lib/fastclick.js?v=20231228"></script>
+
+    <script src="../Resources/Pgb_theme/js/template.js?v=20231228"></script>
+    
+
+    <!-- maximum_admin for demo purposes -->
+    <script src="../Resources/Pgb_theme/js/demo.js?v=20231228"></script>
+
+    <script src="../Resources/Pgb_theme/js/jquery.bxslider.min.js?v=20231228"></script>
+    <script src="../Resources/JavaScript/fingerprint.js?v=20231228"></script>
+
+    <script type="text/javascript">
+
+        $(function () {
+
+            $(".input-group-btn .dropdown-menu li a").click(function () {
+
+                var selText = $(this).html();
+
+                //working version - for single button //
+                //$('.btn:first-child').html(selText+'<span class="caret"></span>');  
+
+                //working version - for multiple buttons //
+                $(this).parents('.input-group-btn').find('.btn-search').html(selText);
+
+            });
+            var fp = new Fingerprint({
+                canvas: true,
+                ie_activex: true,
+                screen_resolution: true
+            });
+            $("#dumpValue").val(fp.get());
+        });
+
+        //$('.slides').bxSlider({
+        //    controls: false,
+        //    auto: true,
+        //    pause: 10000,
+        //    autoControls: false,
+        //    mode: 'horizontal',
+        //    preventDefaultSwipeY: true,
+        //    preventDefaultSwipeX: false,
+
+
+        //});
+
+
+
+    </script>
+    <script type="text/javascript">
+        function ShowBusyBox() {
+            BusyBox.Show();
+            //fix tam loi khong hide content
+            document.getElementById('ctl00_BusyBox_LD').style.top = 0;
+        }
+        function HideBusyBox() {
+
+        }
+        var is_chrome = function () { return Boolean(window.chrome); }
+        function btnPrint_onclick() {
+            var printContent = document.getElementById("print_div");
+            var windowUrl = 'about:blank';
+            var uniqueName = new Date();
+            var windowName = 'Print' + uniqueName.getTime();
+
+            var printWindow = window.open(windowUrl, windowName, 'height=' + screen.height + ',width=' + screen.width + ',resizable=yes,scrollbars=yes,toolbar=yes,menubar=yes,location=yes');
+            printWindow.moveTo(0, 0);
+            printWindow.document.write('<html>\n');
+            printWindow.document.write('<head>\n');
+            printWindow.document.write('<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />\n');
+            printWindow.document.write('<meta http-equiv="X-UA-Compatible" content="IE=edge">');
+            printWindow.document.write('<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">');
+            if (navigator.userAgent.toLowerCase().indexOf("chrome") > -1) {
+
+            }
+            else {
+                printWindow.document.write('<link href="../Resources/StyleSheet/eBanking.css?v=20231228" rel="Stylesheet" type="text/css" />\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/assets/components/bootstrap/dist/css/bootstrapX.css?v=20231228" rel="Stylesheet" type="text/css" />\n');
+                printWindow.document.write('<link href="../Resources/StyleSheet/font-awesome.min.css?v=20231228" rel="Stylesheet" type="text/css" />\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/assets/components/font-awesome/css/font-awesome.css?v=20231228" rel="Stylesheet" type="text/css" />\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/assets/components/Ionicons/css/ionicons.css?v=20231228" rel="Stylesheet" type="text/css" />\n');
+                printWindow.document.write('<link href="../Resources/JavaScript/ebScript.js?v=20231228" type="text/javascript" />\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/css/master_style.css?v=20231228" type="text/css" rel="Stylesheet" />\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/css/skins/_all-skins.css?v=20231228" type="text/css" rel="Stylesheet" />\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/assets/components/morris.js/morris.css?v=20231228" type="text/css" rel="Stylesheet" />\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/assets/components/jvectormap/jquery-jvectormap.css?v=20231228" type="text/css" rel="Stylesheet" />\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/assets/components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css?v=20231228" rel="Stylesheet" type="text/css" />\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/assets/components/bootstrap-daterangepicker/daterangepicker.css?v=20231228" rel="Stylesheet" type="text/css" />\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css?v=20231228" rel="Stylesheet" type="text/css" />\n');
+                printWindow.document.write('<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="Stylesheet"/>\n');
+                printWindow.document.write('<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;subset=vietnamese" rel="Stylesheet"/>\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/css/animate.min.css?v=20231228" rel="Stylesheet"/>\n');
+                printWindow.document.write('<link href="../Resources/Pgb_theme/css/pg.css?v=20231228" rel="Stylesheet"/>\n');
+                printWindow.document.write('<link href="../Resources/StyleSheet/eBanking.css?v=20231228" rel="Stylesheet" type="text/css" />\n');
+            }
+
+            printWindow.document.write('<script>\n');
+
+            if (navigator.userAgent.toLowerCase().indexOf("chrome") > -1) {
+                printWindow.document.write('var chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/StyleSheet/eBanking.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/assets/components/bootstrap/dist/css/bootstrapX.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/StyleSheet/font-awesome.min.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/assets/components/font-awesome/css/font-awesome.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/assets/components/Ionicons/css/ionicons.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "javascript";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/JavaScript/ebScript.js?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/css/master_style.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/css/skins/_all-skins.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/assets/components/morris.js/morris.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/assets/components/jvectormap/jquery-jvectormap.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/assets/components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/assets/components/bootstrap-daterangepicker/daterangepicker.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;subset=vietnamese";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/css/animate.min.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/Pgb_theme/css/pg.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+                printWindow.document.write('chromeCss = document.createElement("link");\n');
+                printWindow.document.write('chromeCss.rel = "stylesheet";\n');
+                printWindow.document.write('chromeCss.href = "../Resources/StyleSheet/eBanking.css?v=20231228";\n');
+                printWindow.document.write('document.getElementsByTagName("head")[0].appendChild(chromeCss);\n');
+            }
+
+            printWindow.document.write('function winPrint()\n');
+            printWindow.document.write('{\n');
+            printWindow.document.write('window.focus();\n');
+
+
+            if (navigator.userAgent.toLowerCase().indexOf("chrome") > -1) {
+                printWindow.document.write('printChrome();\n');
+            }
+            else {
+                printWindow.document.write('window.print();\n');
+            }
+
+
+            if (navigator.userAgent.toLowerCase().indexOf("firefox") > -1) {
+                printWindow.document.write('window.close();\n');
+            }
+            else {
+                printWindow.document.write('chkstate();\n');
+            }
+            printWindow.document.write('}\n');
+
+
+            printWindow.document.write('function chkstate()\n');
+            printWindow.document.write('{\n');
+            printWindow.document.write('if(document.readyState=="complete")');
+            printWindow.document.write('{\n');
+            printWindow.document.write('window.close();\n');
+            printWindow.document.write('}\n');
+            printWindow.document.write('else{\n');
+            printWindow.document.write('setTimeout("chkstate();",3000);\n');
+            printWindow.document.write('}\n');
+            printWindow.document.write('}\n');
+
+            printWindow.document.write('function printChrome()\n');
+            printWindow.document.write('{\n');
+            printWindow.document.write('if(document.readyState=="complete")');
+            printWindow.document.write('{\n');
+            printWindow.document.write('window.print();\n');
+            printWindow.document.write('}\n');
+            printWindow.document.write('else{\n');
+            printWindow.document.write('setTimeout("printChrome();",3000);\n');
+            printWindow.document.write('}\n');
+            printWindow.document.write('}\n');
+
+
+            printWindow.document.write('</scr');
+            printWindow.document.write('ipt>');
+
+            printWindow.document.write('</head>');
+            printWindow.document.write('<body onload="winPrint()" >');
+            printWindow.document.write('<div class="content">');
+            printWindow.document.write('<div class="box box-default">');
+            printWindow.document.write('<div class="box-body">');
+            printWindow.document.write('<div class="row">');
+            printWindow.document.write(printContent.innerHTML);
+            printWindow.document.write('</div>');
+            printWindow.document.write('</div>');
+            printWindow.document.write('</div>');
+            printWindow.document.write('</div>');
+            printWindow.document.write('</body>');
+            printWindow.document.write('</html>');
+            printWindow.document.close();
+
+
+
+        }
+        function isEmail(strEmail) {
+            var filter = /^(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6}$/;
+            if (!filter.test(strEmail))
+                return false;
+            else
+                return true;
+        }
+
+        function isMobile(strEmail) {
+            var filter = /^(((09)\d{8})|(01)\d{9})$/;
+            if (!filter.test(strEmail))
+                return false;
+            else
+                return true;
+        }
+
+        function isUserId(strEmail) {
+            var filter = /^[a-z0-9A-Z_\-\.]{6,20}$/;
+            if (!filter.test(strEmail))
+                return false;
+            else
+                return true;
+        }
+        var ClassName = {
+            fixed: 'fixed',
+            holdTransition: 'hold-transition',
+            sidebar_open: 'sidebar-open',
+            contentWrapper: '.content-wrapper'
+        }
+        function fixSidebar() {
+            if ($(document).width() < 480) {
+                if ($('body').hasClass(ClassName.sidebar_open)) {
+                    $(ClassName.contentWrapper).css('height', 'auto')
+                }
+                else { $(ClassName.contentWrapper).css('height', $('.sidebar-footer').offset().top) }
+            }
+        }
+
+
+        //  $(document).ready(function () {
+
+        //    var withLeftSide = $('.main-sidebar').width();
+        //  var withFullSite = $('#myModal').width();
+        // $("#myModal").width(withFullSite - withLeftSide);
+        //$("#myModal").css({left: withLeftSide })
+        // });
+    </script>
+    
+</body>
+</html>

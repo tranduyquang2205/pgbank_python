@@ -101,3 +101,4 @@ Cargo.lock
 test.py
 data/*.txt
 data/*/*.json
+.codegpt

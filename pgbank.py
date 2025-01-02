@@ -279,7 +279,7 @@ class PGBank:
         match = re.search(pattern, html_content)
         return match.group(1) if match else None
     def extract_balance(self,html_content):
-        pattern = r'<span class="lblLabel" style="color:Black;">Số dư khả dụng</span>: <span style="color: black"><strong>\s+(.*) VND</strong></span><br />'
+        pattern = r'<span class="lblLabel" style="color:Black;">Số dư khả dụng</span>: <span style="color: black"><strong>(.*) VND</strong></span><br />'
         match = re.search(pattern, html_content)
         return int(match.group(1).replace(',','').strip()) if match else None
     def extract_page_url(self,html_content,page):
@@ -638,6 +638,8 @@ class PGBank:
         url = "https://home.pgbank.com.vn/V2018/Pages/acbalance.aspx"
         
         response = self.curlGet(url)
+        # with open('balance.html', 'w', encoding='utf-8') as file:
+        #     file.write(response)
         self.balance = self.extract_balance(response)
         account_number = self.extract_account_number(response)
         accounts = {
