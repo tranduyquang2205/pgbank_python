@@ -21,7 +21,18 @@ from urllib.parse import quote
 from urllib.parse import urlencode
 
 class PGBank:
-    def __init__(self, username, password, account_number):
+    def __init__(self, username, password, account_number,proxy_list=None):
+        self.proxy_list = proxy_list
+        if self.proxy_list:
+            self.proxy_info = random.choice(self.proxy_list)
+            proxy_host, proxy_port, username_proxy, password_proxy = self.proxy_info.split(':')
+            self.proxies = {
+                'http': f'http://{username_proxy}:{password_proxy}@{proxy_host}:{proxy_port}',
+                'https': f'http://{username_proxy}:{password_proxy}@{proxy_host}:{proxy_port}'
+            }
+        else:
+            self.proxies = None
+            
         self.session = requests.Session()
         self.cookies_file = f"data/cookies/{account_number}.json"
         self.is_login = False
@@ -158,7 +169,7 @@ class PGBank:
         'TE': 'trailers'
         }
         self.load_cookies()
-        response = self.session.get(url, headers=headers,allow_redirects=True)
+        response = self.session.get(url, headers=headers,allow_redirects=True,proxies=self.proxies)
         self.save_cookies()
         self.referer_url = url
         try:
@@ -197,7 +208,7 @@ class PGBank:
             'sec-ch-ua-platform': '"Windows"'
             }
         self.load_cookies()
-        response = self.session.post(url, headers=headers, data=data,allow_redirects=True)
+        response = self.session.post(url, headers=headers, data=data,allow_redirects=True,proxies=self.proxies)
         self.save_cookies()
         self.referer_url = url
         try:
